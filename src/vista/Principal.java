@@ -32,6 +32,7 @@ public class Principal extends javax.swing.JFrame {
         btn_Reserva = new javax.swing.JButton();
         btn_Tour = new javax.swing.JButton();
         btn_Trabajador = new javax.swing.JButton();
+        btn_Salir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 204, 204));
@@ -59,6 +60,10 @@ public class Principal extends javax.swing.JFrame {
         btn_Trabajador.setText("Trabajador");
         panel_Contenido.add(btn_Trabajador);
         btn_Trabajador.setBounds(20, 170, 130, 25);
+
+        btn_Salir.setText("Salir");
+        panel_Contenido.add(btn_Salir);
+        btn_Salir.setBounds(30, 400, 73, 25);
 
         getContentPane().add(panel_Contenido, java.awt.BorderLayout.CENTER);
 
@@ -101,10 +106,11 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn_Paquete;
-    private javax.swing.JButton btn_Reserva;
-    private javax.swing.JButton btn_Tour;
-    private javax.swing.JButton btn_Trabajador;
+    public javax.swing.JButton btn_Paquete;
+    public javax.swing.JButton btn_Reserva;
+    public javax.swing.JButton btn_Salir;
+    public javax.swing.JButton btn_Tour;
+    public javax.swing.JButton btn_Trabajador;
     private javax.swing.JPanel panel_Contenido;
     private javax.swing.JPanel panel_Pestañas;
     // End of variables declaration//GEN-END:variables
