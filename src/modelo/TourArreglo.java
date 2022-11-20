@@ -13,6 +13,9 @@ public class TourArreglo {
     private Tour[] tours;
     private int indice;
 
+    public TourArreglo() {
+    }
+
     public TourArreglo(int tam) {
         this.tours = new Tour[tam];
         this.indice = 0;
