@@ -9,7 +9,7 @@ package modelo;
  * @author User
  */
 public class Tour {
-    
+
     private String nombrePaquete;
     private String itinerario;
     private float precioTour;
@@ -56,6 +56,10 @@ public class Tour {
     public void setHoras(int horas) {
         this.horas = horas;
     }
-    
-    
+
+    @Override
+    public String toString() {
+        return "Tour{" + "nombrePaquete=" + nombrePaquete + ", itinerario=" + itinerario + ", precioTour=" + precioTour + ", horas=" + horas + '}';
+    }
+
 }

@@ -10,7 +10,6 @@ package modelo;
  */
 public class Viaje {
 
-    
     private Tour tours;
 
     public void programarViaje(Tour tours) {
