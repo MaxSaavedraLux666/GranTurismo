@@ -11,11 +11,17 @@ package modelo;
 public class Viaje {
 
     private Tour tours;
+    private Vehiculo vehiculoAsignado;
+    private int horaInicio;
+    private int horaFin;
 
     public Viaje() {
+        
+        
+        
     }
 
-    public boolean programarViaje(Tour tours) {
+    public boolean programarViaje(Tour tours, Vehiculo vehiculo) {
         boolean result = false;
         
         return result;
