@@ -11,14 +11,14 @@ package modelo;
 public class Tour {
 
     private String nombrePaquete;
-    private String itinerario;
+    private Itinerario itinerario;
     private float precioTour;
     private int horas;
 
     public Tour() {
     }
 
-    public Tour(String nombrePaquete, String itinerario, float precioTour, int horas) {
+    public Tour(String nombrePaquete, Itinerario itinerario, float precioTour, int horas) {
         this.nombrePaquete = nombrePaquete;
         this.itinerario = itinerario;
         this.precioTour = precioTour;
@@ -33,11 +33,11 @@ public class Tour {
         this.nombrePaquete = nombrePaquete;
     }
 
-    public String getItinerario() {
+    public Itinerario getItinerario() {
         return itinerario;
     }
 
-    public void setItinerario(String itinerario) {
+    public void setItinerario(Itinerario itinerario) {
         this.itinerario = itinerario;
     }
 
@@ -59,7 +59,7 @@ public class Tour {
 
     @Override
     public String toString() {
-        return "Tour{" + "nombrePaquete=" + nombrePaquete + ", itinerario=" + itinerario + ", precioTour=" + precioTour + ", horas=" + horas + '}';
+        return "Lugar : " + nombrePaquete + "\nItinerario : " + itinerario + "\nPrecio del Tour : " + precioTour + "\nHoras : " + horas;
     }
 
 }

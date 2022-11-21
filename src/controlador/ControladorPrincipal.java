@@ -28,7 +28,7 @@ public class ControladorPrincipal {
         }
         );
 
-        this.vista.btn_Paquete.addMouseListener(new MouseListener {
+        this.vista.btnPaquete.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 //paquete
@@ -36,7 +36,7 @@ public class ControladorPrincipal {
         }
         );
         
-        this.vista.btn_Reserva.addActionListener(new ActionListener() {
+        this.vista.btnReserva.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 //Reserva
@@ -44,7 +44,7 @@ public class ControladorPrincipal {
         }
         );
         
-        this.vista.btn_Tour.addActionListener(new ActionListener() {
+        this.vista.btnTour.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 //Tour
@@ -52,7 +52,7 @@ public class ControladorPrincipal {
         }
         );
         
-        this.vista.btn_Trabajador.addActionListener(new ActionListener() {
+        this.vista.btnTrabajador.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 //Trabajador

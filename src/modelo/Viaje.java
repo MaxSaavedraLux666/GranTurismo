@@ -12,7 +12,18 @@ public class Viaje {
 
     private Tour tours;
 
-    public void programarViaje(Tour tours) {
+    public Viaje() {
+    }
 
+    public boolean programarViaje(Tour tours) {
+        boolean result = false;
+        
+        return result;
+    }
+
+    public void mostrarTours(TourArreglo tours) {
+        if (tours != null) {
+            System.out.println(tours);
+        }
     }
 }
