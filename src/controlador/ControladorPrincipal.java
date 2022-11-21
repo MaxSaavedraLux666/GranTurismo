@@ -6,6 +6,7 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseListener;
 import javax.swing.Action;
 import vista.*;
 
@@ -14,9 +15,9 @@ import vista.*;
  * @author User
  */
 public class ControladorPrincipal {
-    Principal vista;
+    fmrPrincipal vista;
 
-    public ControladorPrincipal(Principal vista) {
+    public ControladorPrincipal(fmrPrincipal vista) {
         this.vista = vista;
 
         this.vista.btn_Salir.addActionListener(new ActionListener() {
@@ -27,7 +28,7 @@ public class ControladorPrincipal {
         }
         );
 
-        this.vista.btn_Paquete.addActionListener(new ActionListener() {
+        this.vista.btn_Paquete.addMouseListener(new MouseListener {
             @Override
             public void actionPerformed(ActionEvent e) {
                 //paquete

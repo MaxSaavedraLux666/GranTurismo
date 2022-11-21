@@ -23,6 +23,8 @@ public class App {
         tour1 = new Tour("Ciudadela", "Part Time", 13.5f, 4);
         tourTamaño.agregar(tour1);
         
+        tour1 = new Tour("IntiRaymi", "Part Time", 12.5f, 5);
+        tourTamaño.agregar(tour1);
         
         System.out.println(tourTamaño);
     }
