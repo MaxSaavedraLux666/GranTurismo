@@ -31,13 +31,14 @@ public class fmrTour extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        btn_BuscarTour = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
-        jScrollPane3 = new javax.swing.JScrollPane();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        txtAreaDetalle = new javax.swing.JTextArea();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        tablaTours = new javax.swing.JTable();
+        btn_Informacion = new javax.swing.JButton();
+        btn_Reservar = new javax.swing.JButton();
         jTextField2 = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
@@ -51,6 +52,7 @@ public class fmrTour extends javax.swing.JFrame {
         menuItem_Rural = new javax.swing.JMenuItem();
         menuItem_Naturaleza = new javax.swing.JMenuItem();
         menuItem_Negocio = new javax.swing.JMenuItem();
+        menu_Inicio = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -67,33 +69,37 @@ public class fmrTour extends javax.swing.JFrame {
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 60, 20));
         jPanel2.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 170, 300, 30));
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/buscar.png"))); // NOI18N
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btn_BuscarTour.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/buscar.png"))); // NOI18N
+        btn_BuscarTour.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btn_BuscarTourActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 170, 30, 30));
+        jPanel2.add(btn_BuscarTour, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 170, 30, 30));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 750, 210));
 
         jPanel3.setBackground(new java.awt.Color(204, 204, 255));
 
+        txtAreaDetalle.setColumns(20);
+        txtAreaDetalle.setRows(5);
+        jScrollPane2.setViewportView(txtAreaDetalle);
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
         );
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 240, 240, 190));
 
-        jTable1.setFont(new java.awt.Font("Lucida Fax", 0, 12)); // NOI18N
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tablaTours.setFont(new java.awt.Font("Lucida Fax", 0, 12)); // NOI18N
+        tablaTours.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -112,17 +118,17 @@ public class fmrTour extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tablaTours);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, 480, 300));
 
-        jButton2.setFont(new java.awt.Font("Lucida Fax", 0, 14)); // NOI18N
-        jButton2.setText("Información");
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 470, -1, -1));
+        btn_Informacion.setFont(new java.awt.Font("Lucida Fax", 0, 14)); // NOI18N
+        btn_Informacion.setText("Información");
+        jPanel1.add(btn_Informacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 470, -1, -1));
 
-        jButton3.setFont(new java.awt.Font("Lucida Fax", 0, 14)); // NOI18N
-        jButton3.setText("Reservar");
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 510, 120, -1));
+        btn_Reservar.setFont(new java.awt.Font("Lucida Fax", 0, 14)); // NOI18N
+        btn_Reservar.setText("Reservar");
+        jPanel1.add(btn_Reservar, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 510, 120, -1));
         jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 510, 100, 30));
         jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 470, 100, 30));
 
@@ -164,6 +170,9 @@ public class fmrTour extends javax.swing.JFrame {
 
         jMenuBar1.add(menu_Tour);
 
+        menu_Inicio.setText("Inicio");
+        jMenuBar1.add(menu_Inicio);
+
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -180,9 +189,9 @@ public class fmrTour extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btn_BuscarTourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_BuscarTourActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btn_BuscarTourActionPerformed
 
     /**
      * @param args the command line arguments
@@ -220,9 +229,9 @@ public class fmrTour extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    public javax.swing.JButton btn_BuscarTour;
+    public javax.swing.JButton btn_Informacion;
+    public javax.swing.JButton btn_Reservar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -232,8 +241,7 @@ public class fmrTour extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
@@ -243,7 +251,10 @@ public class fmrTour extends javax.swing.JFrame {
     private javax.swing.JMenuItem menuItem_Negocio;
     private javax.swing.JMenuItem menuItem_PartTime;
     private javax.swing.JMenuItem menuItem_Rural;
-    private javax.swing.JMenu menu_Tiempo;
-    private javax.swing.JMenu menu_Tour;
+    public javax.swing.JMenu menu_Inicio;
+    public javax.swing.JMenu menu_Tiempo;
+    public javax.swing.JMenu menu_Tour;
+    public javax.swing.JTable tablaTours;
+    public javax.swing.JTextArea txtAreaDetalle;
     // End of variables declaration//GEN-END:variables
 }

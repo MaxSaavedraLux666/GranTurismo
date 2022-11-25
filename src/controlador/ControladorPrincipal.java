@@ -14,6 +14,7 @@ import vista.*;
  * @author User
  */
 public class ControladorPrincipal {
+
     fmrPrincipal vista;
 
     public ControladorPrincipal(fmrPrincipal vista) {
@@ -34,7 +35,7 @@ public class ControladorPrincipal {
             }
         }
         );
-        
+
         this.vista.btnReserva.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -42,15 +43,18 @@ public class ControladorPrincipal {
             }
         }
         );
-        
+
         this.vista.btnTour.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 //Tour
+                fmrTour vistaTour = new fmrTour();
+                ControladorTour controlTour = new ControladorTour(vistaTour);
+                controlTour.iniciarTour();
             }
         }
         );
-        
+
         this.vista.btnTrabajador.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

@@ -6,17 +6,19 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.Action;
 import javax.swing.JTable;
 import modelo.Tour;
 import modelo.TourArreglo;
+import vista.fmrPrincipal;
 import vista.fmrTour;
 
 /**
  *
  * @author User
  */
-public class ControladorTour implements ActionListener{
-    
+public class ControladorTour {
+
     fmrTour vistaTour;
     ControladorPrincipal controlPricipal;
     Tour tour;
@@ -24,16 +26,37 @@ public class ControladorTour implements ActionListener{
 
     public ControladorTour(fmrTour vistaTour) {
         this.vistaTour = vistaTour;
-        
-    }
-    
-    public void ListarTabla(JTable tabla){
-        
-        
+
+        this.vistaTour.menu_Inicio.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                
+            }
+        });
+
+        this.vistaTour.btn_BuscarTour.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+
+        this.vistaTour.btn_Informacion.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+
+        this.vistaTour.btn_Reservar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
     }
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        
+    public void iniciarTour() {
+        this.vistaTour.setVisible(true);
     }
 }
