@@ -22,4 +22,14 @@ public class VehiculoArreglo {
         this.vehiculo[this.indice]=vehiculo;
         this.indice++;
     }
+    
+    @Override
+    public String toString() {
+        String result = "";
+        for (Vehiculo obj : this.vehiculo) {
+            result += obj + "\n";
+        }
+        return result;
+    }
+    
 }

@@ -20,6 +20,43 @@ public class Vehiculo {
         this.costoViaje = costoViaje;
         this.nombreDelDueño = nombreDelDueño;
     }
+
+    public String getCodigoVehiculo() {
+        return codigoVehiculo;
+    }
+
+    public void setCodigoVehiculo(String codigoVehiculo) {
+        this.codigoVehiculo = codigoVehiculo;
+    }
+
+    public int getCapacidad() {
+        return capacidad;
+    }
+
+    public void setCapacidad(int capacidad) {
+        this.capacidad = capacidad;
+    }
+
+    public float getCostoViaje() {
+        return costoViaje;
+    }
+
+    public void setCostoViaje(float costoViaje) {
+        this.costoViaje = costoViaje;
+    }
+
+    public String getNombreDelDueño() {
+        return nombreDelDueño;
+    }
+
+    public void setNombreDelDueño(String nombreDelDueño) {
+        this.nombreDelDueño = nombreDelDueño;
+    }
+
+    @Override
+    public String toString() {
+        return "Vehiculo{" + "codigoVehiculo=" + codigoVehiculo + ", capacidad=" + capacidad + ", costoViaje=" + costoViaje + ", nombreDelDue\u00f1o=" + nombreDelDueño + '}';
+    }
     
 }
 
