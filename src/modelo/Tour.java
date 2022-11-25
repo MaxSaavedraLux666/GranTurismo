@@ -14,15 +14,19 @@ public class Tour {
     private Itinerario itinerario;
     private float precioTour;
     private int horas;
+    private String codTour;
+    private String estado;
 
     public Tour() {
     }
 
-    public Tour(String nombrePaquete, Itinerario itinerario, float precioTour, int horas) {
+    public Tour(String nombrePaquete, Itinerario itinerario, float precioTour, int horas, String codTour, String estado) {
         this.nombrePaquete = nombrePaquete;
         this.itinerario = itinerario;
         this.precioTour = precioTour;
         this.horas = horas;
+        this.codTour = codTour;
+        this.estado = estado;
     }
 
     public String getNombrePaquete() {
@@ -57,9 +61,27 @@ public class Tour {
         this.horas = horas;
     }
 
+    public String getCodTour() {
+        return codTour;
+    }
+
+    public void setCodTour(String codTour) {
+        this.codTour = codTour;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
     @Override
     public String toString() {
-        return "Lugar : " + nombrePaquete + "\nItinerario : " + itinerario + "\nPrecio del Tour : " + precioTour + "\nHoras : " + horas;
+        return "Lugar : " + nombrePaquete + "\nItinerario : " + itinerario + 
+            "\nPrecio del Tour : " + precioTour + "\nHoras : " + horas + 
+            "\nCodigo de Tour : " + codTour + "\nEstado : " + estado;
     }
 
 }
