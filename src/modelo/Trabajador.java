@@ -20,7 +20,7 @@ public class Trabajador extends Persona{
     
     @Override 
     public String toString(){
-        return nombre+"\t"+dni+"\t"+edad+"\t"+codTrabajador;
+        return super.toString()+"\t"+codTrabajador;
     }
     
 }
