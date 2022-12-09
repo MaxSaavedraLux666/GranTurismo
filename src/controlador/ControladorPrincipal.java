@@ -6,6 +6,7 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import modelo.TourArreglo;
 
 import vista.*;
 
@@ -16,6 +17,7 @@ import vista.*;
 public class ControladorPrincipal {
 
     fmrPrincipal vista;
+    TourArreglo tours;
 
     public ControladorPrincipal(fmrPrincipal vista) {
         this.vista = vista;
@@ -49,7 +51,7 @@ public class ControladorPrincipal {
             public void actionPerformed(ActionEvent e) {
                 //Tour
                 fmrTour vistaTour = new fmrTour();
-                ControladorTour controlTour = new ControladorTour(vistaTour);
+                ControladorTour controlTour = new ControladorTour(tours, vistaTour);
                 controlTour.iniciarTour();
             }
         }
@@ -59,6 +61,9 @@ public class ControladorPrincipal {
             @Override
             public void actionPerformed(ActionEvent e) {
                 //Trabajador
+                fmrTrabajador vistTrabajador = new fmrTrabajador();
+                ControladorTrabajador controlador = new ControladorTrabajador(vistTrabajador);
+                controlador.iniciarTrabajador();
             }
         }
         );
@@ -66,6 +71,6 @@ public class ControladorPrincipal {
 
     public void iniciar() {
         this.vista.setVisible(true);
-
+        this.vista.setLocationRelativeTo(null);
     }
 }

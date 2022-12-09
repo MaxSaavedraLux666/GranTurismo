@@ -9,7 +9,7 @@ package modelo;
  * @author User
  */
 public class ItinerarioArreglo {
-    
+
     private Itinerario[] itinerarios;
     private int indice;
 
@@ -17,7 +17,7 @@ public class ItinerarioArreglo {
         this.itinerarios = new Itinerario[tamaño];
         this.indice = 0;
     }
-    
+
     public boolean agregar(Itinerario itinerario) {
         boolean result = false;
         if (lleno()) {
@@ -56,5 +56,4 @@ public class ItinerarioArreglo {
         }
         return result;
     }
-    
 }

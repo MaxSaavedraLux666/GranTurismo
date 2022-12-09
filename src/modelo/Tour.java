@@ -4,6 +4,8 @@
  */
 package modelo;
 
+import java.util.Date;
+
 /**
  *
  * @author User
@@ -16,17 +18,19 @@ public class Tour {
     private int horas;
     private String codTour;
     private String estado;
+    private Date fecha;
 
     public Tour() {
     }
 
-    public Tour(String nombrePaquete, Itinerario itinerario, float precioTour, int horas, String codTour, String estado) {
+    public Tour(String nombrePaquete, Itinerario itinerario, float precioTour, int horas, String codTour, String estado, Date fecha) {
         this.nombrePaquete = nombrePaquete;
         this.itinerario = itinerario;
         this.precioTour = precioTour;
         this.horas = horas;
         this.codTour = codTour;
         this.estado = estado;
+        this.fecha = fecha;
     }
 
     public String getNombrePaquete() {
@@ -77,11 +81,19 @@ public class Tour {
         this.estado = estado;
     }
 
-    @Override
-    public String toString() {
-        return "Lugar : " + nombrePaquete + "\nItinerario : " + itinerario + 
-            "\nPrecio del Tour : " + precioTour + "\nHoras : " + horas + 
-            "\nCodigo de Tour : " + codTour + "\nEstado : " + estado;
+    public Date getFecha() {
+        return fecha;
     }
 
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
+    }
+
+    @Override
+    public String toString() {
+        return "Lugar : " + nombrePaquete + "\nItinerario : " + itinerario
+            + "\nPrecio del Tour : " + precioTour + "\nHoras : " + horas
+            + "\nCodigo de Tour : " + codTour + "\nEstado : " + estado
+            + "\nFecha : " + fecha;
+    }
 }

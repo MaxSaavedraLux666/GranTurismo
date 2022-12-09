@@ -32,17 +32,18 @@ public class fmrTour extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         btn_BuscarTour = new javax.swing.JButton();
+        btnRegresar = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         txtAreaDetalle = new javax.swing.JTextArea();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tablaTours = new javax.swing.JTable();
         btn_Informacion = new javax.swing.JButton();
         btn_Reservar = new javax.swing.JButton();
         jTextField2 = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        tablaTours = new javax.swing.JTable();
         jMenuBar1 = new javax.swing.JMenuBar();
         menu_Tiempo = new javax.swing.JMenu();
         menuItem_FullTime = new javax.swing.JMenuItem();
@@ -77,6 +78,9 @@ public class fmrTour extends javax.swing.JFrame {
         });
         jPanel2.add(btn_BuscarTour, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 170, 30, 30));
 
+        btnRegresar.setText("Regresar");
+        jPanel2.add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 170, -1, -1));
+
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 750, 210));
 
         jPanel3.setBackground(new java.awt.Color(204, 204, 255));
@@ -98,30 +102,6 @@ public class fmrTour extends javax.swing.JFrame {
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 240, 240, 190));
 
-        tablaTours.setFont(new java.awt.Font("Lucida Fax", 0, 12)); // NOI18N
-        tablaTours.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Lugar", "Estado", "Precio", "Código"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        });
-        jScrollPane1.setViewportView(tablaTours);
-
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, 480, 300));
-
         btn_Informacion.setFont(new java.awt.Font("Lucida Fax", 0, 14)); // NOI18N
         btn_Informacion.setText("Información");
         jPanel1.add(btn_Informacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 470, -1, -1));
@@ -141,6 +121,22 @@ public class fmrTour extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Código");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 440, 50, -1));
+
+        tablaTours.setBackground(new java.awt.Color(51, 51, 0));
+        tablaTours.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane3.setViewportView(tablaTours);
+
+        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, -1, 290));
 
         jMenuBar1.setBackground(new java.awt.Color(255, 0, 153));
 
@@ -229,6 +225,7 @@ public class fmrTour extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton btnRegresar;
     public javax.swing.JButton btn_BuscarTour;
     public javax.swing.JButton btn_Informacion;
     public javax.swing.JButton btn_Reservar;
@@ -240,8 +237,8 @@ public class fmrTour extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;

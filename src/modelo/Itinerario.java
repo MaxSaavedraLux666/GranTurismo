@@ -4,7 +4,6 @@
  */
 package modelo;
 
-import java.util.Date;
 
 /**
  *
@@ -12,25 +11,15 @@ import java.util.Date;
  */
 public class Itinerario {
 
-    private Date fecha;
     private String hora;
     private String descripcion;
 
     public Itinerario() {
     }
 
-    public Itinerario(Date fecha, String hora, String descripcion) {
-        this.fecha = fecha;
+    public Itinerario(String hora, String descripcion) {
         this.hora = hora;
         this.descripcion = descripcion;
-    }
-
-    public Date getFecha() {
-        return fecha;
-    }
-
-    public void setFecha(Date fecha) {
-        this.fecha = fecha;
     }
 
     public String getHora() {
@@ -51,6 +40,6 @@ public class Itinerario {
 
     @Override
     public String toString() {
-        return "Fecha : " + fecha + "\nHora : " + hora + "\nDescripcion : " + descripcion;
+        return "Hora : " + hora + "\nDescripcion : " + descripcion;
     }
 }

@@ -4,10 +4,6 @@
  */
 package modelo;
 
-import javax.swing.JTable;
-import javax.swing.table.DefaultTableModel;
-import vista.*;
-
 /**
  *
  * @author User
@@ -16,9 +12,9 @@ public class TourArreglo {
 
     private Tour[] tours;
     private int indice;
+    private final String[] cabeceraTours = {"LUGAR", "ESTADO", "PRECIO",
+        "CODIGO"};
 
-    fmrTour tabla = new fmrTour();
-    
     public TourArreglo() {
     }
 
@@ -33,7 +29,6 @@ public class TourArreglo {
             crecer();
         }
         this.tours[this.indice] = tour;
-        agregarTabla(tabla.tablaTours);
         this.indice++;
         result = true;
 
@@ -58,20 +53,37 @@ public class TourArreglo {
         return result;
     }
 
-    public void agregarTabla(JTable tablaDatos) {
+    public String[][] getTours() {
+        String[][] resultado = new String[getTotal()][5];
 
-        DefaultTableModel modelo = (DefaultTableModel) tablaDatos.getModel();
+        int i = 0;
 
-        Object[] fila = new Object[4];
+        for (Tour obj : this.tours) {
+            if (obj != null) {
+                if (obj instanceof Tour) {
+                    resultado[i][0] = obj.getNombrePaquete();
+                    resultado[i][1] = obj.getEstado();
+                    resultado[i][2] = String.valueOf(obj.getPrecioTour());
+                    resultado[i][3] = obj.getCodTour();
+                    i++;
+                }
+            }
+        }
+        return resultado;
+    }
 
-        fila[0] = tours[this.indice].getNombrePaquete();
-        fila[1] = tours[this.indice].getEstado();
-        fila[2] = tours[this.indice].getPrecioTour();
-        fila[3] = tours[this.indice].getCodTour();
+    public String[] getCabecera() {
+        return this.cabeceraTours;
+    }
 
-        modelo.addRow(fila);
-
-        tablaDatos.setModel(modelo);
+    private int getTotal() {
+        int resultado = 0;
+        for (Tour obj : this.tours) {
+            if (obj != null) {
+                resultado++;
+            }
+        }
+        return resultado;
     }
 
     @Override
