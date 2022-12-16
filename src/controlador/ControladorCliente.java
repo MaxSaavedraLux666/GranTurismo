@@ -30,9 +30,14 @@ public class ControladorCliente {
                         vistaCliente.txtFieldTelefonoTitular.getText(),
                         vistaCliente.txtFieldDNItitular.getText(),
                         Integer.parseInt(vistaCliente.txtFieldEdadTitular.getText()));
-
             }
+            
+            
+            
+            
+          
 
+            
         });
 
         this.vistaCliente.btnCancelar.addActionListener(new ActionListener() {
