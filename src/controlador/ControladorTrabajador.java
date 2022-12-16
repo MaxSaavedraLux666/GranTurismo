@@ -38,6 +38,8 @@ public class ControladorTrabajador {
                 vistaTrabajado1.dispose();
             }
         });
+        
+        
     }
 
     public void iniciarTrabajador() {

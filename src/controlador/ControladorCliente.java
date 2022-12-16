@@ -4,10 +4,38 @@
  */
 package controlador;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import vista.fmrCliente;
+
 /**
  *
  * @author Sebastian
  */
 public class ControladorCliente {
+    fmrCliente vistaCliente = new fmrCliente();
+
+    public ControladorCliente(fmrCliente vistaCliente) {
+        this.vistaCliente=vistaCliente;
+        
+        this.vistaCliente.btnAgregar.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+               
+            }
+            
+        });
+        
+        this.vistaCliente.btnCancelar.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                
+            }
+        });
+    }
     
+    public void iniciarCliente(){
+        this.vistaCliente.setVisible(true);
+        this.vistaCliente.setLocationRelativeTo(null);
+    }
 }
