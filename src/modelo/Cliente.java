@@ -11,24 +11,14 @@ package modelo;
 public class Cliente extends Persona{
     
     private String codReserva;
-    private String titular;
     private String correo;
     private String telefono;
     private int numPersonas;
 
-    public Cliente(String codReserva,String titular, String correo, String telefono, String nombre, String dni, int edad) {
+    public Cliente(String codReserva,String nombre, String correo, String telefono,String dni, int edad) {
         super(nombre, dni, edad);
-        this.titular = titular;
         this.correo = correo;
         this.telefono = telefono;
-    }
-
-    public String getTitular() {
-        return titular;
-    }
-
-    public void setTitular(String titular) {
-        this.titular = titular;
     }
 
     public String getCorreo() {
@@ -57,7 +47,7 @@ public class Cliente extends Persona{
     
     @Override 
     public String toString(){
-        return super.toString()+"\t"+codReserva+"\t"+titular+"\t"+correo+"\t"+telefono;
+        return super.toString()+"\t"+codReserva+"\t"+nombre+"\t"+correo+"\t"+telefono;
     }
      
 }

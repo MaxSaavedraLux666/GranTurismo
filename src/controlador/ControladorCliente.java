@@ -14,28 +14,35 @@ import vista.fmrCliente;
  * @author Sebastian
  */
 public class ControladorCliente {
+
     fmrCliente vistaCliente = new fmrCliente();
 
     public ControladorCliente(fmrCliente vistaCliente) {
-        this.vistaCliente=vistaCliente;
-        
-        this.vistaCliente.btnAgregar.addActionListener(new ActionListener(){
+        this.vistaCliente = vistaCliente;
+
+        this.vistaCliente.btnAgregar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-             
+                Cliente cliente = new Cliente(vistaCliente.txtFieldCodigoReservaTitular.getText(),
+                        vistaCliente.txtFieldNombreTitular.getText(),
+                        vistaCliente.txtFieldCorreoTitular.getText(),
+                        vistaCliente.txtFieldTelefonoTitular.getText(),
+                        vistaCliente.txtFieldDNItitular.getText(),
+                        Integer.parseInt(vistaCliente.txtFieldEdadTitular.getText()));
+
             }
-            
+
         });
-        
-        this.vistaCliente.btnCancelar.addActionListener(new ActionListener(){
+
+        this.vistaCliente.btnCancelar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                
+
             }
         });
     }
-    
-    public void iniciarCliente(){
+
+    public void iniciarCliente() {
         this.vistaCliente.setVisible(true);
         this.vistaCliente.setLocationRelativeTo(null);
     }
