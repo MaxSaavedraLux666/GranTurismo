@@ -30,6 +30,7 @@ public class fmrTrabajador extends javax.swing.JFrame {
         btnSalir = new javax.swing.JButton();
         btnRegistrarTour = new javax.swing.JButton();
         btnRegistrarCliente = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 204));
@@ -51,6 +52,14 @@ public class fmrTrabajador extends javax.swing.JFrame {
         });
         jPanel2.add(btnRegistrarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 150, 30));
 
+        jButton1.setText("Prueba");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, -1, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -68,6 +77,10 @@ public class fmrTrabajador extends javax.swing.JFrame {
     private void btnRegistrarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarClienteActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnRegistrarClienteActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -108,6 +121,7 @@ public class fmrTrabajador extends javax.swing.JFrame {
     public javax.swing.JButton btnRegistrarCliente;
     public javax.swing.JButton btnRegistrarTour;
     public javax.swing.JButton btnSalir;
+    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
 }
