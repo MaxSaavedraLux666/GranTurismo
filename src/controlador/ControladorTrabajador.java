@@ -6,6 +6,7 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import vista.fmrCliente;
 import vista.fmrRegistrarTour;
 import vista.fmrTrabajador;
 
@@ -39,6 +40,14 @@ public class ControladorTrabajador {
             }
         });
         
+        this.vistaTrabajador.btnRegistrarCliente.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+               fmrCliente vistaCliente = new fmrCliente();
+               ControladorCliente controladorCliente = new ControladorCliente(vistaCliente);
+               controladorCliente.iniciarCliente();  
+            }
+        });
         
     }
 

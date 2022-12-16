@@ -41,7 +41,7 @@ public class fmrTrabajador extends javax.swing.JFrame {
         jPanel2.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(364, 23, -1, -1));
 
         btnRegistrarTour.setText("Registro de Tours");
-        jPanel2.add(btnRegistrarTour, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 235, -1, -1));
+        jPanel2.add(btnRegistrarTour, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 235, 150, 30));
 
         btnRegistrarCliente.setText("Registrar cliente");
         btnRegistrarCliente.addActionListener(new java.awt.event.ActionListener() {
@@ -49,7 +49,7 @@ public class fmrTrabajador extends javax.swing.JFrame {
                 btnRegistrarClienteActionPerformed(evt);
             }
         });
-        jPanel2.add(btnRegistrarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 120, -1));
+        jPanel2.add(btnRegistrarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 150, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
