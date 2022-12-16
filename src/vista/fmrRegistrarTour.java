@@ -309,8 +309,8 @@ public class fmrRegistrarTour extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextField txtFieldDescripcionItinerario;
     private javax.swing.JTextField txtFieldHoraItinerario;
-    private javax.swing.JTextField txtField_Codigo;
-    private javax.swing.JTextField txtField_Lugar;
-    private javax.swing.JTextField txtField_Precio;
+    public javax.swing.JTextField txtField_Codigo;
+    public javax.swing.JTextField txtField_Lugar;
+    public javax.swing.JTextField txtField_Precio;
     // End of variables declaration//GEN-END:variables
 }

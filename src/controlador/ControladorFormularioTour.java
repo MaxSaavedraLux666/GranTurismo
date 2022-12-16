@@ -6,6 +6,9 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Date;
+import modelo.Itinerario;
+import modelo.Tour;
 import modelo.TourArreglo;
 import vista.fmrRegistrarTour;
 import vista.fmrTour;
@@ -29,6 +32,14 @@ public class ControladorFormularioTour {
             @Override
             public void actionPerformed(ActionEvent e) {
 
+               Itinerario itinerario = new Itinerario();
+               
+               Tour tour = new Tour(vistaRegistrarTour.txtField_Lugar.getText(), itinerario, 
+                        Float.parseFloat(vistaRegistrarTour.txtField_Precio.getText()),
+                        Integer.parseInt(vistaRegistrarTour.comboBox_Hora.getSelectedItem().toString()),
+                        vistaRegistrarTour.txtField_Codigo.getText(), "LIBRE", new Date(2022/12/16));
+               TourArreglo nuevo = new TourArreglo();
+               nuevo.agregar(tour);
             }
         });
 
@@ -38,7 +49,6 @@ public class ControladorFormularioTour {
 
                 fmrTrabajador vistaTrabajador = new fmrTrabajador();
                 ControladorTrabajador controlador = new ControladorTrabajador(vistaTrabajador);
-                controlador.iniciarTrabajador();
                 vistaTrabajador1.dispose();
             }
         });

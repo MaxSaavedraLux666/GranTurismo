@@ -19,13 +19,9 @@ public class Viaje {
 
     }
 
-    public boolean programarViaje(Tour tours, Vehiculo vehiculo, Guia guia) {
+    public boolean programarViaje(Tour tours, Vehiculo vehiculo, Guia guia, String codTour) {
         boolean result = false;
-
-        if (true) {
-
-            result = true;
-        } else {
+        if (venderTour(codTour)) {
 
         }
 
@@ -40,40 +36,32 @@ public class Viaje {
 
     public boolean venderTour(String codigo) {
         boolean result = false;
-
-        if (result) {
-
-            
+        Tour verificar = new Tour();
+        if (verificar.getCodTour() == codigo) {
+            verificar.setEstado("OCUPADO");
             result = true;
-        } else {
         }
-
         return result;
     }
 
     public boolean eliminarTour(String codigo) {
         boolean result = false;
-
-        if (result) {
-
+        Tour verificar = new Tour();
+        if (verificar.getCodTour() == codigo) {
+            
             result = true;
-        } else {
-
         }
-
         return result;
     }
 
     public boolean cancelarTour(String codigo) {
         boolean result = false;
 
-        if (result) {
-
+        Tour verificar = new Tour();
+        if (verificar.getCodTour() == codigo) {
+            verificar.setEstado("LIBRE");
             result = true;
-        } else {
-
         }
-
         return result;
     }
 

@@ -23,7 +23,8 @@ public class Tour {
     public Tour() {
     }
 
-    public Tour(String nombrePaquete, Itinerario itinerario, float precioTour, int horas, String codTour, String estado, Date fecha) {
+    public Tour(String nombrePaquete, Itinerario itinerario, float precioTour, 
+            int horas, String codTour, String estado, Date fecha) {
         this.nombrePaquete = nombrePaquete;
         this.itinerario = itinerario;
         this.precioTour = precioTour;
