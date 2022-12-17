@@ -6,6 +6,7 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import modelo.TourArreglo;
 import vista.fmrCliente;
 import vista.fmrRegistrarTour;
 import vista.fmrTrabajador;
@@ -25,7 +26,8 @@ public class ControladorTrabajador {
             @Override
             public void actionPerformed(ActionEvent e) {
                 fmrRegistrarTour vistaRegistro = new fmrRegistrarTour();
-                ControladorFormularioTour controlador = new ControladorFormularioTour(vistaRegistro);
+                TourArreglo arreglo = new TourArreglo(1);
+                ControladorFormularioTour controlador = new ControladorFormularioTour(vistaRegistro, arreglo);
                 controlador.iniciarRegistroTour();
             }
         });
@@ -39,16 +41,16 @@ public class ControladorTrabajador {
                 vistaTrabajado1.dispose();
             }
         });
-        
-        this.vistaTrabajador.btnRegistrarCliente.addActionListener(new ActionListener(){
+
+        this.vistaTrabajador.btnRegistrarCliente.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-               fmrCliente vistaCliente = new fmrCliente();
-               ControladorCliente controladorCliente = new ControladorCliente(vistaCliente);
-               controladorCliente.iniciarCliente();  
+                fmrCliente vistaCliente = new fmrCliente();
+                ControladorCliente controladorCliente = new ControladorCliente(vistaCliente);
+                controladorCliente.iniciarCliente();
             }
         });
-        
+
     }
 
     public void iniciarTrabajador() {

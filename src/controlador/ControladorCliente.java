@@ -7,6 +7,7 @@ package controlador;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import modelo.Cliente;
+import modelo.PersonaArreglo;
 import vista.fmrCliente;
 import vista.fmrTrabajador;
 
@@ -30,6 +31,8 @@ public class ControladorCliente {
                         vistaCliente.txtFieldTelefonoTitular.getText(),
                         vistaCliente.txtFieldDNItitular.getText(),
                         Integer.parseInt(vistaCliente.txtFieldEdadTitular.getText()));
+                PersonaArreglo mensaje = new PersonaArreglo(1);
+                mensaje.agregar(cliente);
             }
     
         });

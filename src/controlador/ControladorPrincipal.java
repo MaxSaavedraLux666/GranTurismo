@@ -22,6 +22,8 @@ public class ControladorPrincipal {
     public ControladorPrincipal(fmrPrincipal vista) {
         this.vista = vista;
 
+        this.tours = new TourArreglo();
+        
         this.vista.btn_Salir.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

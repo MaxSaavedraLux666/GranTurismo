@@ -16,6 +16,7 @@ public class TourArreglo {
         "CODIGO"};
 
     public TourArreglo() {
+        this(5);
     }
 
     public TourArreglo(int tam) {
@@ -43,6 +44,45 @@ public class TourArreglo {
             i++;
         }
         this.tours = nuevo;
+    }
+
+    public boolean eliminar(String codTour) {
+        boolean result = false;
+
+        for (Tour objTour : tours) {
+            if (codTour == objTour.getCodTour()) {
+                objTour = null;
+                result = true;
+            }
+        }
+
+        return result;
+    }
+
+    public Tour buscar(String codTour) {
+
+        Tour result = null;
+
+        for (Tour objTour : tours) {
+            if (codTour == objTour.getCodTour()) {
+                result = objTour;
+            }
+        }
+        return result;
+
+    }
+
+    public boolean modificar(String codTour, Tour tour) {
+
+        boolean result = false;
+
+        for (Tour objTour : tours) {
+            if (codTour == objTour.getCodTour()) {
+                objTour = tour;
+                result = true;
+            }
+        }
+        return result;
     }
 
     private boolean lleno() {

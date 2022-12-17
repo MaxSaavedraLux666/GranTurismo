@@ -25,7 +25,8 @@ public class ControladorTour {
 
     public ControladorTour(TourArreglo tours, fmrTour vistaTour) {
         this.vistaTour = vistaTour;
-
+        this.modelo = tours;
+        
         this.vistaTour.menu_Inicio.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -59,7 +60,6 @@ public class ControladorTour {
             public void actionPerformed(ActionEvent e) {
                 fmrPrincipal vista = new fmrPrincipal();
                 ControladorPrincipal controlador = new ControladorPrincipal(vista);
-                controlador.iniciar();
                 vistaTour.dispose();
             }
             
