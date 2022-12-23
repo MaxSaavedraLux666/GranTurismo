@@ -55,7 +55,6 @@ public class fmrRegistrarTour extends javax.swing.JFrame {
         txtFieldDescripcionItinerario = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        btn_ModificarItinerario = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaItinerario = new javax.swing.JTable();
         jLabel16 = new javax.swing.JLabel();
@@ -63,6 +62,8 @@ public class fmrRegistrarTour extends javax.swing.JFrame {
         jLabel17 = new javax.swing.JLabel();
         btn_AgregarItinerario = new javax.swing.JButton();
         btn_EliminarItinerario = new javax.swing.JButton();
+        jLabel19 = new javax.swing.JLabel();
+        txtFieldCodigoItinerario = new javax.swing.JTextField();
         jPanel5 = new javax.swing.JPanel();
         btnModificar = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
@@ -238,24 +239,18 @@ public class fmrRegistrarTour extends javax.swing.JFrame {
 
         jPanel4.setBackground(new java.awt.Color(51, 0, 51));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel4.add(txtFieldHoraItinerario, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, 204, -1));
+        jPanel4.add(txtFieldHoraItinerario, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 120, 204, -1));
         jPanel4.add(txtFieldDescripcionItinerario, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 80, 204, -1));
 
         jLabel11.setFont(new java.awt.Font("Yu Gothic UI", 0, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(204, 204, 0));
-        jLabel11.setText("Hora");
-        jPanel4.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, -1, -1));
+        jLabel11.setText("Código");
+        jPanel4.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, -1, -1));
 
         jLabel10.setFont(new java.awt.Font("Yu Gothic UI", 0, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(204, 204, 0));
         jLabel10.setText("Descripción");
         jPanel4.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, -1));
-
-        btn_ModificarItinerario.setBackground(new java.awt.Color(51, 0, 0));
-        btn_ModificarItinerario.setFont(new java.awt.Font("Yu Gothic UI", 0, 14)); // NOI18N
-        btn_ModificarItinerario.setForeground(new java.awt.Color(204, 204, 0));
-        btn_ModificarItinerario.setText("Modificar");
-        jPanel4.add(btn_ModificarItinerario, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 200, -1, -1));
 
         tablaItinerario.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -288,13 +283,24 @@ public class fmrRegistrarTour extends javax.swing.JFrame {
         btn_AgregarItinerario.setFont(new java.awt.Font("Yu Gothic UI", 0, 14)); // NOI18N
         btn_AgregarItinerario.setForeground(new java.awt.Color(204, 204, 0));
         btn_AgregarItinerario.setText("Agregar");
-        jPanel4.add(btn_AgregarItinerario, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, -1, -1));
+        jPanel4.add(btn_AgregarItinerario, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 200, -1, -1));
 
         btn_EliminarItinerario.setBackground(new java.awt.Color(51, 0, 0));
         btn_EliminarItinerario.setFont(new java.awt.Font("Yu Gothic UI", 0, 14)); // NOI18N
         btn_EliminarItinerario.setForeground(new java.awt.Color(204, 204, 0));
         btn_EliminarItinerario.setText("Eliminar");
-        jPanel4.add(btn_EliminarItinerario, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 200, -1, -1));
+        btn_EliminarItinerario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_EliminarItinerarioActionPerformed(evt);
+            }
+        });
+        jPanel4.add(btn_EliminarItinerario, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 200, -1, -1));
+
+        jLabel19.setFont(new java.awt.Font("Yu Gothic UI", 0, 14)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(204, 204, 0));
+        jLabel19.setText("Hora");
+        jPanel4.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, -1, -1));
+        jPanel4.add(txtFieldCodigoItinerario, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 160, 200, -1));
 
         jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 90, 350, 570));
 
@@ -388,6 +394,10 @@ public class fmrRegistrarTour extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btn_EliminarItinerarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_EliminarItinerarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_EliminarItinerarioActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -432,7 +442,6 @@ public class fmrRegistrarTour extends javax.swing.JFrame {
     public javax.swing.JButton btnSalirTourFmr;
     public javax.swing.JButton btn_AgregarItinerario;
     public javax.swing.JButton btn_EliminarItinerario;
-    public javax.swing.JButton btn_ModificarItinerario;
     public javax.swing.JComboBox<String> comboBox_Hora;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -444,6 +453,7 @@ public class fmrRegistrarTour extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -463,6 +473,7 @@ public class fmrRegistrarTour extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator3;
     public javax.swing.JTable tablaItinerario;
     public javax.swing.JTextField txtFieldBuscarCod;
+    public javax.swing.JTextField txtFieldCodigoItinerario;
     public javax.swing.JTextField txtFieldDescripcionItinerario;
     public javax.swing.JTextField txtFieldHoraItinerario;
     public javax.swing.JTextField txtField_Codigo;

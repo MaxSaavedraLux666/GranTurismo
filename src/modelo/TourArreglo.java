@@ -14,6 +14,7 @@ public class TourArreglo {
     private int indice;
     private final String[] cabeceraTours = {"LUGAR", "ESTADO", "PRECIO",
         "CODIGO"};
+    private String[] duracion = {"1", "2", "3", "4", "5", "6", "7", "Part Time", "Full Time"};
 
     public TourArreglo() {
         this(5);
@@ -114,6 +115,10 @@ public class TourArreglo {
 
     public String[] getCabecera() {
         return this.cabeceraTours;
+    }
+
+    public String[] getDuracion() {
+        return duracion;
     }
 
     private int getTotal() {

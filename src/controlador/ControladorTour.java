@@ -20,13 +20,12 @@ public class ControladorTour {
 
     fmrTour vistaTour;
     ControladorPrincipal controlPricipal;
-    Tour tour;
     TourArreglo modelo;
 
     public ControladorTour(TourArreglo modelo, fmrTour vistaTour) {
         this.vistaTour = vistaTour;
         this.modelo = modelo;
-        
+
         this.vistaTour.menu_Inicio.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -54,17 +53,17 @@ public class ControladorTour {
 
             }
         });
-        
-        this.vistaTour.btnRegresar.addActionListener(new ActionListener(){
+
+        this.vistaTour.btnRegresar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 vistaTour.dispose();
             }
-            
+
         });
     }
 
-    private void limpiarControles() {
+    public void limpiarControles() {
         String[] cabecera = modelo.getCabecera();
         String[][] datos = modelo.getTours();
         DefaultTableModel modeloTabla = new DefaultTableModel(datos, cabecera);

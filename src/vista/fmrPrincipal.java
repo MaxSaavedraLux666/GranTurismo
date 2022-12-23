@@ -26,6 +26,9 @@ public class fmrPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel4 = new javax.swing.JPanel();
+        jPanel5 = new javax.swing.JPanel();
+        jPanel7 = new javax.swing.JPanel();
         bg = new javax.swing.JPanel();
         sidePanel = new javax.swing.JPanel();
         btn_Trabajador = new javax.swing.JPanel();
@@ -51,6 +54,48 @@ public class fmrPrincipal extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         btn_Salir = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
+        panelDerecho = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jPanel8 = new javax.swing.JPanel();
+        btnSiguiente = new javax.swing.JButton();
+
+        jPanel4.setBackground(new java.awt.Color(255, 255, 153));
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 530, Short.MAX_VALUE)
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 530, Short.MAX_VALUE)
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 32, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 430, Short.MAX_VALUE)
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 124, Short.MAX_VALUE)
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -280,11 +325,85 @@ public class fmrPrincipal extends javax.swing.JFrame {
                 .addGap(8, 8, 8))
         );
 
-        bg.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(211, 70, 530, -1));
+        bg.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 40, 530, -1));
 
         btn_Salir.setBackground(new java.awt.Color(204, 153, 255));
         btn_Salir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/salir.png"))); // NOI18N
         bg.add(btn_Salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 0, 70, 30));
+
+        jPanel1.setBackground(new java.awt.Color(122, 71, 221));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 520, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 40, Short.MAX_VALUE)
+        );
+
+        bg.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 500, 520, 40));
+
+        jPanel3.setBackground(new java.awt.Color(102, 102, 0));
+        jPanel3.setLayout(new java.awt.BorderLayout());
+
+        panelDerecho.setBackground(new java.awt.Color(0, 153, 153));
+        panelDerecho.setPreferredSize(new java.awt.Dimension(50, 228));
+
+        jLabel2.setText("Hola");
+
+        jLabel4.setText("Mundo");
+
+        javax.swing.GroupLayout panelDerechoLayout = new javax.swing.GroupLayout(panelDerecho);
+        panelDerecho.setLayout(panelDerechoLayout);
+        panelDerechoLayout.setHorizontalGroup(
+            panelDerechoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelDerechoLayout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(jLabel2)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel4)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        panelDerechoLayout.setVerticalGroup(
+            panelDerechoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelDerechoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(panelDerechoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel4))
+                .addContainerGap(33, Short.MAX_VALUE))
+        );
+
+        jPanel3.add(panelDerecho, java.awt.BorderLayout.LINE_START);
+
+        jPanel8.setBackground(new java.awt.Color(204, 255, 204));
+        jPanel8.setPreferredSize(new java.awt.Dimension(611, 50));
+
+        btnSiguiente.setText("Siguiente");
+
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                .addContainerGap(441, Short.MAX_VALUE)
+                .addComponent(btnSiguiente)
+                .addContainerGap())
+        );
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnSiguiente)
+                .addContainerGap(14, Short.MAX_VALUE))
+        );
+
+        jPanel3.add(jPanel8, java.awt.BorderLayout.PAGE_END);
+
+        bg.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 140, 530, 110));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -340,6 +459,7 @@ public class fmrPrincipal extends javax.swing.JFrame {
     public javax.swing.JButton btnInicio;
     public javax.swing.JButton btnPaquete;
     public javax.swing.JButton btnReserva;
+    public javax.swing.JButton btnSiguiente;
     public javax.swing.JButton btnTour;
     public javax.swing.JButton btnTrabajador;
     private javax.swing.JPanel btn_Inicio;
@@ -354,12 +474,21 @@ public class fmrPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
     private javax.swing.JSeparator jSeparator1;
+    public javax.swing.JPanel panelDerecho;
     private javax.swing.JPanel sidePanel;
     // End of variables declaration//GEN-END:variables
 }

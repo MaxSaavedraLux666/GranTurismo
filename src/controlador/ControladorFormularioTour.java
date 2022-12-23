@@ -8,13 +8,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Date;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 import modelo.Itinerario;
 import modelo.ItinerarioArreglo;
 import modelo.Tour;
 import modelo.TourArreglo;
 import vista.fmrRegistrarTour;
 import vista.fmrTour;
-import vista.fmrTrabajador;
 
 /**
  *
@@ -25,8 +25,6 @@ public class ControladorFormularioTour {
     fmrRegistrarTour vistaRegistrarTour;
     TourArreglo modeloTour;
     ItinerarioArreglo modeloItinerarios;
-    fmrTour vistaTour;
-    fmrTrabajador vistaTrabajador1;
 
     public ControladorFormularioTour(fmrRegistrarTour vistaRegistrarTour, TourArreglo modeloTour, ItinerarioArreglo modeloItinerarios) {
         this.vistaRegistrarTour = vistaRegistrarTour;
@@ -39,7 +37,7 @@ public class ControladorFormularioTour {
 
                 Tour tour = new Tour(vistaRegistrarTour.txtField_Lugar.getText(), modeloItinerarios,
                         Float.parseFloat(vistaRegistrarTour.txtField_Precio.getText()),
-                        Integer.parseInt(vistaRegistrarTour.comboBox_Hora.getSelectedItem().toString()),
+                        vistaRegistrarTour.comboBox_Hora.getSelectedIndex(),
                         vistaRegistrarTour.txtField_Codigo.getText(), "LIBRE", new Date(2022 / 12 / 16));
                 if (modeloTour.agregarTour(tour)) {
                     JOptionPane.showMessageDialog(null, "Los datos han sido agregados exitosamente");
@@ -61,7 +59,7 @@ public class ControladorFormularioTour {
         this.vistaRegistrarTour.btnSalirTourFmr.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                vistaTrabajador1.dispose();
+                vistaRegistrarTour.dispose();
             }
         });
 
@@ -91,7 +89,7 @@ public class ControladorFormularioTour {
 
                 Tour tourNuevo = new Tour(vistaRegistrarTour.txtField_Lugar.getText(), modeloItinerarios,
                         Float.parseFloat(vistaRegistrarTour.txtField_Precio.getText()),
-                        Integer.parseInt(vistaRegistrarTour.comboBox_Hora.getSelectedItem().toString()),
+                        vistaRegistrarTour.comboBox_Hora.getSelectedIndex(),
                         vistaRegistrarTour.txtField_Codigo.getText(), "LIBRE", new Date(2022 / 12 / 16));
 
                 if (modeloTour.modificarTour(vistaRegistrarTour.txtFieldBuscarCod.getText(), tourNuevo)) {
@@ -115,11 +113,14 @@ public class ControladorFormularioTour {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                Itinerario itinerario = new Itinerario(vistaRegistrarTour.txtFieldDescripcionItinerario.getText(),
+                Itinerario itinerario = new Itinerario(vistaRegistrarTour.txtFieldCodigoItinerario.getText(), vistaRegistrarTour.txtFieldDescripcionItinerario.getText(),
                         vistaRegistrarTour.txtFieldHoraItinerario.getText());
 
                 if (modeloItinerarios.agregarItinerario(itinerario)) {
-
+                    limpiarControles();
+                    vistaRegistrarTour.txtFieldDescripcionItinerario.setText("");
+                    vistaRegistrarTour.txtFieldHoraItinerario.setText("");
+                    vistaRegistrarTour.txtFieldCodigoItinerario.setText("");
                 } else {
                     JOptionPane.showMessageDialog(null, "Error\n"
                             + "Los datos no han sido agregados exitosamente");
@@ -140,27 +141,6 @@ public class ControladorFormularioTour {
             }
         });
 
-        this.vistaRegistrarTour.btn_ModificarItinerario.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Itinerario itinerario = new Itinerario(vistaRegistrarTour.txtFieldDescripcionItinerario.getText(),
-                        vistaRegistrarTour.txtFieldHoraItinerario.getText());
-                if (modeloItinerarios.agregarItinerario(itinerario)) {
-                    JOptionPane.showMessageDialog(null, "Los datos han sido modificados exitosamente");
-                } else {
-                    JOptionPane.showMessageDialog(null, "Error\n"
-                            + "Los datos no han sido modificados exitosamente");
-                }
-            }
-        });
-
-        this.vistaRegistrarTour.comboBox_Hora.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-            }
-        });
-
         this.vistaRegistrarTour.btnAdvertencia.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -171,8 +151,24 @@ public class ControladorFormularioTour {
         });
     }
 
+    public void rellenarCbHoras() {
+        String[] horas = this.modeloTour.getDuracion();
+        vistaRegistrarTour.comboBox_Hora.removeAllItems();
+        for (String hora : horas) {
+            vistaRegistrarTour.comboBox_Hora.addItem(hora);
+        }
+    }
+
+    private void limpiarControles() {
+        String[] cabecera = modeloItinerarios.getCabecera();
+        String[][] datos = modeloItinerarios.getItinerarios();
+        DefaultTableModel modeloTabla = new DefaultTableModel(datos, cabecera);
+        vistaRegistrarTour.tablaItinerario.setModel(modeloTabla);
+    }
+
     public void iniciarRegistroTour() {
         this.vistaRegistrarTour.setVisible(true);
         this.vistaRegistrarTour.setLocationRelativeTo(null);
+        rellenarCbHoras();
     }
 }

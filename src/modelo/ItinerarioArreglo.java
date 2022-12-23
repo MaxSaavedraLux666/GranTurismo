@@ -12,7 +12,7 @@ public class ItinerarioArreglo {
 
     private Itinerario[] itinerarios;
     private int indice;
-    private final String[] cabeceraItinerario = {"ÍNDICE", "DESCRIPCIÓN", "HORA"};
+    private final String[] cabeceraItinerario = {"CÓDIGO", "DESCRIPCIÓN", "HORA"};
 
     public ItinerarioArreglo(int tamaño) {
         this.itinerarios = new Itinerario[tamaño];
@@ -49,23 +49,22 @@ public class ItinerarioArreglo {
         return result;
     }
 
-    public boolean eliminarItinerario(String indiceItinerario) {
+    public boolean eliminarItinerario(String cod) {
         boolean result = false;
-        for (Itinerario objItinerario : itinerarios) {
-            if (buscarItinerario(indiceItinerario)==objItinerario) {
-                objItinerario = null;
-                result = true;
+        
+        for (Itinerario itinerario : itinerarios) {
+            if (buscarItinerario(cod) == itinerario) {
+               itinerario = null;
             }
         }
         return result;
     }
 
-    private Itinerario buscarItinerario(String indiceItinerario) {
+    private Itinerario buscarItinerario(String codigo) {
         Itinerario result = null;
-        int indItinerario = Integer.parseInt(indiceItinerario);
-        for (int i = 0; i < itinerarios.length; i++) {
-            if (indItinerario == i) {
-                result = itinerarios[i];
+        for (Itinerario itinerario : itinerarios) {
+            if (itinerario.getCodigoItinerario() == codigo) {
+                result = itinerario;
             }
         }
         return result;
@@ -74,7 +73,7 @@ public class ItinerarioArreglo {
     public boolean modificarItinerario(String indiceItinerario, Itinerario itinerario) {
         boolean result = false;
         for (Itinerario objItinerario : itinerarios) {
-            if (buscarItinerario(indiceItinerario)==objItinerario) {
+            if (buscarItinerario(indiceItinerario) == objItinerario) {
                 objItinerario = itinerario;
                 result = true;
             }
@@ -90,7 +89,7 @@ public class ItinerarioArreglo {
         for (Itinerario obj : this.itinerarios) {
             if (obj != null) {
                 if (obj instanceof Itinerario) {
-                    resultado[i][0] = String.valueOf(this.indice);
+                    resultado[i][0] = obj.getCodigoItinerario();
                     resultado[i][1] = obj.getDescripcion();
                     resultado[i][2] = obj.getHora();
                     i++;
