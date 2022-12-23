@@ -9,7 +9,6 @@ import java.awt.event.ActionListener;
 import modelo.Cliente;
 import modelo.PersonaArreglo;
 import vista.fmrCliente;
-import vista.fmrTrabajador;
 
 /**
  *
@@ -40,8 +39,6 @@ public class ControladorCliente {
         this.vistaCliente.btnCancelar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                fmrTrabajador vistaTrabajador = new fmrTrabajador();
-                ControladorTrabajador controladorTrabajador = new ControladorTrabajador(vistaTrabajador);
                 vistaCliente.dispose();
 
             }

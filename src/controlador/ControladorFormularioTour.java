@@ -168,6 +168,7 @@ public class ControladorFormularioTour {
 
     public void iniciarRegistroTour() {
         this.vistaRegistrarTour.setVisible(true);
+        this.vistaRegistrarTour.setResizable(false);
         this.vistaRegistrarTour.setLocationRelativeTo(null);
         rellenarCbHoras();
     }

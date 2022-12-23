@@ -61,6 +61,8 @@ public class fmrPrincipal extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
         btnSiguiente = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jList1 = new javax.swing.JList<>();
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 153));
 
@@ -313,7 +315,7 @@ public class fmrPrincipal extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(353, Short.MAX_VALUE))
+                .addContainerGap(433, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -325,11 +327,11 @@ public class fmrPrincipal extends javax.swing.JFrame {
                 .addGap(8, 8, 8))
         );
 
-        bg.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 40, 530, -1));
+        bg.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 40, 610, -1));
 
         btn_Salir.setBackground(new java.awt.Color(204, 153, 255));
         btn_Salir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/salir.png"))); // NOI18N
-        bg.add(btn_Salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 0, 70, 30));
+        bg.add(btn_Salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 0, 70, 30));
 
         jPanel1.setBackground(new java.awt.Color(122, 71, 221));
 
@@ -337,14 +339,14 @@ public class fmrPrincipal extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 520, Short.MAX_VALUE)
+            .addGap(0, 610, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
+            .addGap(0, 50, Short.MAX_VALUE)
         );
 
-        bg.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 500, 520, 40));
+        bg.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 490, 610, 50));
 
         jPanel3.setBackground(new java.awt.Color(102, 102, 0));
         jPanel3.setLayout(new java.awt.BorderLayout());
@@ -374,7 +376,7 @@ public class fmrPrincipal extends javax.swing.JFrame {
                 .addGroup(panelDerechoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jLabel4))
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addContainerGap(93, Short.MAX_VALUE))
         );
 
         jPanel3.add(panelDerecho, java.awt.BorderLayout.LINE_START);
@@ -389,7 +391,7 @@ public class fmrPrincipal extends javax.swing.JFrame {
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
-                .addContainerGap(441, Short.MAX_VALUE)
+                .addContainerGap(521, Short.MAX_VALUE)
                 .addComponent(btnSiguiente)
                 .addContainerGap())
         );
@@ -403,13 +405,22 @@ public class fmrPrincipal extends javax.swing.JFrame {
 
         jPanel3.add(jPanel8, java.awt.BorderLayout.PAGE_END);
 
-        bg.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 140, 530, 110));
+        bg.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 140, 610, 170));
+
+        jList1.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane1.setViewportView(jList1);
+
+        bg.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 340, 280, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, 828, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -480,6 +491,7 @@ public class fmrPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JList<String> jList1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -487,6 +499,7 @@ public class fmrPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     public javax.swing.JPanel panelDerecho;
     private javax.swing.JPanel sidePanel;

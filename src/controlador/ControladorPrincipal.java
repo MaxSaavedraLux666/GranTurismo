@@ -77,7 +77,6 @@ public class ControladorPrincipal {
                 fmrTrabajador vistTrabajador = new fmrTrabajador();
                 ControladorTrabajador controlador = new ControladorTrabajador(vistTrabajador);
                 controlador.iniciarTrabajador();
-                vista.setVisible(false);
             }
         }
         );
@@ -121,6 +120,7 @@ public class ControladorPrincipal {
 
     public void iniciar() {
         this.vista.setVisible(true);
+        this.vista.setResizable(false);
         this.vista.setLocationRelativeTo(null);
     }
 }

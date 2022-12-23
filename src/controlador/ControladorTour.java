@@ -9,6 +9,7 @@ import java.awt.event.ActionListener;
 import javax.swing.table.DefaultTableModel;
 import modelo.Tour;
 import modelo.TourArreglo;
+import vista.fmrBoleta;
 import vista.fmrPrincipal;
 import vista.fmrTour;
 
@@ -44,6 +45,11 @@ public class ControladorTour {
             @Override
             public void actionPerformed(ActionEvent e) {
 
+                fmrBoleta boleta = new fmrBoleta();
+                boleta.labelNombre.setText("Max");
+                boleta.labelValido.setText("4 personas");
+                boleta.labelCosto.setText("16.9");
+                boleta.setVisible(true);
             }
         });
 
@@ -72,6 +78,7 @@ public class ControladorTour {
 
     public void iniciarTour() {
         this.vistaTour.setVisible(true);
+        this.vistaTour.setResizable(false);
         this.vistaTour.setLocationRelativeTo(null);
         limpiarControles();
     }
