@@ -47,9 +47,4 @@ public class Guia {
         this.idioma = idioma;
     }
     
-    
-    
-    
-    
-    
 }
