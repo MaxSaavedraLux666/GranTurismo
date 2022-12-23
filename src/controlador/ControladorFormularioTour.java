@@ -23,42 +23,44 @@ import vista.fmrTrabajador;
 public class ControladorFormularioTour {
 
     fmrRegistrarTour vistaRegistrarTour;
-    TourArreglo modelo;
+    TourArreglo modeloTour;
+    ItinerarioArreglo modeloItinerarios;
     fmrTour vistaTour;
     fmrTrabajador vistaTrabajador1;
 
-    public ControladorFormularioTour(fmrRegistrarTour vistaRegistrarTour, TourArreglo modelo) {
+    public ControladorFormularioTour(fmrRegistrarTour vistaRegistrarTour, TourArreglo modeloTour, ItinerarioArreglo modeloItinerarios) {
         this.vistaRegistrarTour = vistaRegistrarTour;
-        this.modelo = modelo;
+        this.modeloTour = modeloTour;
+        this.modeloItinerarios = modeloItinerarios;
 
         this.vistaRegistrarTour.btnAgregar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                Itinerario itinerario = new Itinerario();
-
-                Tour tour = new Tour(vistaRegistrarTour.txtField_Lugar.getText(), itinerario,
+                Tour tour = new Tour(vistaRegistrarTour.txtField_Lugar.getText(), modeloItinerarios,
                         Float.parseFloat(vistaRegistrarTour.txtField_Precio.getText()),
                         Integer.parseInt(vistaRegistrarTour.comboBox_Hora.getSelectedItem().toString()),
                         vistaRegistrarTour.txtField_Codigo.getText(), "LIBRE", new Date(2022 / 12 / 16));
-
-                if (modelo.agregar(tour)) {
+                if (modeloTour.agregarTour(tour)) {
                     JOptionPane.showMessageDialog(null, "Los datos han sido agregados exitosamente");
-                    
+                    vistaRegistrarTour.tablaItinerario.removeAll();
+                    vistaRegistrarTour.txtFieldBuscarCod.setText("");
+                    vistaRegistrarTour.txtFieldDescripcionItinerario.setText("");
+                    vistaRegistrarTour.txtFieldHoraItinerario.setText("");
+                    vistaRegistrarTour.txtField_Codigo.setText("");
+                    vistaRegistrarTour.txtField_Codigo1.setText("");
+                    vistaRegistrarTour.txtField_Lugar.setText("");
+                    vistaRegistrarTour.txtField_Precio.setText("");
                 } else {
                     JOptionPane.showMessageDialog(null, "Error\n"
                             + "Los datos no han sido agregados exitosamente");
                 }
-
             }
         });
 
         this.vistaRegistrarTour.btnSalirTourFmr.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
-                fmrTrabajador vistaTrabajador = new fmrTrabajador();
-                ControladorTrabajador controlador = new ControladorTrabajador(vistaTrabajador);
                 vistaTrabajador1.dispose();
             }
         });
@@ -66,59 +68,88 @@ public class ControladorFormularioTour {
         this.vistaRegistrarTour.btnBuscra.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
-                
-                modelo.buscar(vistaRegistrarTour.txtFieldBuscarCod.getText());
-                    
-                
+                modeloTour.buscarTour(vistaRegistrarTour.txtFieldBuscarCod.getText());
             }
         });
 
         this.vistaRegistrarTour.btnEliminar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
-                if (modelo.eliminar(vistaRegistrarTour.txtFieldBuscarCod.getText())) {
+                if (modeloTour.eliminarTour(vistaRegistrarTour.txtFieldBuscarCod.getText())) {
                     JOptionPane.showMessageDialog(null, "Los datos han sido eliminado exitosamente");
+                    vistaRegistrarTour.txtFieldBuscarCod.setText("");
                 } else {
                     JOptionPane.showMessageDialog(null, "Error\n"
                             + "Los datos no han sido eliminado exitosamente");
                 }
-
             }
         });
 
         this.vistaRegistrarTour.btnModificar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Itinerario itinerario = new Itinerario();
-                Tour tourNuevo = new Tour(vistaRegistrarTour.txtField_Lugar.getText(), itinerario,
+
+                Tour tourNuevo = new Tour(vistaRegistrarTour.txtField_Lugar.getText(), modeloItinerarios,
                         Float.parseFloat(vistaRegistrarTour.txtField_Precio.getText()),
                         Integer.parseInt(vistaRegistrarTour.comboBox_Hora.getSelectedItem().toString()),
                         vistaRegistrarTour.txtField_Codigo.getText(), "LIBRE", new Date(2022 / 12 / 16));
 
-                if (modelo.modificar(vistaRegistrarTour.txtFieldBuscarCod.getText(), tourNuevo)) {
+                if (modeloTour.modificarTour(vistaRegistrarTour.txtFieldBuscarCod.getText(), tourNuevo)) {
                     JOptionPane.showMessageDialog(null, "Los datos han sido modificados exitosamente");
+                    vistaRegistrarTour.tablaItinerario.removeAll();
+                    vistaRegistrarTour.txtFieldBuscarCod.setText("");
+                    vistaRegistrarTour.txtFieldDescripcionItinerario.setText("");
+                    vistaRegistrarTour.txtFieldHoraItinerario.setText("");
+                    vistaRegistrarTour.txtField_Codigo.setText("");
+                    vistaRegistrarTour.txtField_Codigo1.setText("");
+                    vistaRegistrarTour.txtField_Lugar.setText("");
+                    vistaRegistrarTour.txtField_Precio.setText("");
                 } else {
                     JOptionPane.showMessageDialog(null, "Error\n"
                             + "Los datos no han sido modificados exitosamente");
                 }
-
             }
         });
 
         this.vistaRegistrarTour.btn_AgregarItinerario.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
                 Itinerario itinerario = new Itinerario(vistaRegistrarTour.txtFieldDescripcionItinerario.getText(),
                         vistaRegistrarTour.txtFieldHoraItinerario.getText());
-                ItinerarioArreglo mensaje = new ItinerarioArreglo(1);
 
-                if (mensaje.agregar(itinerario)) {
-                    JOptionPane.showMessageDialog(null, "Los datos han sido agregados exitosamente");
+                if (modeloItinerarios.agregarItinerario(itinerario)) {
+
                 } else {
                     JOptionPane.showMessageDialog(null, "Error\n"
                             + "Los datos no han sido agregados exitosamente");
+                }
+            }
+        });
+
+        this.vistaRegistrarTour.btn_EliminarItinerario.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (modeloItinerarios.eliminarItinerario(JOptionPane.showInputDialog("Ingrese el indice del itinerario\n"))) {
+                    JOptionPane.showMessageDialog(null, "Error\n"
+                            + "Los datos han sido eliminados exitosamente");
+                } else {
+                    JOptionPane.showMessageDialog(null, "Error\n"
+                            + "Los datos no han sido eliminados exitosamente");
+                }
+            }
+        });
+
+        this.vistaRegistrarTour.btn_ModificarItinerario.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Itinerario itinerario = new Itinerario(vistaRegistrarTour.txtFieldDescripcionItinerario.getText(),
+                        vistaRegistrarTour.txtFieldHoraItinerario.getText());
+                if (modeloItinerarios.agregarItinerario(itinerario)) {
+                    JOptionPane.showMessageDialog(null, "Los datos han sido modificados exitosamente");
+                } else {
+                    JOptionPane.showMessageDialog(null, "Error\n"
+                            + "Los datos no han sido modificados exitosamente");
                 }
             }
         });

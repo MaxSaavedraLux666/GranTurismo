@@ -57,9 +57,10 @@ public class fmrTour extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel2.setBackground(new java.awt.Color(0, 102, 102));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/lago.png"))); // NOI18N
@@ -122,7 +123,7 @@ public class fmrTour extends javax.swing.JFrame {
         jLabel4.setText("Código");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 440, 50, -1));
 
-        tablaTours.setBackground(new java.awt.Color(51, 51, 0));
+        tablaTours.setBackground(new java.awt.Color(0, 153, 153));
         tablaTours.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},

@@ -13,10 +13,7 @@ public class Itinerario {
 
     private String hora;
     private String descripcion;
-
-    public Itinerario() {
-    }
-
+    
     public Itinerario(String hora, String descripcion) {
         this.hora = hora;
         this.descripcion = descripcion;

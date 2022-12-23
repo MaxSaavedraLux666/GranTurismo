@@ -13,7 +13,7 @@ import java.util.Date;
 public class Tour {
 
     private String nombrePaquete;
-    private Itinerario itinerario;
+    private ItinerarioArreglo itinerarios;
     private float precioTour;
     private int horas;
     private String codTour;
@@ -23,10 +23,10 @@ public class Tour {
     public Tour() {
     }
 
-    public Tour(String nombrePaquete, Itinerario itinerario, float precioTour, 
+    public Tour(String nombrePaquete, ItinerarioArreglo itinerarios, float precioTour, 
             int horas, String codTour, String estado, Date fecha) {
         this.nombrePaquete = nombrePaquete;
-        this.itinerario = itinerario;
+        this.itinerarios = itinerarios;
         this.precioTour = precioTour;
         this.horas = horas;
         this.codTour = codTour;
@@ -42,12 +42,12 @@ public class Tour {
         this.nombrePaquete = nombrePaquete;
     }
 
-    public Itinerario getItinerario() {
-        return itinerario;
+    public ItinerarioArreglo getItinerarios() {
+        return itinerarios;
     }
 
-    public void setItinerario(Itinerario itinerario) {
-        this.itinerario = itinerario;
+    public void setItinerarios(ItinerarioArreglo itinerarios) {
+        this.itinerarios = itinerarios;
     }
 
     public float getPrecioTour() {
@@ -92,7 +92,7 @@ public class Tour {
 
     @Override
     public String toString() {
-        return "Lugar : " + nombrePaquete + "\nItinerario : " + itinerario
+        return "Lugar : " + nombrePaquete + "\nItinerario : " + itinerarios
             + "\nPrecio del Tour : " + precioTour + "\nHoras : " + horas
             + "\nCodigo de Tour : " + codTour + "\nEstado : " + estado
             + "\nFecha : " + fecha;

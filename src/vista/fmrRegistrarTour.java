@@ -55,12 +55,14 @@ public class fmrRegistrarTour extends javax.swing.JFrame {
         txtFieldDescripcionItinerario = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        btn_AgregarItinerario = new javax.swing.JButton();
+        btn_ModificarItinerario = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tablaItinerario = new javax.swing.JTable();
         jLabel16 = new javax.swing.JLabel();
         jSeparator3 = new javax.swing.JSeparator();
         jLabel17 = new javax.swing.JLabel();
+        btn_AgregarItinerario = new javax.swing.JButton();
+        btn_EliminarItinerario = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         btnModificar = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
@@ -249,24 +251,24 @@ public class fmrRegistrarTour extends javax.swing.JFrame {
         jLabel10.setText("Descripción");
         jPanel4.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, -1));
 
-        btn_AgregarItinerario.setBackground(new java.awt.Color(51, 0, 0));
-        btn_AgregarItinerario.setFont(new java.awt.Font("Yu Gothic UI", 0, 14)); // NOI18N
-        btn_AgregarItinerario.setForeground(new java.awt.Color(204, 204, 0));
-        btn_AgregarItinerario.setText("Agregar Itinerario");
-        jPanel4.add(btn_AgregarItinerario, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 200, -1, -1));
+        btn_ModificarItinerario.setBackground(new java.awt.Color(51, 0, 0));
+        btn_ModificarItinerario.setFont(new java.awt.Font("Yu Gothic UI", 0, 14)); // NOI18N
+        btn_ModificarItinerario.setForeground(new java.awt.Color(204, 204, 0));
+        btn_ModificarItinerario.setText("Modificar");
+        jPanel4.add(btn_ModificarItinerario, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 200, -1, -1));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tablaItinerario.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2"
+                "Title 1", "Title 2", "Title 3"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tablaItinerario);
 
         jPanel4.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 320, 210));
 
@@ -281,6 +283,18 @@ public class fmrRegistrarTour extends javax.swing.JFrame {
 
         jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/itinerario.png"))); // NOI18N
         jPanel4.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 490, 70, 70));
+
+        btn_AgregarItinerario.setBackground(new java.awt.Color(51, 0, 0));
+        btn_AgregarItinerario.setFont(new java.awt.Font("Yu Gothic UI", 0, 14)); // NOI18N
+        btn_AgregarItinerario.setForeground(new java.awt.Color(204, 204, 0));
+        btn_AgregarItinerario.setText("Agregar");
+        jPanel4.add(btn_AgregarItinerario, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, -1, -1));
+
+        btn_EliminarItinerario.setBackground(new java.awt.Color(51, 0, 0));
+        btn_EliminarItinerario.setFont(new java.awt.Font("Yu Gothic UI", 0, 14)); // NOI18N
+        btn_EliminarItinerario.setForeground(new java.awt.Color(204, 204, 0));
+        btn_EliminarItinerario.setText("Eliminar");
+        jPanel4.add(btn_EliminarItinerario, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 200, -1, -1));
 
         jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 90, 350, 570));
 
@@ -417,6 +431,8 @@ public class fmrRegistrarTour extends javax.swing.JFrame {
     public javax.swing.JButton btnModificar;
     public javax.swing.JButton btnSalirTourFmr;
     public javax.swing.JButton btn_AgregarItinerario;
+    public javax.swing.JButton btn_EliminarItinerario;
+    public javax.swing.JButton btn_ModificarItinerario;
     public javax.swing.JComboBox<String> comboBox_Hora;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -445,7 +461,7 @@ public class fmrRegistrarTour extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JTable jTable1;
+    public javax.swing.JTable tablaItinerario;
     public javax.swing.JTextField txtFieldBuscarCod;
     public javax.swing.JTextField txtFieldDescripcionItinerario;
     public javax.swing.JTextField txtFieldHoraItinerario;

@@ -24,7 +24,7 @@ public class TourArreglo {
         this.indice = 0;
     }
 
-    public boolean agregar(Tour tour) {
+    public boolean agregarTour(Tour tour) {
         boolean result = false;
         if (lleno()) {
             crecer();
@@ -46,7 +46,7 @@ public class TourArreglo {
         this.tours = nuevo;
     }
 
-    public boolean eliminar(String codTour) {
+    public boolean eliminarTour(String codTour) {
         boolean result = false;
 
         for (Tour objTour : tours) {
@@ -59,7 +59,7 @@ public class TourArreglo {
         return result;
     }
 
-    public Tour buscar(String codTour) {
+    public Tour buscarTour(String codTour) {
 
         Tour result = null;
 
@@ -72,7 +72,7 @@ public class TourArreglo {
 
     }
 
-    public boolean modificar(String codTour, Tour tour) {
+    public boolean modificarTour(String codTour, Tour tour) {
 
         boolean result = false;
 

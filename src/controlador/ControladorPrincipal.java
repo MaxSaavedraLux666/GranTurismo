@@ -17,12 +17,11 @@ import vista.*;
 public class ControladorPrincipal {
 
     fmrPrincipal vista;
-    TourArreglo tours;
+    TourArreglo modeloArreglo;
 
-    public ControladorPrincipal(fmrPrincipal vista) {
+    public ControladorPrincipal(fmrPrincipal vista, TourArreglo modeloArreglo) {
         this.vista = vista;
-
-        this.tours = new TourArreglo();
+        this.modeloArreglo = modeloArreglo;
         
         this.vista.btn_Salir.addActionListener(new ActionListener() {
             @Override
@@ -53,7 +52,7 @@ public class ControladorPrincipal {
             public void actionPerformed(ActionEvent e) {
                 //Tour
                 fmrTour vistaTour = new fmrTour();
-                ControladorTour controlTour = new ControladorTour(tours, vistaTour);
+                ControladorTour controlTour = new ControladorTour(modeloArreglo, vistaTour);
                 controlTour.iniciarTour();
             }
         }
