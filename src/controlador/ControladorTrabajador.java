@@ -6,11 +6,14 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.Action;
 import modelo.ItinerarioArreglo;
 import modelo.PersonaArreglo;
 import modelo.TourArreglo;
+import modelo.VehiculoArreglo;
 import vista.fmrCliente;
 import vista.fmrRegistrarTour;
+import vista.fmrRegistroTransporte;
 import vista.fmrTrabajador;
 
 /**
@@ -23,10 +26,11 @@ public class ControladorTrabajador {
     ItinerarioArreglo modeloItinerario;
     TourArreglo modeloTour;
     PersonaArreglo modeloPersona;
+    VehiculoArreglo modeloVehiculo;
 
     public ControladorTrabajador(fmrTrabajador vistaTrabajador, TourArreglo modeloTour,
             ItinerarioArreglo modeloItinerario,
-            PersonaArreglo modeloPersona) {
+            PersonaArreglo modeloPersona, VehiculoArreglo modeloVehiculo) {
         this.vistaTrabajador = vistaTrabajador;
         this.modeloTour = modeloTour;
         this.modeloItinerario = modeloItinerario;
@@ -54,6 +58,15 @@ public class ControladorTrabajador {
                 fmrCliente vistaCliente = new fmrCliente();
                 ControladorCliente controladorCliente = new ControladorCliente(vistaCliente);
                 controladorCliente.iniciarCliente();
+            }
+        });
+        
+        this.vistaTrabajador.btnTransporte.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                fmrRegistroTransporte vistaTransporte = new fmrRegistroTransporte();
+                ControladorFormularioTransporte controlador = new ControladorFormularioTransporte(vistaTransporte, modeloVehiculo);
+                
             }
         });
 

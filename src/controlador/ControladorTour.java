@@ -7,10 +7,13 @@ package controlador;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.table.DefaultTableModel;
+import modelo.PersonaArreglo;
 import modelo.Tour;
 import modelo.TourArreglo;
+import modelo.VehiculoArreglo;
 import vista.fmrBoleta;
 import vista.fmrPrincipal;
+import vista.fmrReserva;
 import vista.fmrTour;
 
 /**
@@ -21,11 +24,15 @@ public class ControladorTour {
 
     fmrTour vistaTour;
     ControladorPrincipal controlPricipal;
-    TourArreglo modelo;
+    TourArreglo modeloTour;
+    VehiculoArreglo modeloVehiculo;
+    PersonaArreglo modeloPersona;
 
-    public ControladorTour(TourArreglo modelo, fmrTour vistaTour) {
+    public ControladorTour(TourArreglo modeloTour, fmrTour vistaTour, VehiculoArreglo modeloVehiculo, PersonaArreglo modeloPersona) {
         this.vistaTour = vistaTour;
-        this.modelo = modelo;
+        this.modeloTour = modeloTour;
+        this.modeloVehiculo = modeloVehiculo;
+        this.modeloPersona = modeloPersona;
 
         this.vistaTour.menu_Inicio.addActionListener(new ActionListener() {
             @Override
@@ -57,6 +64,10 @@ public class ControladorTour {
             @Override
             public void actionPerformed(ActionEvent e) {
 
+                fmrReserva vistaReserva = new fmrReserva();
+                ControladorReserva controlador = new ControladorReserva(vistaReserva, modeloTour, modeloVehiculo, modeloPersona);
+                controlador.iniciarReserva();
+
             }
         });
 
@@ -70,8 +81,8 @@ public class ControladorTour {
     }
 
     public void limpiarControles() {
-        String[] cabecera = modelo.getCabecera();
-        String[][] datos = modelo.getTour();
+        String[] cabecera = modeloTour.getCabecera();
+        String[][] datos = modeloTour.getTour();
         DefaultTableModel modeloTabla = new DefaultTableModel(datos, cabecera);
         vistaTour.tablaTours.setModel(modeloTabla);
     }

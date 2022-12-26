@@ -76,7 +76,7 @@ public class ControladorPrincipal {
             public void actionPerformed(ActionEvent e) {
                 //Tour
                 fmrTour vistaTour = new fmrTour();
-                ControladorTour controlTour = new ControladorTour(modeloTour, vistaTour);
+                ControladorTour controlTour = new ControladorTour(modeloTour, vistaTour, modeloVehiculo, modeloPersona);
                 controlTour.iniciarTour();
             }
         });
@@ -87,8 +87,18 @@ public class ControladorPrincipal {
                 //Trabajador
                 fmrTrabajador vistTrabajador = new fmrTrabajador();
                 ControladorTrabajador controlador = new ControladorTrabajador(vistTrabajador,
-                        modeloTour, modeloItinerario, modeloPersona);
+                        modeloTour, modeloItinerario, modeloPersona, modeloVehiculo);
                 controlador.iniciarTrabajador();
+            }
+        });
+
+        this.vista.btnBusqueda.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                fmrBusqueda vistaBusqueda = new fmrBusqueda();
+                ControladorBusqueda controlador = new ControladorBusqueda(vistaBusqueda, modeloTour, modeloVehiculo, modeloPersona);
+                controlador.iniciarBusqueda();
             }
         });
 
