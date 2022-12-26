@@ -7,7 +7,7 @@ package controlador;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.DefaultListSelectionModel;
+import javax.swing.DefaultListModel;
 import javax.swing.JComponent;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
@@ -27,12 +27,21 @@ public class ControladorPrincipal {
 
     fmrPrincipal vista;
     TourArreglo modeloTour;
+    ItinerarioArreglo modeloItinerario;
+    PersonaArreglo modeloPersona;
+    GuiaArreglo modeloGuia;
+    VehiculoArreglo modeloVehiculo;
+
     private boolean estado = true;
 
     public ControladorPrincipal(fmrPrincipal vista, TourArreglo modeloTour, ItinerarioArreglo modeloItinerario,
             PersonaArreglo modeloPersona, GuiaArreglo modeloGuia, VehiculoArreglo modeloVehiculo) {
         this.vista = vista;
         this.modeloTour = modeloTour;
+        this.modeloItinerario = modeloItinerario;
+        this.modeloPersona = modeloPersona;
+        this.modeloGuia = modeloGuia;
+        this.modeloVehiculo = modeloVehiculo;
 
         this.vista.btn_Salir.addActionListener(new ActionListener() {
             @Override
@@ -77,7 +86,8 @@ public class ControladorPrincipal {
             public void actionPerformed(ActionEvent e) {
                 //Trabajador
                 fmrTrabajador vistTrabajador = new fmrTrabajador();
-                ControladorTrabajador controlador = new ControladorTrabajador(vistTrabajador);
+                ControladorTrabajador controlador = new ControladorTrabajador(vistTrabajador,
+                        modeloTour, modeloItinerario, modeloPersona);
                 controlador.iniciarTrabajador();
             }
         });
@@ -172,16 +182,20 @@ public class ControladorPrincipal {
         //
     }
     //
-    
-    public void llenarLista(){
-        DefaultListSelectionModel modelo = new DefaultListSelectionModel();
-        modelo.clearSelection();
-        
+
+    public void llenarLista() {
+        DefaultListModel modelo = new DefaultListModel();
+        modelo.removeAllElements();
+        for (int i = 0; i < modeloTour.getTours().length; i++) {
+            modelo.addElement(modeloTour.getTours()[i]);
+        }
+        vista.listaPaquete.setModel(modelo);
     }
 
     public void iniciar() {
         this.vista.setVisible(true);
         this.vista.setLocationRelativeTo(null);
         detalles();
+        llenarLista();
     }
 }

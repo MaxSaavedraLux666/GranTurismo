@@ -49,17 +49,15 @@ public class TourArreglo {
 
     public boolean eliminarTour(String codTour) {
         boolean result = false;
-        Tour[] nuevo = new Tour[indice - 1];
-        int i = 0;
-        for (Tour objTour : tours) {
-            if (buscarTour(codTour) != objTour) {
-                nuevo[i] = objTour;
+        for (int i = 0; i < this.tours.length; i++) {
+            if (tours[i] != buscarTour(codTour)) {
+                for (int k = i; k < tours.length; k++) {
+                    this.tours[k] = tours[k + 1];
+                }
+                this.indice--;
                 result = true;
-                i++;
             }
         }
-        this.tours = nuevo;
-        this.indice--;
         return result;
     }
 

@@ -7,6 +7,7 @@ package controlador;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import modelo.ItinerarioArreglo;
+import modelo.PersonaArreglo;
 import modelo.TourArreglo;
 import vista.fmrCliente;
 import vista.fmrRegistrarTour;
@@ -19,16 +20,22 @@ import vista.fmrTrabajador;
 public class ControladorTrabajador {
 
     fmrTrabajador vistaTrabajador;
+    ItinerarioArreglo modeloItinerario;
+    TourArreglo modeloTour;
+    PersonaArreglo modeloPersona;
 
-    public ControladorTrabajador(fmrTrabajador vistaTrabajador) {
+    public ControladorTrabajador(fmrTrabajador vistaTrabajador, TourArreglo modeloTour,
+            ItinerarioArreglo modeloItinerario,
+            PersonaArreglo modeloPersona) {
         this.vistaTrabajador = vistaTrabajador;
+        this.modeloTour = modeloTour;
+        this.modeloItinerario = modeloItinerario;
+        this.modeloPersona = modeloPersona;
 
         this.vistaTrabajador.btnRegistrarTour.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 fmrRegistrarTour vistaRegistro = new fmrRegistrarTour();
-                TourArreglo modeloTour = new TourArreglo(1);
-                ItinerarioArreglo modeloItinerario = new ItinerarioArreglo(1);
                 ControladorFormularioTour controlador = new ControladorFormularioTour(vistaRegistro, modeloTour, modeloItinerario);
                 controlador.iniciarRegistroTour();
             }

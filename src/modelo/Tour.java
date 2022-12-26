@@ -92,9 +92,8 @@ public class Tour {
 
     @Override
     public String toString() {
-        return "Lugar : " + nombrePaquete + "\nItinerario : " + itinerarios
-            + "\nPrecio del Tour : " + precioTour + "\nHoras : " + horas
-            + "\nCodigo de Tour : " + codTour + "\nEstado : " + estado
-            + "\nFecha : " + fecha;
+        return nombrePaquete
+            + "       Desde : " + precioTour + " $"
+            + "         Código : " + codTour;
     }
 }

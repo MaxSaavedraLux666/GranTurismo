@@ -133,8 +133,9 @@ public class ControladorFormularioTour {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (modeloItinerarios.eliminarItinerario(JOptionPane.showInputDialog("Ingrese el indice del itinerario\n"))) {
-                    JOptionPane.showMessageDialog(null, "Error\n"
-                            + "Los datos han sido eliminados exitosamente");
+                    JOptionPane.showMessageDialog(null,
+                            "Los datos han sido eliminados exitosamente");
+                    limpiarControles();
                 } else {
                     JOptionPane.showMessageDialog(null, "Error\n"
                             + "Los datos no han sido eliminados exitosamente");

@@ -81,13 +81,12 @@ public class fmrPrincipal extends javax.swing.JFrame {
         jPanel8 = new javax.swing.JPanel();
         btnSiguiente = new javax.swing.JButton();
         pantalla1 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        listaPaquetes = new javax.swing.JList<>();
-        scrollIncluye = new javax.swing.JScrollPane();
-        labelCuadro = new javax.swing.JLabel();
+        scrollLista = new javax.swing.JScrollPane();
+        listaPaquete = new javax.swing.JList<>();
         txtFieldBusqueda = new javax.swing.JTextField();
         btnBusqueda = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 153));
 
@@ -535,37 +534,27 @@ public class fmrPrincipal extends javax.swing.JFrame {
 
         bg.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 90, 610, 90));
 
-        listaPaquetes.setBackground(new java.awt.Color(0, 102, 102));
-        listaPaquetes.setFont(new java.awt.Font("DialogInput", 0, 12)); // NOI18N
-        listaPaquetes.setForeground(new java.awt.Color(255, 255, 255));
-        listaPaquetes.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane1.setViewportView(listaPaquetes);
+        listaPaquete.setBackground(new java.awt.Color(0, 102, 102));
+        listaPaquete.setFont(new java.awt.Font("DialogInput", 0, 12)); // NOI18N
+        listaPaquete.setForeground(new java.awt.Color(255, 255, 255));
+        scrollLista.setViewportView(listaPaquete);
 
-        bg.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 280, 430, 200));
-
-        scrollIncluye.setBackground(new java.awt.Color(0, 102, 102));
-        scrollIncluye.setForeground(new java.awt.Color(0, 102, 102));
-
-        labelCuadro.setFont(new java.awt.Font("ISOCP", 0, 12)); // NOI18N
-        labelCuadro.setForeground(new java.awt.Color(0, 0, 0));
-        labelCuadro.setText("jLabel4");
-        scrollIncluye.setViewportView(labelCuadro);
-
-        bg.add(scrollIncluye, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 280, 160, 200));
+        bg.add(scrollLista, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 280, 430, 200));
         bg.add(txtFieldBusqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 210, 70, 30));
 
+        btnBusqueda.setBackground(new java.awt.Color(0, 153, 153));
         btnBusqueda.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 14)); // NOI18N
         btnBusqueda.setForeground(new java.awt.Color(204, 204, 0));
         btnBusqueda.setText("Buscar");
-        bg.add(btnBusqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(663, 210, 80, 30));
+        bg.add(btnBusqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 210, 80, 30));
 
         jLabel4.setForeground(new java.awt.Color(255, 0, 102));
-        jLabel4.setText("jLabel4");
-        bg.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 200, 280, 60));
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondoPrincipal.png"))); // NOI18N
+        bg.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 190, 430, 80));
+
+        jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/pichu.gif"))); // NOI18N
+        jLabel21.setText("jLabel21");
+        bg.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 280, 180, 200));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -652,6 +641,7 @@ public class fmrPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel19;
     public javax.swing.JLabel jLabel2;
     public javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -666,13 +656,11 @@ public class fmrPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JLabel labelCuadro;
-    public javax.swing.JList<String> listaPaquetes;
+    public javax.swing.JList<String> listaPaquete;
     public javax.swing.JPanel panelDerecho;
     public javax.swing.JLabel pantalla1;
-    private javax.swing.JScrollPane scrollIncluye;
+    public javax.swing.JScrollPane scrollLista;
     private javax.swing.JPanel sidePanel;
     public javax.swing.JLabel telefono1;
     public javax.swing.JLabel telefono2;
