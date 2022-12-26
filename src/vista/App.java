@@ -22,6 +22,9 @@ public class App {
 
         TourArreglo tourTamaño = new TourArreglo(1);
         ItinerarioArreglo itinerarios = new ItinerarioArreglo(1);
+        PersonaArreglo personas = new PersonaArreglo(1);
+        GuiaArreglo guias = new GuiaArreglo(1);
+        VehiculoArreglo vehiculos = new VehiculoArreglo(1);
 
         itinerario = new Itinerario("c34", " Caminata por la ciudad de Machu Picchu", " 4:20 ");
         itinerarios.agregarItinerario(itinerario);
@@ -44,7 +47,9 @@ public class App {
         mensaje.mostrarTours(tourTamaño);
 
         fmrPrincipal vista = new fmrPrincipal();
-        ControladorPrincipal controlador = new ControladorPrincipal(vista, tourTamaño);
+
+        ControladorPrincipal controlador = new ControladorPrincipal(vista, tourTamaño, itinerarios,
+                personas, guias, vehiculos);
         controlador.iniciar();
     }
 }

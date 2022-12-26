@@ -71,7 +71,7 @@ public class ControladorTour {
 
     public void limpiarControles() {
         String[] cabecera = modelo.getCabecera();
-        String[][] datos = modelo.getTours();
+        String[][] datos = modelo.getTour();
         DefaultTableModel modeloTabla = new DefaultTableModel(datos, cabecera);
         vistaTour.tablaTours.setModel(modeloTabla);
     }

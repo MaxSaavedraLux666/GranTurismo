@@ -51,12 +51,16 @@ public class ItinerarioArreglo {
 
     public boolean eliminarItinerario(String cod) {
         boolean result = false;
-        
+        Itinerario[] nuevo = new Itinerario[indice - 1];
+        int i = 0;
         for (Itinerario itinerario : itinerarios) {
-            if (buscarItinerario(cod) == itinerario) {
-               itinerario = null;
+            if (buscarItinerario(cod) != itinerario) {
+                nuevo[i] = itinerario;
+                i++;
             }
         }
+        this.itinerarios = nuevo;
+        this.indice--;
         return result;
     }
 
@@ -65,6 +69,7 @@ public class ItinerarioArreglo {
         for (Itinerario itinerario : itinerarios) {
             if (itinerario.getCodigoItinerario() == codigo) {
                 result = itinerario;
+                break;
             }
         }
         return result;

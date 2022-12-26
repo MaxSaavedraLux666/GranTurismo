@@ -49,6 +49,7 @@ public class ControladorFormularioTour {
                     vistaRegistrarTour.txtField_Codigo1.setText("");
                     vistaRegistrarTour.txtField_Lugar.setText("");
                     vistaRegistrarTour.txtField_Precio.setText("");
+                    vistaRegistrarTour.remove(vistaRegistrarTour);
                 } else {
                     JOptionPane.showMessageDialog(null, "Error\n"
                             + "Los datos no han sido agregados exitosamente");

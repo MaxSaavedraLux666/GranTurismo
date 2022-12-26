@@ -49,14 +49,17 @@ public class TourArreglo {
 
     public boolean eliminarTour(String codTour) {
         boolean result = false;
-
+        Tour[] nuevo = new Tour[indice - 1];
+        int i = 0;
         for (Tour objTour : tours) {
-            if (codTour == objTour.getCodTour()) {
-                objTour = null;
+            if (buscarTour(codTour) != objTour) {
+                nuevo[i] = objTour;
                 result = true;
+                i++;
             }
         }
-
+        this.tours = nuevo;
+        this.indice--;
         return result;
     }
 
@@ -94,7 +97,7 @@ public class TourArreglo {
         return result;
     }
 
-    public String[][] getTours() {
+    public String[][] getTour() {
         String[][] resultado = new String[getTotal()][5];
 
         int i = 0;
@@ -129,6 +132,10 @@ public class TourArreglo {
             }
         }
         return resultado;
+    }
+
+    public Tour[] getTours() {
+        return tours;
     }
 
     @Override
