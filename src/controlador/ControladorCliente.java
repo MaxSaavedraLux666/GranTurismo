@@ -17,8 +17,9 @@ import vista.fmrCliente;
 public class ControladorCliente {
 
     fmrCliente vistaCliente = new fmrCliente();
+    PersonaArreglo modelo;
 
-    public ControladorCliente(fmrCliente vistaCliente) {
+    public ControladorCliente(fmrCliente vistaCliente, PersonaArreglo modelo) {
         this.vistaCliente = vistaCliente;
 
         this.vistaCliente.btnAgregar.addActionListener(new ActionListener() {
@@ -30,8 +31,7 @@ public class ControladorCliente {
                         vistaCliente.txtFieldTelefonoTitular.getText(),
                         vistaCliente.txtFieldDNItitular.getText(),
                         Integer.parseInt(vistaCliente.txtFieldEdadTitular.getText()));
-                PersonaArreglo mensaje = new PersonaArreglo(1);
-                mensaje.agregar(cliente);
+                modelo.agregar(cliente);
             }
     
         });
