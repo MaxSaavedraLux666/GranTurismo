@@ -23,14 +23,6 @@ public class ControladorMC {
     public ControladorMC(fmrMantenimientoCliente vistaMC, PersonaArreglo modelo) {
         this.vistaMC = vistaMC;
         this.modelo = modelo;
-        this.vistaMC.btnAgregarMC.addActionListener(new ActionListener(){
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                fmrCliente vistaCliente = new fmrCliente();
-                ControladorCliente controladorCliente = new ControladorCliente(vistaCliente,modelo);
-                controladorCliente.iniciarCliente();
-            }  
-        });
         this.vistaMC.btnSalirMC.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {

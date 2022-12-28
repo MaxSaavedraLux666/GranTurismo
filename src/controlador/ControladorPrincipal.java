@@ -67,7 +67,9 @@ public class ControladorPrincipal {
         this.vista.btnReserva.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //Reserva
+                fmrReserva vistaReserva= new fmrReserva();
+                ControladorReserva controladorReserva= new ControladorReserva(vistaReserva, modeloTour,  modeloVehiculo, modeloPersona);
+                controladorReserva.iniciarReserva();
             }
         });
 

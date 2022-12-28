@@ -36,51 +36,62 @@ public class fmrReserva extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jSpinner1 = new javax.swing.JSpinner();
-        jCheckBox1 = new javax.swing.JCheckBox();
         jComboBox1 = new javax.swing.JComboBox<>();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(153, 0, 153));
+        jPanel1.setBackground(new java.awt.Color(0, 204, 102));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnVerTransporte.setText("Ver Transporte");
-        jPanel1.add(btnVerTransporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 240, -1, -1));
+        jPanel1.add(btnVerTransporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 210, -1, -1));
 
-        btnRegistroCliente.setText("Registrar Datos del Cilente");
-        jPanel1.add(btnRegistroCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, -1));
+        btnRegistroCliente.setText("Agregar Cliente");
+        btnRegistroCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistroClienteActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnRegistroCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 150, -1, -1));
 
-        jPanel2.setBackground(new java.awt.Color(102, 0, 102));
+        jPanel2.setBackground(new java.awt.Color(0, 153, 102));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnRegresar.setText("Regresar");
-        jPanel2.add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 10, -1, -1));
+        btnRegresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegresarActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 10, -1, -1));
 
         btnAceptar.setText("Aceptar");
-        jPanel2.add(btnAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 10, -1, -1));
+        jPanel2.add(btnAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, -1, -1));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 470, 50));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 390, 470, 50));
 
         jLabel6.setFont(new java.awt.Font("Engravers MT", 1, 12)); // NOI18N
-        jLabel6.setText("fecha");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, -1, -1));
+        jLabel6.setText("fecha:");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 220, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Engravers MT", 1, 12)); // NOI18N
-        jLabel7.setText("personas");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, -1, -1));
+        jLabel7.setText("CLIENTE:");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Engravers MT", 1, 12)); // NOI18N
-        jLabel8.setText("DESDE:");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, -1, -1));
+        jLabel8.setText("CÓDIGO DE RESERVA:");
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 340, -1, -1));
 
-        jLabel9.setFont(new java.awt.Font("Engravers MT", 1, 12)); // NOI18N
-        jLabel9.setText("DEStino:");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, -1));
-        jPanel1.add(jSpinner1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 130, 90, -1));
-
-        jCheckBox1.setText("jCheckBox1");
-        jPanel1.add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 180, -1, -1));
+        jLabel9.setFont(new java.awt.Font("Engravers MT", 2, 24)); // NOI18N
+        jLabel9.setText("REGISTRAR RESERVA");
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 30, -1, -1));
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
@@ -88,7 +99,30 @@ public class fmrReserva extends javax.swing.JFrame {
                 jComboBox1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 90, -1, -1));
+        jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 90, -1, -1));
+
+        jLabel11.setFont(new java.awt.Font("Engravers MT", 1, 12)); // NOI18N
+        jLabel11.setText("PRECIO:");
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 280, -1, -1));
+
+        jLabel12.setFont(new java.awt.Font("Engravers MT", 1, 12)); // NOI18N
+        jLabel12.setText("DEStino:");
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 100, -1, -1));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/CLIENTE_1.png"))); // NOI18N
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 50, 50));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/dolar.png"))); // NOI18N
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 50, 50));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/codigo de barras.png"))); // NOI18N
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 50, 40));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/destino_1.png"))); // NOI18N
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 80, 70));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/calendario_1.png"))); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 60, 70));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -98,7 +132,7 @@ public class fmrReserva extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 537, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -107,6 +141,14 @@ public class fmrReserva extends javax.swing.JFrame {
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox1ActionPerformed
+
+    private void btnRegistroClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistroClienteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnRegistroClienteActionPerformed
+
+    private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnRegresarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -148,14 +190,19 @@ public class fmrReserva extends javax.swing.JFrame {
     public javax.swing.JButton btnRegistroCliente;
     public javax.swing.JButton btnRegresar;
     public javax.swing.JButton btnVerTransporte;
-    private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JSpinner jSpinner1;
     // End of variables declaration//GEN-END:variables
 }

@@ -9,6 +9,7 @@ import java.awt.event.ActionListener;
 import modelo.PersonaArreglo;
 import modelo.TourArreglo;
 import modelo.VehiculoArreglo;
+import vista.fmrCliente;
 import vista.fmrReserva;
 import vista.fmrTransporte;
 import vista.fmrVenta;
@@ -51,8 +52,10 @@ public class ControladorReserva {
         this.vistaReserva.btnRegistroCliente.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
-                
-            }
+                fmrCliente vistaCliente = new fmrCliente();
+                ControladorCliente controladorCliente = new ControladorCliente(vistaCliente,modeloPersona);
+                controladorCliente.iniciarCliente();
+            }  
         });
         
         this.vistaReserva.btnRegresar.addActionListener(new ActionListener(){

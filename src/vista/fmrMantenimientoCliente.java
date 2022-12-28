@@ -28,7 +28,6 @@ public class fmrMantenimientoCliente extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         btnSalirMC = new javax.swing.JButton();
-        btnAgregarMC = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         btnEliminarMC = new javax.swing.JButton();
         btnBuscarMC = new javax.swing.JButton();
@@ -45,8 +44,6 @@ public class fmrMantenimientoCliente extends javax.swing.JFrame {
                 btnSalirMCActionPerformed(evt);
             }
         });
-
-        btnAgregarMC.setText("Agregar");
 
         jLabel1.setFont(new java.awt.Font("Sitka Small", 3, 36)); // NOI18N
         jLabel1.setText("Mantenimiento de Clientes");
@@ -78,13 +75,11 @@ public class fmrMantenimientoCliente extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(149, 149, 149)
+                .addGap(165, 165, 165)
                 .addComponent(btnSalirMC)
-                .addGap(34, 34, 34)
-                .addComponent(btnAgregarMC)
-                .addGap(41, 41, 41)
+                .addGap(120, 120, 120)
                 .addComponent(btnEliminarMC)
-                .addGap(44, 44, 44)
+                .addGap(117, 117, 117)
                 .addComponent(btnBuscarMC)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
@@ -107,7 +102,6 @@ public class fmrMantenimientoCliente extends javax.swing.JFrame {
                 .addGap(47, 47, 47)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSalirMC)
-                    .addComponent(btnAgregarMC)
                     .addComponent(btnEliminarMC)
                     .addComponent(btnBuscarMC))
                 .addContainerGap(58, Short.MAX_VALUE))
@@ -171,7 +165,6 @@ public class fmrMantenimientoCliente extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton btnAgregarMC;
     public javax.swing.JButton btnBuscarMC;
     public javax.swing.JButton btnEliminarMC;
     public javax.swing.JButton btnSalirMC;
