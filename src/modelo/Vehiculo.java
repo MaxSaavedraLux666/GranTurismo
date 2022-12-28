@@ -11,6 +11,7 @@ package modelo;
 public class Vehiculo {
     private String codigoVehiculo;
     private int capacidad;
+    private Asiento asientos[];
     private float costoViaje;
     private String nombreDelDueño;
 
@@ -20,7 +21,36 @@ public class Vehiculo {
         this.costoViaje = costoViaje;
         this.nombreDelDueño = nombreDelDueño;
     }
-
+    
+    private void generarAsientos(){
+        this.asientos=new Asiento[this.capacidad];
+        for(int i=0; i<this.capacidad; i++){
+            this.asientos[i]=new Asiento(i+1,false);
+        }
+    }
+    
+    private int getCantidadAsientosLibre(){
+        int resultado=0;
+        for (int i=0; i<capacidad; i++){
+            if(this.asientos[i].getEstado()==false){
+                resultado++;
+            }
+        }
+        return resultado;
+    }
+    
+    public Asiento[] asientoslibre(){
+        Asiento resultado[] = new Asiento[getCantidadAsientosLibre()];
+        int indice=0;
+        for (int i=0; i<capacidad;i++){
+            if(this.asientos[i].getEstado()==false){
+                resultado[indice]=this.asientos[i];
+                indice ++;
+            }
+        }
+        return resultado;
+    }
+    
     public String getCodigoVehiculo() {
         return codigoVehiculo;
     }
