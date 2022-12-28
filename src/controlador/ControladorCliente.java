@@ -6,6 +6,7 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 import modelo.Cliente;
 import modelo.PersonaArreglo;
 import vista.fmrCliente;
@@ -32,9 +33,21 @@ public class ControladorCliente {
                         vistaCliente.txtFieldTelefonoTitular.getText(),
                         vistaCliente.txtFieldDNItitular.getText(),
                         Integer.parseInt(vistaCliente.txtFieldEdadTitular.getText()));
-                modelo.agregar(cliente);
+                if (modelo.agregar(cliente)) {
+                    JOptionPane.showMessageDialog(null, "Los datos han sido agregados exitosamente");
+                    vistaCliente.txtFieldCodigoReservaTitular.setText("");
+                    vistaCliente.txtFieldNombreTitular.setText("");
+                    vistaCliente.txtFieldCorreoTitular.setText("");
+                    vistaCliente.txtFieldTelefonoTitular.setText("");
+                    vistaCliente.txtFieldDNItitular.setText("");
+                    vistaCliente.txtFieldEdadTitular.setText("");
+ 
+                } else {
+                    JOptionPane.showMessageDialog(null, "Error\n"
+                            + "Los datos no han sido agregados exitosamente");
+                
             }
-    
+            }
         });
 
         this.vistaCliente.btnCancelar.addActionListener(new ActionListener() {
