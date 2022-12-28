@@ -27,28 +27,17 @@ public class fmrMantenimientoCliente extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
         btnSalirMC = new javax.swing.JButton();
         btnAgregarMC = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        btnEliminarMC = new javax.swing.JButton();
+        btnBuscarMC = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tblMC = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(153, 255, 255));
-
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
-            },
-            new String [] {
-                "Código de Reserva", "Nombre del titular", "Correo ", "Teléfono", "DNI", "Edad"
-            }
-        ));
-        jScrollPane1.setViewportView(jTable1);
+        jPanel1.setBackground(new java.awt.Color(255, 255, 0));
 
         btnSalirMC.setText("Salir");
         btnSalirMC.addActionListener(new java.awt.event.ActionListener() {
@@ -62,36 +51,66 @@ public class fmrMantenimientoCliente extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Sitka Small", 3, 36)); // NOI18N
         jLabel1.setText("Mantenimiento de Clientes");
 
+        btnEliminarMC.setText("Eliminar");
+        btnEliminarMC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarMCActionPerformed(evt);
+            }
+        });
+
+        btnBuscarMC.setText("Buscar");
+
+        tblMC.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane2.setViewportView(tblMC);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(214, 214, 214)
-                .addComponent(jLabel1)
-                .addContainerGap(219, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(251, 251, 251)
+                .addGap(149, 149, 149)
                 .addComponent(btnSalirMC)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(34, 34, 34)
                 .addComponent(btnAgregarMC)
-                .addGap(268, 268, 268))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 770, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(41, 41, 41)
+                .addComponent(btnEliminarMC)
+                .addGap(44, 44, 44)
+                .addComponent(btnBuscarMC)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(78, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 651, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(49, 49, 49))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(126, 126, 126))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(47, 47, 47)
+                .addGap(15, 15, 15)
                 .addComponent(jLabel1)
-                .addGap(28, 28, 28)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(29, 29, 29)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(47, 47, 47)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSalirMC)
-                    .addComponent(btnAgregarMC))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnAgregarMC)
+                    .addComponent(btnEliminarMC)
+                    .addComponent(btnBuscarMC))
+                .addContainerGap(58, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -111,6 +130,10 @@ public class fmrMantenimientoCliente extends javax.swing.JFrame {
     private void btnSalirMCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirMCActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnSalirMCActionPerformed
+
+    private void btnEliminarMCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarMCActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnEliminarMCActionPerformed
 
     /**
      * @param args the command line arguments
@@ -149,10 +172,12 @@ public class fmrMantenimientoCliente extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnAgregarMC;
+    public javax.swing.JButton btnBuscarMC;
+    public javax.swing.JButton btnEliminarMC;
     public javax.swing.JButton btnSalirMC;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JScrollPane jScrollPane2;
+    public javax.swing.JTable tblMC;
     // End of variables declaration//GEN-END:variables
 }

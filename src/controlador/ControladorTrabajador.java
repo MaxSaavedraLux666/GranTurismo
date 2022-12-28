@@ -12,6 +12,7 @@ import modelo.PersonaArreglo;
 import modelo.TourArreglo;
 import modelo.VehiculoArreglo;
 import vista.fmrCliente;
+import vista.fmrMantenimientoCliente;
 import vista.fmrRegistrarTour;
 import vista.fmrRegistroTransporte;
 import vista.fmrTrabajador;
@@ -51,15 +52,21 @@ public class ControladorTrabajador {
                 vistaTrabajador.dispose();
             }
         });
-
-        this.vistaTrabajador.btnRegistrarCliente.addActionListener(new ActionListener() {
+        
+        this.vistaTrabajador.btnModificarCliente.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
-                fmrCliente vistaCliente = new fmrCliente();
-                ControladorCliente controladorCliente = new ControladorCliente(vistaCliente);
-                controladorCliente.iniciarCliente();
+                fmrMantenimientoCliente vistaMC= new fmrMantenimientoCliente();
+                ControladorMC controladorMC= new ControladorMC(vistaMC, modeloPersona);
+                controladorMC.iniciarControladorMC();
+                
             }
+           
+            
+            
+            
         });
+
         
         this.vistaTrabajador.btnTransporte.addActionListener(new ActionListener(){
             @Override
