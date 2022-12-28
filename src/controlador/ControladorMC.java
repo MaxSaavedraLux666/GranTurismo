@@ -36,7 +36,20 @@ public class ControladorMC {
             public void actionPerformed(ActionEvent e) {
                 vistaMC.dispose();
             }  
-        });  
+        });
+        this.vistaMC.btnBuscarMC.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                
+            } 
+        });
+        this.vistaMC.btnEliminarMC.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                
+             
+            } 
+        });
     }
     
     public void limpiarControles() {

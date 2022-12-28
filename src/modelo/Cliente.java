@@ -18,9 +18,11 @@ public class Cliente extends Persona{
     public Cliente(String codReserva,String nombre, 
             String correo, String telefono,String dni, int edad) {
         super(nombre, dni, edad);
+        this.codReserva=codReserva;
         this.correo = correo;
         this.telefono = telefono;
     }
+   
 
     public String getCodReserva() {
         return codReserva;

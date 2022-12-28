@@ -36,6 +36,32 @@ public class PersonaArreglo {
         return result;
     }
     
+    public boolean eliminarCliente(String codCliente) {
+        boolean result = false;
+        for (int i = 0; i < this.personas.length; i++) {
+            if (personas[i] != buscarCliente(codCliente)) {
+                for (int k = i; k < personas.length; k++) {
+                    this.personas[k] = personas[k + 1];
+                }
+                this.indice--;
+                result = true;
+            }
+        }
+        return result;
+    }
+    
+    public Persona buscarCliente(String codCliente) {
+
+        Persona result = null;
+
+        for (Persona objCliente : personas) {
+            if (codCliente == ((Cliente) objCliente).getCodReserva()){
+                result = objCliente;
+            }
+        }
+        return result;
+    }
+    
     
     public void crecer(){
         Persona[] nuevo = new Persona[indice*2];
