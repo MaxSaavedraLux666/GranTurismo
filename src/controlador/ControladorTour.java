@@ -34,13 +34,6 @@ public class ControladorTour {
         this.modeloVehiculo = modeloVehiculo;
         this.modeloPersona = modeloPersona;
 
-        this.vistaTour.menu_Inicio.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-            }
-        });
-
         this.vistaTour.btn_BuscarTour.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

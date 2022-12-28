@@ -28,46 +28,115 @@ public class fmrBusqueda extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         btnReservar = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        labelNombreDestino = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        listItinerario = new javax.swing.JList<>();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         btnRegresar = new javax.swing.JButton();
+        labelCodigo = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        labelPrecio = new javax.swing.JLabel();
+        labelHora = new javax.swing.JLabel();
+        labelEstado = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(0, 153, 153));
+        jPanel1.setBackground(new java.awt.Color(153, 153, 0));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        btnReservar.setBackground(new java.awt.Color(0, 153, 153));
+        btnReservar.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        btnReservar.setForeground(new java.awt.Color(0, 0, 0));
         btnReservar.setText("Reservar");
+        jPanel1.add(btnReservar, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 500, -1, -1));
 
+        jPanel2.setBackground(new java.awt.Color(102, 0, 102));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        labelNombreDestino.setFont(new java.awt.Font("Lucida Sans Unicode", 1, 18)); // NOI18N
+        labelNombreDestino.setForeground(new java.awt.Color(255, 255, 255));
+        labelNombreDestino.setText("jLabel1");
+        jPanel2.add(labelNombreDestino, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 20, 266, 48));
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 460, 80));
+
+        listItinerario.setBackground(new java.awt.Color(0, 102, 102));
+        listItinerario.setFont(new java.awt.Font("DialogInput", 0, 12)); // NOI18N
+        listItinerario.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane1.setViewportView(listItinerario);
+
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, 430, -1));
+
+        jLabel1.setFont(new java.awt.Font("Engravers MT", 1, 12)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setText("CÓDIGO:");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, -1, -1));
+
+        jLabel2.setFont(new java.awt.Font("Arial Narrow", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setText("ITINERARIO");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 300, -1, -1));
+
+        btnRegresar.setBackground(new java.awt.Color(0, 153, 153));
+        btnRegresar.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        btnRegresar.setForeground(new java.awt.Color(0, 0, 0));
         btnRegresar.setText("Regresar");
+        jPanel1.add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 500, -1, -1));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(287, Short.MAX_VALUE)
-                .addComponent(btnReservar)
-                .addGap(35, 35, 35)
-                .addComponent(btnRegresar)
-                .addContainerGap())
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(102, 102, 102)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnReservar)
-                    .addComponent(btnRegresar))
-                .addContainerGap(272, Short.MAX_VALUE))
-        );
+        labelCodigo.setFont(new java.awt.Font("Engravers MT", 1, 12)); // NOI18N
+        labelCodigo.setForeground(new java.awt.Color(0, 0, 0));
+        labelCodigo.setText("IDENTIFICACIÓN");
+        jPanel1.add(labelCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 240, -1, -1));
+
+        jLabel4.setFont(new java.awt.Font("Engravers MT", 1, 12)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel4.setText("DURACIÓN:");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, -1, -1));
+
+        jLabel5.setFont(new java.awt.Font("Engravers MT", 1, 12)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel5.setText("ESTADO:");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, -1, -1));
+
+        jLabel6.setFont(new java.awt.Font("Engravers MT", 1, 12)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel6.setText("DESDE:");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, -1, -1));
+
+        labelPrecio.setFont(new java.awt.Font("Engravers MT", 1, 12)); // NOI18N
+        labelPrecio.setForeground(new java.awt.Color(0, 0, 0));
+        labelPrecio.setText("PRECIO");
+        jPanel1.add(labelPrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 100, -1, -1));
+
+        labelHora.setFont(new java.awt.Font("Engravers MT", 1, 12)); // NOI18N
+        labelHora.setForeground(new java.awt.Color(0, 0, 0));
+        labelHora.setText("HORAS");
+        jPanel1.add(labelHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 150, -1, -1));
+
+        labelEstado.setFont(new java.awt.Font("Engravers MT", 1, 12)); // NOI18N
+        labelEstado.setForeground(new java.awt.Color(0, 0, 0));
+        labelEstado.setText("DISPONIBILIDAD");
+        jPanel1.add(labelEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 200, -1, -1));
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 280, 450, 20));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 461, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 536, Short.MAX_VALUE)
         );
 
         pack();
@@ -111,6 +180,20 @@ public class fmrBusqueda extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnRegresar;
     public javax.swing.JButton btnReservar;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSeparator jSeparator1;
+    public javax.swing.JLabel labelCodigo;
+    public javax.swing.JLabel labelEstado;
+    public javax.swing.JLabel labelHora;
+    public javax.swing.JLabel labelNombreDestino;
+    public javax.swing.JLabel labelPrecio;
+    public javax.swing.JList<String> listItinerario;
     // End of variables declaration//GEN-END:variables
 }
