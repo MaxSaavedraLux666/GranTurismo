@@ -21,6 +21,7 @@ public class ControladorCliente {
 
     public ControladorCliente(fmrCliente vistaCliente, PersonaArreglo modelo) {
         this.vistaCliente = vistaCliente;
+        this.modelo=modelo;
 
         this.vistaCliente.btnAgregar.addActionListener(new ActionListener() {
             @Override
