@@ -7,6 +7,7 @@ package controlador;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.DefaultComboBoxModel;
+import modelo.Cliente;
 import modelo.PersonaArreglo;
 import modelo.Tour;
 import modelo.TourArreglo;
@@ -26,12 +27,14 @@ public class ControladorReserva {
     TourArreglo modeloTour;
     VehiculoArreglo modeloVehiculo;
     PersonaArreglo modeloPersona;
+    Tour tourElegido;
 
-    public ControladorReserva(fmrReserva vistaReserva, TourArreglo modeloTour, VehiculoArreglo modeloVehiculo, PersonaArreglo modeloPersona) {
+    public ControladorReserva(fmrReserva vistaReserva, TourArreglo modeloTour, VehiculoArreglo modeloVehiculo, PersonaArreglo modeloPersona, Tour tourElegido) {
         this.vistaReserva = vistaReserva;
         this.modeloTour = modeloTour;
         this.modeloVehiculo = modeloVehiculo;
         this.modeloPersona = modeloPersona;
+        this.tourElegido=tourElegido;
         
         
         
@@ -61,19 +64,14 @@ public class ControladorReserva {
         });
     } 
     
-    public void rellenarCbDestino(){ 
-        String lugares[]=new String[3];
-        lugares[0]="Machu Picchu";
-        lugares[1]="Ciudadela";
-        lugares[2]="Inti Raymi";
-        DefaultComboBoxModel model = new DefaultComboBoxModel();
-        for(String obj: lugares){
-            model.addElement(obj);
-        }
-        this.vistaReserva.cbDestino.setModel(model);
+    public void detallesReserva(){
+        vistaReserva.labelDestino.setText(tourElegido.getNombrePaquete());
+        vistaReserva.labelPrecio.setText(String.valueOf(tourElegido.getPrecioTour()));
+
     }
     public void iniciarReserva(){
         this.vistaReserva.setVisible(true);
         this.vistaReserva.setLocationRelativeTo(null);
+        detallesReserva();
     }
 }

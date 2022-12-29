@@ -19,15 +19,20 @@ public class ControladorCliente {
 
     fmrCliente vistaCliente = new fmrCliente();
     PersonaArreglo modelo;
+    String codigo;
 
     public ControladorCliente(fmrCliente vistaCliente, PersonaArreglo modelo) {
         this.vistaCliente = vistaCliente;
         this.modelo=modelo;
+        this.codigo=generarCodigoReserva();
+        
 
         this.vistaCliente.btnAgregar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Cliente cliente = new Cliente(vistaCliente.txtFieldCodigoReservaTitular.getText(),
+                String codigo2= new String();
+                codigo2=generarCodigoReserva();
+                Cliente cliente = new Cliente(codigo,
                         vistaCliente.txtFieldNombreTitular.getText(),
                         vistaCliente.txtFieldCorreoTitular.getText(),
                         vistaCliente.txtFieldTelefonoTitular.getText(),
@@ -35,12 +40,12 @@ public class ControladorCliente {
                         Integer.parseInt(vistaCliente.txtFieldEdadTitular.getText()));
                 if (modelo.agregar(cliente)) {
                     JOptionPane.showMessageDialog(null, "Los datos han sido agregados exitosamente");
-                    vistaCliente.txtFieldCodigoReservaTitular.setText("");
                     vistaCliente.txtFieldNombreTitular.setText("");
                     vistaCliente.txtFieldCorreoTitular.setText("");
                     vistaCliente.txtFieldTelefonoTitular.setText("");
                     vistaCliente.txtFieldDNItitular.setText("");
                     vistaCliente.txtFieldEdadTitular.setText("");
+                    vistaCliente.labelCodReserva.setText(codigo2);
  
                 } else {
                     JOptionPane.showMessageDialog(null, "Error\n"
@@ -58,8 +63,21 @@ public class ControladorCliente {
             }
         });
     }
+    
+    
+    public String generarCodigoReserva(){
+        int aleatorio=0;
+        aleatorio=(int) (Math.random() * (999999 - 100000 + 1) + 100000);
+        codigo=String.valueOf(aleatorio);
+        return codigo;
+    }
+    
+    public void detallesCliente(){
+        vistaCliente.labelCodReserva.setText(codigo);
+    }
 
     public void iniciarCliente() {
+        detallesCliente();
         this.vistaCliente.setVisible(true);
         this.vistaCliente.setLocationRelativeTo(null);
     }

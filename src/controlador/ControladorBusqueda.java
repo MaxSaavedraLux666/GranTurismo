@@ -39,7 +39,7 @@ public class ControladorBusqueda {
             @Override
             public void actionPerformed(ActionEvent e) {
                 fmrReserva vistaReserva = new fmrReserva();
-                ControladorReserva controlador = new ControladorReserva(vistaReserva, modeloTour, modeloVehiculo, modeloPersona);
+                ControladorReserva controlador = new ControladorReserva(vistaReserva, modeloTour, modeloVehiculo, modeloPersona, tourElegido);
                 controlador.iniciarReserva();
             }
         });
