@@ -8,12 +8,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.DefaultComboBoxModel;
 import modelo.PersonaArreglo;
-import modelo.Tour;
 import modelo.TourArreglo;
 import modelo.VehiculoArreglo;
 import vista.fmrCliente;
 import vista.fmrReserva;
-import vista.fmrTransporte;
 import vista.fmrVenta;
 
 /**

@@ -4,8 +4,6 @@
  */
 package modelo;
 
-import java.util.Date;
-
 /**
  *
  * @author User
@@ -17,21 +15,14 @@ public class Tour {
     private float precioTour;
     private int horas;
     private String codTour;
-    private String estado;
-    private Date fecha;
+    private String estado = "LIBRE";
 
-    public Tour() {
-    }
-
-    public Tour(String nombrePaquete, ItinerarioArreglo itinerarios, float precioTour,
-            int horas, String codTour, String estado, Date fecha) {
+    public Tour(String nombrePaquete, ItinerarioArreglo itinerarios, float precioTour, int horas, String codTour) {
         this.nombrePaquete = nombrePaquete;
         this.itinerarios = itinerarios;
         this.precioTour = precioTour;
         this.horas = horas;
         this.codTour = codTour;
-        this.estado = estado;
-        this.fecha = fecha;
     }
 
     public String getNombrePaquete() {
@@ -40,14 +31,6 @@ public class Tour {
 
     public void setNombrePaquete(String nombrePaquete) {
         this.nombrePaquete = nombrePaquete;
-    }
-
-    public ItinerarioArreglo getItinerarios() {
-        return itinerarios;
-    }
-
-    public void setItinerarios(ItinerarioArreglo itinerarios) {
-        this.itinerarios = itinerarios;
     }
 
     public float getPrecioTour() {
@@ -82,12 +65,12 @@ public class Tour {
         this.estado = estado;
     }
 
-    public Date getFecha() {
-        return fecha;
+    public ItinerarioArreglo getItinerarios() {
+        return itinerarios;
     }
 
-    public void setFecha(Date fecha) {
-        this.fecha = fecha;
+    public void setItinerarios(ItinerarioArreglo itinerarios) {
+        this.itinerarios = itinerarios;
     }
 
     @Override

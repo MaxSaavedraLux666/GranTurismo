@@ -36,32 +36,19 @@ public class Viaje {
 
     public boolean venderTour(String codigo) {
         boolean result = false;
-        Tour verificar = new Tour();
-        if (verificar.getCodTour() == codigo) {
-            verificar.setEstado("OCUPADO");
-            result = true;
-        }
+        
         return result;
     }
 
     public boolean eliminarTour(String codigo) {
         boolean result = false;
-        Tour verificar = new Tour();
-        if (verificar.getCodTour() == codigo) {
-            
-            result = true;
-        }
+       
         return result;
     }
 
     public boolean cancelarTour(String codigo) {
         boolean result = false;
 
-        Tour verificar = new Tour();
-        if (verificar.getCodTour() == codigo) {
-            verificar.setEstado("LIBRE");
-            result = true;
-        }
         return result;
     }
 

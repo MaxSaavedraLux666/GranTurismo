@@ -54,16 +54,15 @@ public class ControladorBusqueda {
 
     private void detalleTour() {
         this.vistaBusqueda.labelNombreDestino.setText(tourElegido.getNombrePaquete());
-        this.vistaBusqueda.labelPrecio.setText(String.valueOf(tourElegido.getPrecioTour()));
+        this.vistaBusqueda.labelPrecio.setText(String.valueOf(tourElegido.getPrecioTour()) + " $");
         this.vistaBusqueda.labelEstado.setText(tourElegido.getEstado());
-        this.vistaBusqueda.labelHora.setText(String.valueOf(tourElegido.getHoras()));
+        this.vistaBusqueda.labelHora.setText(String.valueOf(tourElegido.getHoras()) + " horas");
         this.vistaBusqueda.labelCodigo.setText(tourElegido.getCodTour());
     }
 
     private void llenarListaItinerario() {
         DefaultListModel modelo = new DefaultListModel();
         modelo.removeAllElements();
-
         vistaBusqueda.listItinerario.setModel(modelo);
     }
 

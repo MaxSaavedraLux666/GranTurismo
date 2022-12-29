@@ -46,6 +46,6 @@ public class Itinerario {
 
     @Override
     public String toString() {
-        return "Itinerario{" + "codigoItinerario=" + codigoItinerario + ", hora=" + hora + ", descripcion=" + descripcion + '}';
+        return " hora " + hora + " descripcion  " + descripcion;
     }
 }

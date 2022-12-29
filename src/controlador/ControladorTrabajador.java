@@ -6,12 +6,10 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.Action;
-import modelo.ItinerarioArreglo;
+import modelo.GuiaArreglo;
 import modelo.PersonaArreglo;
 import modelo.TourArreglo;
 import modelo.VehiculoArreglo;
-import vista.fmrCliente;
 import vista.fmrMantenimientoCliente;
 import vista.fmrRegistrarTour;
 import vista.fmrRegistroTransporte;
@@ -24,24 +22,23 @@ import vista.fmrTrabajador;
 public class ControladorTrabajador {
 
     fmrTrabajador vistaTrabajador;
-    ItinerarioArreglo modeloItinerario;
     TourArreglo modeloTour;
     PersonaArreglo modeloPersona;
     VehiculoArreglo modeloVehiculo;
+    GuiaArreglo modeloGuia;
 
     public ControladorTrabajador(fmrTrabajador vistaTrabajador, TourArreglo modeloTour,
-            ItinerarioArreglo modeloItinerario,
-            PersonaArreglo modeloPersona, VehiculoArreglo modeloVehiculo) {
+            PersonaArreglo modeloPersona, VehiculoArreglo modeloVehiculo, GuiaArreglo modeloGuia) {
         this.vistaTrabajador = vistaTrabajador;
         this.modeloTour = modeloTour;
-        this.modeloItinerario = modeloItinerario;
         this.modeloPersona = modeloPersona;
+        this.modeloGuia = modeloGuia;
 
         this.vistaTrabajador.btnRegistrarTour.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 fmrRegistrarTour vistaRegistro = new fmrRegistrarTour();
-                ControladorFormularioTour controlador = new ControladorFormularioTour(vistaRegistro, modeloTour, modeloItinerario);
+                ControladorFormularioTour controlador = new ControladorFormularioTour(vistaRegistro, modeloTour);
                 controlador.iniciarRegistroTour();
             }
         });
@@ -60,10 +57,7 @@ public class ControladorTrabajador {
                 ControladorMC controladorMC= new ControladorMC(vistaMC, modeloPersona);
                 controladorMC.iniciarControladorMC();
                 
-            }
-           
-            
-            
+            }     
             
         });
 

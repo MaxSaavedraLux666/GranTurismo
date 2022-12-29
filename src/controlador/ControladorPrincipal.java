@@ -27,18 +27,16 @@ public class ControladorPrincipal {
 
     fmrPrincipal vista;
     TourArreglo modeloTour;
-    ItinerarioArreglo modeloItinerario;
     PersonaArreglo modeloPersona;
     GuiaArreglo modeloGuia;
     VehiculoArreglo modeloVehiculo;
 
     private boolean estado = true;
 
-    public ControladorPrincipal(fmrPrincipal vista, TourArreglo modeloTour, ItinerarioArreglo modeloItinerario,
+    public ControladorPrincipal(fmrPrincipal vista, TourArreglo modeloTour,
             PersonaArreglo modeloPersona, GuiaArreglo modeloGuia, VehiculoArreglo modeloVehiculo) {
         this.vista = vista;
         this.modeloTour = modeloTour;
-        this.modeloItinerario = modeloItinerario;
         this.modeloPersona = modeloPersona;
         this.modeloGuia = modeloGuia;
         this.modeloVehiculo = modeloVehiculo;
@@ -73,7 +71,7 @@ public class ControladorPrincipal {
             }
         });
 
-        this.vista.btnTour.addActionListener(new ActionListener() {
+        this.vista.btnTour.addActionListener(new ActionListener() { //correcto
             @Override
             public void actionPerformed(ActionEvent e) {
                 //Tour
@@ -83,13 +81,13 @@ public class ControladorPrincipal {
             }
         });
 
-        this.vista.btnTrabajador.addActionListener(new ActionListener() {
+        this.vista.btnTrabajador.addActionListener(new ActionListener() { //correcto
             @Override
             public void actionPerformed(ActionEvent e) {
                 //Trabajador
                 fmrTrabajador vistTrabajador = new fmrTrabajador();
                 ControladorTrabajador controlador = new ControladorTrabajador(vistTrabajador,
-                        modeloTour, modeloItinerario, modeloPersona, modeloVehiculo);
+                        modeloTour, modeloPersona, modeloVehiculo, modeloGuia);
                 controlador.iniciarTrabajador();
             }
         });

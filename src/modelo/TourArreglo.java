@@ -63,9 +63,9 @@ public class TourArreglo {
 
     public Tour buscarTour(String codTour) {
         Tour result = null;
-        for (Tour objTour : this.tours) {
-            if (codTour.equals(objTour.getCodTour())) {
-                result = objTour;
+        for (int i = 0; i < tours.length; i++) {
+            if (tours[i].getCodTour().equals(codTour)) {
+                result = tours[i];
                 break;
             }
         }
@@ -73,9 +73,7 @@ public class TourArreglo {
     }
 
     public boolean modificarTour(String codTour, Tour tour) {
-
         boolean result = false;
-
         for (Tour objTour : tours) {
             if (codTour.equals(objTour.getCodTour())) {
                 objTour = tour;
