@@ -72,6 +72,9 @@ public class App {
 
         Cliente cliente3 = new Cliente("789", "Joseph Meza", "joseph.meza@unmsm.edu.pe", "998157090", "76543210", 23);
         personas.agregar(cliente3);
+        
+        Cliente cliente4 = new Cliente("234", "Landeo Chipi", "Landeochipi@unmsm.edu.pe", "998212090", "76543230", 24);
+        personas.agregar(cliente4);
 
         //Salidas
         mensaje.mostrarTours(tours);
