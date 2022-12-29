@@ -6,7 +6,9 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.DefaultComboBoxModel;
 import modelo.PersonaArreglo;
+import modelo.Tour;
 import modelo.TourArreglo;
 import modelo.VehiculoArreglo;
 import vista.fmrCliente;
@@ -31,14 +33,7 @@ public class ControladorReserva {
         this.modeloVehiculo = modeloVehiculo;
         this.modeloPersona = modeloPersona;
         
-        this.vistaReserva.btnVerTransporte.addActionListener(new ActionListener(){
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                fmrTransporte vistaTransporte = new fmrTransporte();
-                ControladorTransporte controlador = new ControladorTransporte(vistaTransporte);
-                controlador.iniciarTransporte();
-            }
-        });
+        
         
         this.vistaReserva.btnAceptar.addActionListener(new ActionListener(){
             @Override
@@ -64,8 +59,19 @@ public class ControladorReserva {
                 vistaReserva.dispose();
             }
         });
-    }
+    } 
     
+    public void rellenarCbDestino(){ 
+        String lugares[]=new String[3];
+        lugares[0]="Machu Picchu";
+        lugares[1]="Ciudadela";
+        lugares[2]="Inti Raymi";
+        DefaultComboBoxModel model = new DefaultComboBoxModel();
+        for(String obj: lugares){
+            model.addElement(obj);
+        }
+        this.vistaReserva.cbDestino.setModel(model);
+    }
     public void iniciarReserva(){
         this.vistaReserva.setVisible(true);
         this.vistaReserva.setLocationRelativeTo(null);

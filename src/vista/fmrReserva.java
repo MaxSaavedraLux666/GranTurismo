@@ -27,7 +27,6 @@ public class fmrReserva extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        btnVerTransporte = new javax.swing.JButton();
         btnRegistroCliente = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         btnRegresar = new javax.swing.JButton();
@@ -36,7 +35,7 @@ public class fmrReserva extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        cbDestino = new javax.swing.JComboBox<>();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -44,14 +43,12 @@ public class fmrReserva extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jComboBox2 = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(0, 204, 102));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        btnVerTransporte.setText("Ver Transporte");
-        jPanel1.add(btnVerTransporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 210, -1, -1));
 
         btnRegistroCliente.setText("Agregar Cliente");
         btnRegistroCliente.addActionListener(new java.awt.event.ActionListener() {
@@ -93,13 +90,13 @@ public class fmrReserva extends javax.swing.JFrame {
         jLabel9.setText("REGISTRAR RESERVA");
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 30, -1, -1));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        cbDestino.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbDestino.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                cbDestinoActionPerformed(evt);
             }
         });
-        jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 90, -1, -1));
+        jPanel1.add(cbDestino, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 90, -1, -1));
 
         jLabel11.setFont(new java.awt.Font("Engravers MT", 1, 12)); // NOI18N
         jLabel11.setText("PRECIO:");
@@ -124,6 +121,9 @@ public class fmrReserva extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/calendario_1.png"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 60, 70));
 
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel1.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 220, -1, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -138,9 +138,9 @@ public class fmrReserva extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    private void cbDestinoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbDestinoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    }//GEN-LAST:event_cbDestinoActionPerformed
 
     private void btnRegistroClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistroClienteActionPerformed
         // TODO add your handling code here:
@@ -189,8 +189,8 @@ public class fmrReserva extends javax.swing.JFrame {
     public javax.swing.JButton btnAceptar;
     public javax.swing.JButton btnRegistroCliente;
     public javax.swing.JButton btnRegresar;
-    public javax.swing.JButton btnVerTransporte;
-    private javax.swing.JComboBox<String> jComboBox1;
+    public javax.swing.JComboBox<String> cbDestino;
+    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
