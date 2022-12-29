@@ -38,12 +38,12 @@ public class fmrCliente extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         btnAgregar = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
-        jLabel6 = new javax.swing.JLabel();
-        txtFieldCodigoReservaTitular = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         txtFieldDNItitular = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         txtFieldEdadTitular = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        labelCodReserva = new javax.swing.JLabel();
 
         jLabel8.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
         jLabel8.setText("Nombre del titular");
@@ -62,24 +62,24 @@ public class fmrCliente extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
         jLabel1.setText("Nombre del titular");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 150, -1, -1));
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 130, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
         jLabel2.setText("Correo del titular");
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 190, -1, -1));
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 170, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
         jLabel3.setText("Teléfono del titular");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 230, -1, -1));
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 210, -1, -1));
 
         txtFieldNombreTitular.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtFieldNombreTitularActionPerformed(evt);
             }
         });
-        jPanel2.add(txtFieldNombreTitular, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 150, 240, 20));
-        jPanel2.add(txtFieldCorreoTitular, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 190, 240, 20));
-        jPanel2.add(txtFieldTelefonoTitular, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 230, 240, 20));
+        jPanel2.add(txtFieldNombreTitular, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 130, 240, 20));
+        jPanel2.add(txtFieldCorreoTitular, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 170, 240, 20));
+        jPanel2.add(txtFieldTelefonoTitular, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 210, 240, 20));
 
         jLabel5.setFont(new java.awt.Font("Verdana", 3, 36)); // NOI18N
         jLabel5.setText("REGISTRO DE CLIENTES");
@@ -101,38 +101,34 @@ public class fmrCliente extends javax.swing.JFrame {
         });
         jPanel2.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 370, -1, -1));
 
-        jLabel6.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-        jLabel6.setText("Codigo de Reserva");
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, -1, -1));
-
-        txtFieldCodigoReservaTitular.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtFieldCodigoReservaTitularActionPerformed(evt);
-            }
-        });
-        jPanel2.add(txtFieldCodigoReservaTitular, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 110, 240, 20));
-
         jLabel7.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
         jLabel7.setText("DNI");
-        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 270, -1, -1));
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 250, -1, -1));
 
         txtFieldDNItitular.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtFieldDNItitularActionPerformed(evt);
             }
         });
-        jPanel2.add(txtFieldDNItitular, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 270, 240, 20));
+        jPanel2.add(txtFieldDNItitular, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 250, 240, 20));
 
         jLabel9.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-        jLabel9.setText("Edad");
-        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 310, -1, -1));
+        jLabel9.setText("Codigo de Reserva");
+        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 330, -1, -1));
 
         txtFieldEdadTitular.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtFieldEdadTitularActionPerformed(evt);
             }
         });
-        jPanel2.add(txtFieldEdadTitular, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 310, 240, 20));
+        jPanel2.add(txtFieldEdadTitular, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 290, 240, 20));
+
+        jLabel10.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        jLabel10.setText("Edad");
+        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 290, -1, -1));
+
+        labelCodReserva.setText("codigo");
+        jPanel2.add(labelCodReserva, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 330, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -159,10 +155,6 @@ public class fmrCliente extends javax.swing.JFrame {
     private void txtFieldNombreTitularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFieldNombreTitularActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtFieldNombreTitularActionPerformed
-
-    private void txtFieldCodigoReservaTitularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFieldCodigoReservaTitularActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtFieldCodigoReservaTitularActionPerformed
 
     private void txtFieldDNItitularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFieldDNItitularActionPerformed
         // TODO add your handling code here:
@@ -215,15 +207,15 @@ public class fmrCliente extends javax.swing.JFrame {
     public javax.swing.JButton btnAgregar;
     public javax.swing.JButton btnCancelar;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
-    public javax.swing.JTextField txtFieldCodigoReservaTitular;
+    public javax.swing.JLabel labelCodReserva;
     public javax.swing.JTextField txtFieldCorreoTitular;
     public javax.swing.JTextField txtFieldDNItitular;
     public javax.swing.JTextField txtFieldEdadTitular;

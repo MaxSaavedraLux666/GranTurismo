@@ -12,9 +12,19 @@ public class Reserva {
     public Reserva(Cliente cliente, float precioReserva) {
         this.cliente = cliente;
         this.precioReserva = precioReserva;
-        this.codigoReserva = (int) (Math.random() * (999999 - 100000 + 1) + 100000);
+        this.codigoReserva = codigoReserva;
         this.fechaReserva = new Date();
     }
+
+    public int getCodigoReserva() {
+        return codigoReserva;
+    }
+
+    public void setCodigoReserva(int codigoReserva) {
+        this.codigoReserva = codigoReserva;
+    }
+    
+    
 
     public boolean reservar() {
         boolean flag = false;

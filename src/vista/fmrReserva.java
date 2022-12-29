@@ -33,17 +33,16 @@ public class fmrReserva extends javax.swing.JFrame {
         btnAceptar = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        cbDestino = new javax.swing.JComboBox<>();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
+        labelPrecio = new javax.swing.JLabel();
+        labelDestino = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        cbFecha = new javax.swing.JComboBox<>();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -56,7 +55,7 @@ public class fmrReserva extends javax.swing.JFrame {
                 btnRegistroClienteActionPerformed(evt);
             }
         });
-        jPanel1.add(btnRegistroCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 150, -1, -1));
+        jPanel1.add(btnRegistroCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 180, -1, -1));
 
         jPanel2.setBackground(new java.awt.Color(0, 153, 102));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -76,53 +75,46 @@ public class fmrReserva extends javax.swing.JFrame {
 
         jLabel6.setFont(new java.awt.Font("Engravers MT", 1, 12)); // NOI18N
         jLabel6.setText("fecha:");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 220, -1, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 240, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Engravers MT", 1, 12)); // NOI18N
         jLabel7.setText("CLIENTE:");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, -1, -1));
-
-        jLabel8.setFont(new java.awt.Font("Engravers MT", 1, 12)); // NOI18N
-        jLabel8.setText("CÓDIGO DE RESERVA:");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 340, -1, -1));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 180, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Engravers MT", 2, 24)); // NOI18N
         jLabel9.setText("REGISTRAR RESERVA");
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 30, -1, -1));
 
-        cbDestino.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        cbDestino.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbDestinoActionPerformed(evt);
-            }
-        });
-        jPanel1.add(cbDestino, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 90, -1, -1));
+        labelPrecio.setFont(new java.awt.Font("Engravers MT", 1, 12)); // NOI18N
+        labelPrecio.setText("labelprecio");
+        jPanel1.add(labelPrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 300, -1, -1));
 
-        jLabel11.setFont(new java.awt.Font("Engravers MT", 1, 12)); // NOI18N
-        jLabel11.setText("PRECIO:");
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 280, -1, -1));
-
-        jLabel12.setFont(new java.awt.Font("Engravers MT", 1, 12)); // NOI18N
-        jLabel12.setText("DEStino:");
-        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 100, -1, -1));
+        labelDestino.setFont(new java.awt.Font("Engravers MT", 1, 12)); // NOI18N
+        labelDestino.setText("labelDestino");
+        jPanel1.add(labelDestino, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 120, -1, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/CLIENTE_1.png"))); // NOI18N
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 50, 50));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 50, 50));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/dolar.png"))); // NOI18N
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 50, 50));
-
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/codigo de barras.png"))); // NOI18N
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 50, 40));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 50, 50));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/destino_1.png"))); // NOI18N
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 80, 70));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 80, 70));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/calendario_1.png"))); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 60, 70));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, 60, 70));
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel1.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 220, -1, -1));
+        cbFecha.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel1.add(cbFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 240, -1, -1));
+
+        jLabel13.setFont(new java.awt.Font("Engravers MT", 1, 12)); // NOI18N
+        jLabel13.setText("DEStino:");
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 120, -1, -1));
+
+        jLabel12.setFont(new java.awt.Font("Engravers MT", 1, 12)); // NOI18N
+        jLabel12.setText("PRECIO:");
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 300, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -137,10 +129,6 @@ public class fmrReserva extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void cbDestinoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbDestinoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cbDestinoActionPerformed
 
     private void btnRegistroClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistroClienteActionPerformed
         // TODO add your handling code here:
@@ -189,20 +177,19 @@ public class fmrReserva extends javax.swing.JFrame {
     public javax.swing.JButton btnAceptar;
     public javax.swing.JButton btnRegistroCliente;
     public javax.swing.JButton btnRegresar;
-    public javax.swing.JComboBox<String> cbDestino;
-    private javax.swing.JComboBox<String> jComboBox2;
+    public javax.swing.JComboBox<String> cbFecha;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    public javax.swing.JLabel labelDestino;
+    public javax.swing.JLabel labelPrecio;
     // End of variables declaration//GEN-END:variables
 }

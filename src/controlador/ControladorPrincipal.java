@@ -62,16 +62,7 @@ public class ControladorPrincipal {
             }
         });
 
-        this.vista.btnReserva.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                fmrReserva vistaReserva = new fmrReserva();
-                ControladorReserva controladorReserva = new ControladorReserva(vistaReserva, modeloTour, modeloVehiculo, modeloPersona);
-                controladorReserva.iniciarReserva();
-            }
-        });
-
-        this.vista.btnTour.addActionListener(new ActionListener() { //correcto
+        this.vista.btnTour.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 //Tour

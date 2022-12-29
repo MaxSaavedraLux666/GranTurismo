@@ -22,6 +22,8 @@ public class Cliente extends Persona{
         this.correo = correo;
         this.telefono = telefono;
     }
+
+ 
    
 
     public String getCodReserva() {
