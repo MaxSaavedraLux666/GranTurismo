@@ -23,7 +23,7 @@ public class Tour {
     public Tour() {
     }
 
-    public Tour(String nombrePaquete, ItinerarioArreglo itinerarios, float precioTour, 
+    public Tour(String nombrePaquete, ItinerarioArreglo itinerarios, float precioTour,
             int horas, String codTour, String estado, Date fecha) {
         this.nombrePaquete = nombrePaquete;
         this.itinerarios = itinerarios;
@@ -93,7 +93,7 @@ public class Tour {
     @Override
     public String toString() {
         return nombrePaquete
-            + "       Desde : " + precioTour + " $"
-            + "         Código : " + codTour;
+                + "       Desde : " + precioTour + " $"
+                + "         Código : " + codTour;
     }
 }

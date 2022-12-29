@@ -67,8 +67,8 @@ public class ControladorPrincipal {
         this.vista.btnReserva.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                fmrReserva vistaReserva= new fmrReserva();
-                ControladorReserva controladorReserva= new ControladorReserva(vistaReserva, modeloTour,  modeloVehiculo, modeloPersona);
+                fmrReserva vistaReserva = new fmrReserva();
+                ControladorReserva controladorReserva = new ControladorReserva(vistaReserva, modeloTour, modeloVehiculo, modeloPersona);
                 controladorReserva.iniciarReserva();
             }
         });
@@ -97,10 +97,15 @@ public class ControladorPrincipal {
         this.vista.btnBusqueda.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
-                fmrBusqueda vistaBusqueda = new fmrBusqueda();
-                ControladorBusqueda controlador = new ControladorBusqueda(vistaBusqueda, modeloTour, modeloVehiculo, modeloPersona);
-                controlador.iniciarBusqueda();
+                if (modeloTour.buscarTour(vista.txtFieldBusqueda.getText()) != null) {
+                    fmrBusqueda vistaBusqueda = new fmrBusqueda();
+                    ControladorBusqueda controlador = new ControladorBusqueda(vistaBusqueda, modeloTour, modeloVehiculo, 
+                            modeloPersona, modeloTour.buscarTour(vista.txtFieldBusqueda.getText()));
+                    controlador.iniciarBusqueda();
+                } else {
+                    JOptionPane.showMessageDialog(null, "El tour no se encuentar"
+                            + "\nIngrese correctamente el código");
+                }
             }
         });
 

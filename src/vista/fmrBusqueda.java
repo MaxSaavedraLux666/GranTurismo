@@ -67,11 +67,6 @@ public class fmrBusqueda extends javax.swing.JFrame {
 
         listItinerario.setBackground(new java.awt.Color(0, 102, 102));
         listItinerario.setFont(new java.awt.Font("DialogInput", 0, 12)); // NOI18N
-        listItinerario.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
         jScrollPane1.setViewportView(listItinerario);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, 430, -1));

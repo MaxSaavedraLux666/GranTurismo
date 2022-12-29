@@ -6,11 +6,12 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.DefaultListModel;
 import modelo.PersonaArreglo;
+import modelo.Tour;
 import modelo.TourArreglo;
 import modelo.VehiculoArreglo;
 import vista.fmrBusqueda;
-import vista.fmrRegistrarTour;
 import vista.fmrReserva;
 
 /**
@@ -23,12 +24,16 @@ public class ControladorBusqueda {
     TourArreglo modeloTour;
     VehiculoArreglo modeloVehiculo;
     PersonaArreglo modeloPersona;
+    Tour tourElegido;
 
-    public ControladorBusqueda(fmrBusqueda vistaBusqueda, TourArreglo modeloTour, VehiculoArreglo modeloVehiculo, PersonaArreglo modeloPersona) {
+    public ControladorBusqueda(fmrBusqueda vistaBusqueda, TourArreglo modeloTour,
+            VehiculoArreglo modeloVehiculo, PersonaArreglo modeloPersona,
+            Tour tourElegido) {
         this.vistaBusqueda = vistaBusqueda;
         this.modeloTour = modeloTour;
         this.modeloVehiculo = modeloVehiculo;
         this.modeloPersona = modeloPersona;
+        this.tourElegido = tourElegido;
 
         this.vistaBusqueda.btnReservar.addActionListener(new ActionListener() {
             @Override
@@ -47,8 +52,25 @@ public class ControladorBusqueda {
         });
     }
 
+    private void detalleTour() {
+        this.vistaBusqueda.labelNombreDestino.setText(tourElegido.getNombrePaquete());
+        this.vistaBusqueda.labelPrecio.setText(String.valueOf(tourElegido.getPrecioTour()));
+        this.vistaBusqueda.labelEstado.setText(tourElegido.getEstado());
+        this.vistaBusqueda.labelHora.setText(String.valueOf(tourElegido.getHoras()));
+        this.vistaBusqueda.labelCodigo.setText(tourElegido.getCodTour());
+    }
+
+    private void llenarListaItinerario() {
+        DefaultListModel modelo = new DefaultListModel();
+        modelo.removeAllElements();
+
+        vistaBusqueda.listItinerario.setModel(modelo);
+    }
+
     public void iniciarBusqueda() {
         this.vistaBusqueda.setVisible(true);
         this.vistaBusqueda.setLocationRelativeTo(null);
+        detalleTour();
+        llenarListaItinerario();
     }
 }
