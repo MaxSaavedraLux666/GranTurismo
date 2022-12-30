@@ -31,27 +31,75 @@ public class PersonaArreglo {
 
         return result;
     }
-
-    public boolean eliminarCliente(String codPersona) {
+    
+    /*public boolean eliminarCliente(String codigo, Cliente clientes[]) {
         boolean result = false;
-        for (int i = 0; i < this.personas.length; i++) {
-            if (personas[i] != buscarPersona(codPersona)) {
-                for (int k = i; k < personas.length; k++) {
-                    this.personas[k] = personas[k + 1];
-                }
-                this.indice--;
+        int tamanio=contarClientes();
+        Cliente[] nuevo = new Cliente[tamanio - 1];
+        int pos = 0;
+        for (int i = 0; i < tamanio; i++) {
+            if (clientes[i].getCodReserva().equals(codigo)) {
+                pos = i;
                 result = true;
+                break;
+            }
+        }
+        if (result) {
+            for (int i = 0; i < pos; i++) {
+                nuevo[i] = clientes[i];
+            }
+            for (int i = pos + 1; i < tamanio; i++) {
+                nuevo[i - 1] = clientes[i];
+            }
+            clientes = nuevo;
+            this.indice--;
+        }
+
+        return result;
+    }*/
+    
+    public boolean eliminarPersona(String dniPersona) {
+        boolean result = false;
+        Persona[] nuevo = new Persona[personas.length - 1];
+        int pos = 0;
+        for (int i = 0; i < personas.length; i++) {
+            if (personas[i].getDni().equals(dniPersona)) {
+                pos = i;
+                result = true;
+                break;
+            }
+        }
+        if (result) {
+            for (int i = 0; i < pos; i++) {
+                nuevo[i] = personas[i];
+            }
+            for (int i = pos + 1; i < personas.length; i++) {
+                nuevo[i - 1] = personas[i];
+            }
+            this.personas = nuevo;
+            this.indice--;
+        }
+
+        return result;
+    }
+
+    public Persona buscarPersona(String dniPersona) {
+        Persona result = null;
+        for (int i = 0; i < personas.length; i++) {
+            if (personas[i].getDni().equals(dniPersona)) {
+                result = personas[i];
+                break;
             }
         }
         return result;
     }
-
-    public Persona buscarPersona(String codPersona) {
-        Persona result = null;
-        for (int i = 0; i < personas.length; i++) {
-            if (((Cliente) personas[i]).getCodReserva().equals(codPersona)) {
-                result = personas[i];
-                break;
+    
+    public boolean modificarPersona(String dniPersona, Persona persona) {
+        boolean result = false;
+        for (Persona objPersona : personas) {
+            if (dniPersona.equals(objPersona.getDni())) {
+                objPersona = persona;
+                result = true;
             }
         }
         return result;
@@ -80,8 +128,18 @@ public class PersonaArreglo {
         }
         return result;
     }
-
-    public String[] getCabecera() {
+    private int contarClientes(){
+        int i=0;
+        for(Persona obj: this.personas ){
+            if( obj != null ) {
+                if(obj instanceof Cliente) {
+                    i++;              
+                }
+            } 
+        }
+        return i;
+    }
+    public String[] getCabecera(){
         return this.cabeceraCliente;
     }
 
