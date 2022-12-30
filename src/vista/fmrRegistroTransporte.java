@@ -28,14 +28,13 @@ public class fmrRegistroTransporte extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         btnAceptar = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        btnEliminar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
+        tablaTransporte = new javax.swing.JTable();
+        txtCostoP = new javax.swing.JTextField();
+        txtCodAuto = new javax.swing.JTextField();
+        txtCapacidad = new javax.swing.JTextField();
+        txtNombreDuenio = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         btnRegresar = new javax.swing.JButton();
         jLabel16 = new javax.swing.JLabel();
@@ -43,7 +42,6 @@ public class fmrRegistroTransporte extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -53,13 +51,13 @@ public class fmrRegistroTransporte extends javax.swing.JFrame {
         btnAceptar.setText("Agregar");
         jPanel1.add(btnAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 350, -1, -1));
 
-        jButton1.setText("Eliminar");
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 350, -1, -1));
+        btnEliminar.setText("Eliminar");
+        jPanel1.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 350, -1, -1));
 
-        jTable1.setBackground(new java.awt.Color(102, 255, 204));
-        jTable1.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jTable1.setForeground(new java.awt.Color(0, 0, 0));
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tablaTransporte.setBackground(new java.awt.Color(102, 255, 204));
+        tablaTransporte.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        tablaTransporte.setForeground(new java.awt.Color(0, 0, 0));
+        tablaTransporte.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
                 {null, null, null, null, null},
@@ -70,20 +68,19 @@ public class fmrRegistroTransporte extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4", "Title 5"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tablaTransporte);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 390, 560, 330));
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 170, 190, -1));
-        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 220, 190, -1));
+        jPanel1.add(txtCostoP, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 170, 190, -1));
+        jPanel1.add(txtCodAuto, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 220, 190, -1));
 
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        txtCapacidad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                txtCapacidadActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 130, 190, -1));
-        jPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 90, 190, -1));
-        jPanel1.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 270, 190, -1));
+        jPanel1.add(txtCapacidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 130, 190, -1));
+        jPanel1.add(txtNombreDuenio, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 90, 190, -1));
 
         jLabel10.setFont(new java.awt.Font("Yu Gothic Medium", 1, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(204, 204, 0));
@@ -91,7 +88,7 @@ public class fmrRegistroTransporte extends javax.swing.JFrame {
         jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, -1, -1));
 
         btnRegresar.setText("Regresar");
-        jPanel1.add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 10, -1, -1));
+        jPanel1.add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 10, -1, -1));
 
         jLabel16.setBackground(new java.awt.Color(255, 255, 0));
         jLabel16.setFont(new java.awt.Font("Yu Gothic UI", 0, 18)); // NOI18N
@@ -109,18 +106,13 @@ public class fmrRegistroTransporte extends javax.swing.JFrame {
 
         jLabel12.setFont(new java.awt.Font("Yu Gothic Medium", 1, 14)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(204, 204, 0));
-        jLabel12.setText("Descripción");
-        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, -1, -1));
+        jLabel12.setText("Costo por pasajero");
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, -1, -1));
 
         jLabel13.setFont(new java.awt.Font("Yu Gothic Medium", 1, 14)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(204, 204, 0));
         jLabel13.setText("Capacidad");
-        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, -1, -1));
-
-        jLabel14.setFont(new java.awt.Font("Yu Gothic Medium", 1, 14)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(204, 204, 0));
-        jLabel14.setText("Descripción");
-        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 270, -1, -1));
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -136,9 +128,9 @@ public class fmrRegistroTransporte extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void txtCapacidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCapacidadActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_txtCapacidadActionPerformed
 
     /**
      * @param args the command line arguments
@@ -177,22 +169,20 @@ public class fmrRegistroTransporte extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnAceptar;
+    public javax.swing.JButton btnEliminar;
     public javax.swing.JButton btnRegresar;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
+    public javax.swing.JTable tablaTransporte;
+    public javax.swing.JTextField txtCapacidad;
+    public javax.swing.JTextField txtCodAuto;
+    public javax.swing.JTextField txtCostoP;
+    public javax.swing.JTextField txtNombreDuenio;
     // End of variables declaration//GEN-END:variables
 }

@@ -33,6 +33,12 @@ public class ControladorPrincipal {
 
     private boolean estado = true;
 
+    public ControladorPrincipal(fmrPrincipal vista,TourArreglo modeloTour) {
+        this.modeloTour = modeloTour;
+        this.vista = vista;
+        llenarLista();
+    }
+
     public ControladorPrincipal(fmrPrincipal vista, TourArreglo modeloTour,
             PersonaArreglo modeloPersona, GuiaArreglo modeloGuia, VehiculoArreglo modeloVehiculo) {
         this.vista = vista;
@@ -196,7 +202,6 @@ public class ControladorPrincipal {
         //
     }
     //
-
     public void llenarLista() {
         DefaultListModel modelo = new DefaultListModel();
         modelo.removeAllElements();

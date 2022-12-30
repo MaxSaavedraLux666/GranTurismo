@@ -8,10 +8,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.DefaultComboBoxModel;
 import modelo.Cliente;
+import modelo.Guia;
 import modelo.PersonaArreglo;
 import modelo.Tour;
 import modelo.TourArreglo;
+import modelo.Vehiculo;
 import modelo.VehiculoArreglo;
+import modelo.Viaje;
 import vista.fmrCliente;
 import vista.fmrReserva;
 import vista.fmrVenta;
@@ -27,6 +30,9 @@ public class ControladorReserva {
     VehiculoArreglo modeloVehiculo;
     PersonaArreglo modeloPersona;
     Tour tourElegido;
+    Vehiculo vehiculoElegido;
+    Guia guiaElegido;
+    Viaje viaje;
 
     public ControladorReserva(fmrReserva vistaReserva, TourArreglo modeloTour, VehiculoArreglo modeloVehiculo, PersonaArreglo modeloPersona, Tour tourElegido) {
         this.vistaReserva = vistaReserva;
@@ -41,6 +47,7 @@ public class ControladorReserva {
             @Override
             public void actionPerformed(ActionEvent e) {
                 fmrVenta vistaVenta = new fmrVenta();
+                viaje = new Viaje(tourElegido, vehiculoElegido, guiaElegido);
                 ControladorVenta controlador = new ControladorVenta(vistaVenta);
                 controlador.iniciarVenta();
             }

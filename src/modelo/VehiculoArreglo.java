@@ -12,8 +12,8 @@ public class VehiculoArreglo {
 
     private Vehiculo[] vehiculos;
     private int indice;
-    private final String[] cabeceraTours = {"NOMBRE", "DNI", "SALARIO/H",
-        "IDIOMA"};
+    private final String[] cabeceraTours = {"CÓDIGO", "CHOFER", "CAPACIDAD",
+        "COSTO"};
 
     public VehiculoArreglo(int tamaño) {
         this.vehiculos = new Vehiculo[tamaño];
@@ -52,15 +52,26 @@ public class VehiculoArreglo {
 
     public boolean eliminarVehiculo(String codigo) {
         boolean result = false;
-        for (int i = 0; i < this.vehiculos.length; i++) {
-            if (vehiculos[i] != buscarVehiculo(codigo)) {
-                for (int k = i; k < vehiculos.length; k++) {
-                    this.vehiculos[k] = vehiculos[k + 1];
-                }
-                this.indice--;
+        Vehiculo[] nuevo = new Vehiculo[vehiculos.length - 1];
+        int pos = 0;
+        for (int i = 0; i < vehiculos.length; i++) {
+            if (vehiculos[i].getCodigoVehiculo().equals(codigo)) {
+                pos = i;
                 result = true;
+                break;
             }
         }
+        if (result) {
+            for (int i = 0; i < pos; i++) {
+                nuevo[i] = vehiculos[i];
+            }
+            for (int i = pos + 1; i < vehiculos.length; i++) {
+                nuevo[i - 1] = vehiculos[i];
+            }
+            this.vehiculos = nuevo;
+            this.indice--;
+        }
+
         return result;
     }
 

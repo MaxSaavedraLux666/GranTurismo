@@ -17,7 +17,6 @@ public class App {
 
         Tour tour1;
         Itinerario itinerario;
-        Viaje mensaje = new Viaje();
         Cliente cliente;
 
         //Tours
@@ -75,20 +74,20 @@ public class App {
 
         cliente = new Cliente("789123", "Joseph Meza", "joseph.meza@unmsm.edu.pe", "998157090", "76543210", 23);
         personas.agregar(cliente);
-
+        
         ////Guias
-        guia = new Guia("Kimnua", "2635", 8.9f, "Francés");
+        guia = new Guia("Kimnua", "2635", 8.9f,"Francés");
         guias.agregarGuia(guia);
         ////
         ///Vehiculos
         vehiculo = new Vehiculo("QQ23", 8, 5.5f, "Landeo");
         vehiculos.agregar(vehiculo);
         ////
+        
 
         //Salidas
-        mensaje.mostrarTours(tours);
         fmrPrincipal vista = new fmrPrincipal();
-        ControladorPrincipal controlador = new ControladorPrincipal(vista, tours,
+        ControladorPrincipal controlador = new ControladorPrincipal(vista, tours, 
                 personas, guias, vehiculos);
         controlador.iniciar();
     }

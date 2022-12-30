@@ -12,6 +12,8 @@ import modelo.Tour;
 import modelo.TourArreglo;
 import vista.fmrItinerario;
 import vista.fmrRegistrarTour;
+import controlador.*;
+import vista.fmrPrincipal;
 
 /**
  *
@@ -39,9 +41,11 @@ public class ControladorFormularioTour {
                     JOptionPane.showMessageDialog(null, "Los datos han sido agregados exitosamente");
                     vistaRegistrarTour.txtFieldBuscarCod.setText("");
                     vistaRegistrarTour.txtField_Codigo.setText("");
-                    vistaRegistrarTour.txtField_Codigo1.setText("");
                     vistaRegistrarTour.txtField_Lugar.setText("");
                     vistaRegistrarTour.txtField_Precio.setText("");
+                    fmrPrincipal vista = new fmrPrincipal();
+                    ControladorPrincipal control = new ControladorPrincipal(vista, modeloTour);
+                    control.llenarLista();
                 } else {
                     JOptionPane.showMessageDialog(null, """
                                                         Error
@@ -80,10 +84,9 @@ public class ControladorFormularioTour {
                         vistaRegistrarTour.txtField_Codigo.getText());
 
                 if (modeloTour.modificarTour(vistaRegistrarTour.txtFieldBuscarCod.getText(), tourNuevo)) {
-                    JOptionPane.showMessageDialog(null, "Los datos han sido modificados exitosamente"); 
+                    JOptionPane.showMessageDialog(null, "Los datos han sido modificados exitosamente");
                     vistaRegistrarTour.txtFieldBuscarCod.setText("");
                     vistaRegistrarTour.txtField_Codigo.setText("");
-                    vistaRegistrarTour.txtField_Codigo1.setText("");
                     vistaRegistrarTour.txtField_Lugar.setText("");
                     vistaRegistrarTour.txtField_Precio.setText("");
                 } else {
@@ -92,7 +95,7 @@ public class ControladorFormularioTour {
                 }
             }
         });
-        
+
         this.vistaRegistrarTour.btnAgregarItinerario.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -102,8 +105,8 @@ public class ControladorFormularioTour {
                 controlador.iniciarItinerario();
             }
         });
-        
-        this.vistaRegistrarTour.btnSalirTourFmr.addActionListener(new ActionListener(){
+
+        this.vistaRegistrarTour.btnSalirTourFmr.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 vistaRegistrarTour.dispose();

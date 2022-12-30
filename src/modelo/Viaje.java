@@ -10,21 +10,23 @@ package modelo;
  */
 public class Viaje {
 
-    private Tour tours;
-    private Vehiculo vehiculoAsignado;
+    private Tour tourElegido;
+    private Vehiculo vehiculoElegido;
+    private Guia guiaElegido;
     private int horaInicio;
     private int horaFin;
 
-    public Viaje() {
-
+    public Viaje(Tour tourElegido, Vehiculo vehiculoElegido, Guia guiaElegido) {
+        this.tourElegido = tourElegido;
+        this.vehiculoElegido = vehiculoElegido;
+        this.guiaElegido = guiaElegido;
     }
 
-    public boolean programarViaje(Tour tours, Vehiculo vehiculo, Guia guia, String codTour) {
+    public boolean programarViaje(Tour tours, Vehiculo vehiculo, Guia guia) {
         boolean result = false;
-        if (venderTour(codTour)) {
-
+        if (venderTour()) {
+            result = true;
         }
-
         return result;
     }
 
@@ -34,7 +36,7 @@ public class Viaje {
         }
     }
 
-    public boolean venderTour(String codigo) {
+    public boolean venderTour() {
         boolean result = false;
         
         return result;
@@ -52,21 +54,31 @@ public class Viaje {
         return result;
     }
 
-    public Tour getTours() {
-        return tours;
+    public Tour getTourElegido() {
+        return tourElegido;
     }
 
-    public void setTours(Tour tours) {
-        this.tours = tours;
+    public void setTourElegido(Tour tourElegido) {
+        this.tourElegido = tourElegido;
     }
 
-    public Vehiculo getVehiculoAsignado() {
-        return vehiculoAsignado;
+    public Vehiculo getVehiculoElegido() {
+        return vehiculoElegido;
     }
 
-    public void setVehiculoAsignado(Vehiculo vehiculoAsignado) {
-        this.vehiculoAsignado = vehiculoAsignado;
+    public void setVehiculoElegido(Vehiculo vehiculoElegido) {
+        this.vehiculoElegido = vehiculoElegido;
     }
+
+    public Guia getGuiaElegido() {
+        return guiaElegido;
+    }
+
+    public void setGuiaElegido(Guia guiaElegido) {
+        this.guiaElegido = guiaElegido;
+    }
+
+    
 
     public int getHoraInicio() {
         return horaInicio;
@@ -86,7 +98,7 @@ public class Viaje {
 
     @Override
     public String toString() {
-        return "Viaje{" + "tours=" + tours + ", vehiculoAsignado=" + vehiculoAsignado + ", horaInicio=" + horaInicio + ", horaFin=" + horaFin + '}';
-    }
+        return "Viaje{" + "tourElegido=" + tourElegido + ", vehiculoElegido=" + vehiculoElegido + ", guiaElegido=" + guiaElegido + ", horaInicio=" + horaInicio + ", horaFin=" + horaFin + '}';
+    }  
 
 }

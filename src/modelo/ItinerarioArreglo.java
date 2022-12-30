@@ -27,7 +27,6 @@ public class ItinerarioArreglo {
         this.itinerarios[this.indice] = itinerario;
         this.indice++;
         result = true;
-
         return result;
     }
 
@@ -68,6 +67,7 @@ public class ItinerarioArreglo {
                 nuevo[i - 1] = itinerarios[i];
             }
             this.itinerarios = nuevo;
+            this.indice--;
         }
         return result;
     }

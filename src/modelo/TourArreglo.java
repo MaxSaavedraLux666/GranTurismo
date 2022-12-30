@@ -66,6 +66,7 @@ public class TourArreglo {
                 nuevo[i - 1] = tours[i];
             }
             this.tours = nuevo;
+            this.indice--;
         }
 
         return result;

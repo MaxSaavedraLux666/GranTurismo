@@ -45,9 +45,6 @@ public class fmrRegistrarTour extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        txtField_Codigo1 = new javax.swing.JTextField();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
         jPanel5 = new javax.swing.JPanel();
@@ -111,8 +108,8 @@ public class fmrRegistrarTour extends javax.swing.JFrame {
         jLabel5.setText("Código");
         jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(62, 249, -1, -1));
         jPanel3.add(txtField_Lugar, new org.netbeans.lib.awtextra.AbsoluteConstraints(118, 70, 174, -1));
-        jPanel3.add(txtField_Codigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(119, 308, 176, -1));
-        jPanel3.add(txtField_Precio, new org.netbeans.lib.awtextra.AbsoluteConstraints(119, 193, 173, -1));
+        jPanel3.add(txtField_Codigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 250, 176, -1));
+        jPanel3.add(txtField_Precio, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 190, 173, -1));
 
         comboBox_Hora.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jPanel3.add(comboBox_Hora, new org.netbeans.lib.awtextra.AbsoluteConstraints(118, 118, 174, -1));
@@ -128,15 +125,6 @@ public class fmrRegistrarTour extends javax.swing.JFrame {
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cod.png"))); // NOI18N
         jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 249, -1, 27));
-        jPanel3.add(txtField_Codigo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(119, 251, 176, -1));
-
-        jLabel13.setFont(new java.awt.Font("Yu Gothic UI", 0, 14)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(204, 204, 0));
-        jLabel13.setText("Fecha");
-        jPanel3.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(71, 306, -1, -1));
-
-        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/calendario.png"))); // NOI18N
-        jPanel3.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 300, -1, 27));
 
         jLabel15.setBackground(new java.awt.Color(255, 255, 0));
         jLabel15.setFont(new java.awt.Font("Yu Gothic UI", 0, 18)); // NOI18N
@@ -253,8 +241,6 @@ public class fmrRegistrarTour extends javax.swing.JFrame {
     public javax.swing.JComboBox<String> comboBox_Hora;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
@@ -273,7 +259,6 @@ public class fmrRegistrarTour extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator2;
     public javax.swing.JTextField txtFieldBuscarCod;
     public javax.swing.JTextField txtField_Codigo;
-    public javax.swing.JTextField txtField_Codigo1;
     public javax.swing.JTextField txtField_Lugar;
     public javax.swing.JTextField txtField_Precio;
     // End of variables declaration//GEN-END:variables

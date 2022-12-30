@@ -55,8 +55,7 @@ public class ControladorTrabajador {
             public void actionPerformed(ActionEvent e) {
                 fmrMantenimientoCliente vistaMC= new fmrMantenimientoCliente();
                 ControladorMC controladorMC= new ControladorMC(vistaMC, modeloPersona);
-                controladorMC.iniciarControladorMC();
-                
+                controladorMC.iniciarControladorMC();         
             }     
             
         });
@@ -66,10 +65,9 @@ public class ControladorTrabajador {
             public void actionPerformed(ActionEvent e) {
                 fmrRegistroTransporte vistaTransporte = new fmrRegistroTransporte();
                 ControladorFormularioTransporte controlador = new ControladorFormularioTransporte(vistaTransporte, modeloVehiculo);
-                
+                controlador.iniciarRegistroTransporte();
             }
         });
-
     }
 
     public void iniciarTrabajador() {
