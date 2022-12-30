@@ -29,13 +29,12 @@ public class fmrMantenimientoCliente extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         btnSalirMC = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        btnEliminarMC = new javax.swing.JButton();
         btnBuscarMC = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         tblMC = new javax.swing.JTable();
         txtFieldBuscar = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
         jSeparator3 = new javax.swing.JSeparator();
+        btnEliminarMC = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -48,27 +47,18 @@ public class fmrMantenimientoCliente extends javax.swing.JFrame {
                 btnSalirMCActionPerformed(evt);
             }
         });
-        jPanel1.add(btnSalirMC, new org.netbeans.lib.awtextra.AbsoluteConstraints(78, 416, -1, -1));
+        jPanel1.add(btnSalirMC, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 420, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Sitka Small", 3, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(204, 204, 0));
         jLabel1.setText("Mantenimiento de Clientes");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(148, 15, -1, -1));
 
-        btnEliminarMC.setText("Eliminar");
-        btnEliminarMC.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEliminarMCActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnEliminarMC, new org.netbeans.lib.awtextra.AbsoluteConstraints(538, 416, -1, -1));
-
         btnBuscarMC.setText("Buscar");
-        jPanel1.add(btnBuscarMC, new org.netbeans.lib.awtextra.AbsoluteConstraints(395, 416, -1, -1));
+        jPanel1.add(btnBuscarMC, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 420, -1, -1));
 
         tblMC.setBackground(new java.awt.Color(153, 255, 204));
         tblMC.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        tblMC.setForeground(new java.awt.Color(0, 0, 0));
         tblMC.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -83,14 +73,18 @@ public class fmrMantenimientoCliente extends javax.swing.JFrame {
         jScrollPane2.setViewportView(tblMC);
 
         jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 651, 261));
-        jPanel1.add(txtFieldBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(198, 419, 147, -1));
-
-        jLabel2.setForeground(new java.awt.Color(204, 204, 0));
-        jLabel2.setText("Buscar a :");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(198, 389, -1, -1));
+        jPanel1.add(txtFieldBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 420, 147, -1));
 
         jSeparator3.setBackground(new java.awt.Color(255, 255, 0));
         jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 50, 530, 20));
+
+        btnEliminarMC.setText("Eliminar");
+        btnEliminarMC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarMCActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnEliminarMC, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 420, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -154,7 +148,6 @@ public class fmrMantenimientoCliente extends javax.swing.JFrame {
     public javax.swing.JButton btnEliminarMC;
     public javax.swing.JButton btnSalirMC;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator3;

@@ -38,19 +38,21 @@ public class ControladorMC {
                 
             } 
         });
-        this.vistaMC.btnEliminarMC.addActionListener(new ActionListener(){
+        this.vistaMC.btnEliminarMC.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (modelo.eliminarCliente(vistaMC.txtFieldBuscar.getText())) {
+                if (modelo.eliminarPersona(vistaMC.txtFieldBuscar.getText())) {
                     JOptionPane.showMessageDialog(null, "Los datos han sido eliminado exitosamente");
                     vistaMC.txtFieldBuscar.setText("");
                 } else {
                     JOptionPane.showMessageDialog(null, "Error\n"
                             + "Los datos no han sido eliminado exitosamente");
                 }
-             
-            } 
+            }
         });
+
+ 
+
     }
     
     public void limpiarControles() {
