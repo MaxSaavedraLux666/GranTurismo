@@ -34,7 +34,7 @@ public class ControladorTrabajador {
         this.modeloPersona = modeloPersona;
         this.modeloGuia = modeloGuia;
 
-        this.vistaTrabajador.btnRegistrarTour.addActionListener(new ActionListener() {
+        this.vistaTrabajador.btnRegistrarTour.addActionListener(new ActionListener() { //Correcto
             @Override
             public void actionPerformed(ActionEvent e) {
                 fmrRegistrarTour vistaRegistro = new fmrRegistrarTour();
@@ -60,7 +60,6 @@ public class ControladorTrabajador {
             }     
             
         });
-
         
         this.vistaTrabajador.btnTransporte.addActionListener(new ActionListener(){
             @Override

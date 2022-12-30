@@ -7,11 +7,10 @@ package controlador;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
-import modelo.Itinerario;
 import modelo.ItinerarioArreglo;
 import modelo.Tour;
 import modelo.TourArreglo;
+import vista.fmrItinerario;
 import vista.fmrRegistrarTour;
 
 /**
@@ -38,26 +37,16 @@ public class ControladorFormularioTour {
                         vistaRegistrarTour.txtField_Codigo.getText());
                 if (modeloTour.agregarTour(tour)) {
                     JOptionPane.showMessageDialog(null, "Los datos han sido agregados exitosamente");
-                    vistaRegistrarTour.tablaItinerario.removeAll();
                     vistaRegistrarTour.txtFieldBuscarCod.setText("");
-                    vistaRegistrarTour.txtFieldDescripcionItinerario.setText("");
-                    vistaRegistrarTour.txtFieldHoraItinerario.setText("");
                     vistaRegistrarTour.txtField_Codigo.setText("");
                     vistaRegistrarTour.txtField_Codigo1.setText("");
                     vistaRegistrarTour.txtField_Lugar.setText("");
                     vistaRegistrarTour.txtField_Precio.setText("");
-                    vistaRegistrarTour.remove(vistaRegistrarTour);
                 } else {
-                    JOptionPane.showMessageDialog(null, "Error\n"
-                            + "Los datos no han sido agregados exitosamente");
+                    JOptionPane.showMessageDialog(null, """
+                                                        Error
+                                                        Los datos no han sido agregados exitosamente""");
                 }
-            }
-        });
-
-        this.vistaRegistrarTour.btnSalirTourFmr.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                vistaRegistrarTour.dispose();
             }
         });
 
@@ -91,11 +80,8 @@ public class ControladorFormularioTour {
                         vistaRegistrarTour.txtField_Codigo.getText());
 
                 if (modeloTour.modificarTour(vistaRegistrarTour.txtFieldBuscarCod.getText(), tourNuevo)) {
-                    JOptionPane.showMessageDialog(null, "Los datos han sido modificados exitosamente");
-                    vistaRegistrarTour.tablaItinerario.removeAll();
+                    JOptionPane.showMessageDialog(null, "Los datos han sido modificados exitosamente"); 
                     vistaRegistrarTour.txtFieldBuscarCod.setText("");
-                    vistaRegistrarTour.txtFieldDescripcionItinerario.setText("");
-                    vistaRegistrarTour.txtFieldHoraItinerario.setText("");
                     vistaRegistrarTour.txtField_Codigo.setText("");
                     vistaRegistrarTour.txtField_Codigo1.setText("");
                     vistaRegistrarTour.txtField_Lugar.setText("");
@@ -106,13 +92,30 @@ public class ControladorFormularioTour {
                 }
             }
         });
+        
+        this.vistaRegistrarTour.btnAgregarItinerario.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                fmrItinerario vistaItinerario = new fmrItinerario();
+                ControladorItinerario controlador = new ControladorItinerario(vistaItinerario, modeloItinerarios);
+                controlador.iniciarItinerario();
+            }
+        });
+        
+        this.vistaRegistrarTour.btnSalirTourFmr.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                vistaRegistrarTour.dispose();
+            }
+        });
 
         this.vistaRegistrarTour.btnAdvertencia.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(null, "El boton agregar guardará todos los datos llenados en los casilleros\n"
-                        + "Para modificar, primero se ingresa el código en la parte del botón buscar\n"
-                        + "Para elimininar, primero se busca el código en la parte del botón buscar");
+                JOptionPane.showMessageDialog(null, """
+                                                    El boton agregar guardar\u00e1 todos los datos llenados en los casilleros
+                                                    Para modificar, primero se ingresa el c\u00f3digo en la parte del bot\u00f3n buscar
+                                                    Para elimininar, primero se busca el c\u00f3digo en la parte del bot\u00f3n buscar""");
             }
         });
     }
@@ -123,13 +126,6 @@ public class ControladorFormularioTour {
         for (String hora : horas) {
             vistaRegistrarTour.comboBox_Hora.addItem(hora);
         }
-    }
-
-    private void limpiarControles() {
-        String[] cabecera = modeloItinerarios.getCabecera();
-        String[][] datos = modeloItinerarios.getItinerarios();
-        DefaultTableModel modeloTabla = new DefaultTableModel(datos, cabecera);
-        vistaRegistrarTour.tablaItinerario.setModel(modeloTabla);
     }
 
     public void iniciarRegistroTour() {

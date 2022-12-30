@@ -11,8 +11,8 @@ import javax.swing.DefaultListModel;
 import javax.swing.JComponent;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
+import libreria.SerializadoraGen;
 import modelo.GuiaArreglo;
-import modelo.ItinerarioArreglo;
 import modelo.PersonaArreglo;
 import modelo.TourArreglo;
 import modelo.VehiculoArreglo;
@@ -44,6 +44,7 @@ public class ControladorPrincipal {
         this.vista.btn_Salir.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+               // SerializadoraGen.serializar("personas.txt",modeloTour);
                 System.exit(0);
             }
         });
@@ -62,12 +63,13 @@ public class ControladorPrincipal {
             }
         });
 
-        this.vista.btnTour.addActionListener(new ActionListener() {
+        this.vista.btnTour.addActionListener(new ActionListener() { //Correcto
             @Override
             public void actionPerformed(ActionEvent e) {
                 //Tour
                 fmrTour vistaTour = new fmrTour();
-                ControladorTour controlTour = new ControladorTour(modeloTour, vistaTour, modeloVehiculo, modeloPersona);
+                ControladorTour controlTour = new ControladorTour(modeloTour, vistaTour,
+                        modeloVehiculo, modeloPersona, modeloGuia);
                 controlTour.iniciarTour();
             }
         });
@@ -88,12 +90,14 @@ public class ControladorPrincipal {
             public void actionPerformed(ActionEvent e) {
                 if (modeloTour.buscarTour(vista.txtFieldBusqueda.getText()) != null) {
                     fmrBusqueda vistaBusqueda = new fmrBusqueda();
-                    ControladorBusqueda controlador = new ControladorBusqueda(vistaBusqueda, modeloTour, modeloVehiculo, 
-                            modeloPersona, modeloTour.buscarTour(vista.txtFieldBusqueda.getText()));
+                    ControladorBusqueda controlador = new ControladorBusqueda(vistaBusqueda, modeloTour, modeloVehiculo,
+                            modeloPersona, modeloTour.buscarTour(vista.txtFieldBusqueda.getText()),
+                   modeloTour.buscarTour(vista.txtFieldBusqueda.getText()).getItinerarios());
                     controlador.iniciarBusqueda();
                 } else {
-                    JOptionPane.showMessageDialog(null, "El tour no se encuentar"
-                            + "\nIngrese correctamente el código");
+                    JOptionPane.showMessageDialog(null, """
+                                                        El tour no se encuentar
+                                                        Ingrese correctamente el c\u00f3digo""");
                 }
             }
         });
@@ -101,36 +105,40 @@ public class ControladorPrincipal {
         this.vista.btnNosotros.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(null, "Somos una empresa de tecnologías de información,  enfocado"
-                        + "\nen brindar asesoría y recursos especializados en las plataformas"
-                        + "\ntecnológicas acorde a las necesidades de nuestros clientes.");
+                JOptionPane.showMessageDialog(null, """
+                                                    Somos una empresa de tecnolog\u00edas de informaci\u00f3n,  enfocado
+                                                    en brindar asesor\u00eda y recursos especializados en las plataformas
+                                                    tecnol\u00f3gicas acorde a las necesidades de nuestros clientes.""");
             }
         });
 
         this.vista.btnRecomendaciones.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(null, "Ten a la mano su carnet de vacunación"
-                        + "\nReserve su tour con días de anticipación"
-                        + "\nElija fechas célebres para una mejor experiencia");
+                JOptionPane.showMessageDialog(null, """
+                                                    Ten a la mano su carnet de vacunaci\u00f3n
+                                                    Reserve su tour con d\u00edas de anticipaci\u00f3n
+                                                    Elija fechas c\u00e9lebres para una mejor experiencia""");
             }
         });
 
         this.vista.btnConsultas.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(null, "Pida el libro de reclamaciones a consultas_Cusco_Tours@gmail.com"
-                        + "\nComuníquese a +51 975 343 567 para más consultas"
-                        + "\nLlamar a 679 579");
+                JOptionPane.showMessageDialog(null, """
+                                                    Pida el libro de reclamaciones a consultas_Cusco_Tours@gmail.com
+                                                    Comun\u00edquese a +51 975 343 567 para m\u00e1s consultas
+                                                    Llamar a 679 579""");
             }
         });
 
         this.vista.btnNotas.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(null, "Puede pagar en efectivo o a través de su tarjeta de débito o crédito"
-                        + "\nPuede escoger un guía y un vehículo para su traslado"
-                        + "\nDebe estar sobrio para el tour");
+                JOptionPane.showMessageDialog(null, """
+                                                    Puede pagar en efectivo o a trav\u00e9s de su tarjeta de d\u00e9bito o cr\u00e9dito
+                                                    Puede escoger un gu\u00eda y un veh\u00edculo para su traslado
+                                                    Debe estar sobrio para el tour""");
             }
         });
     }

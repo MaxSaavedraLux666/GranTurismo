@@ -110,7 +110,7 @@ public class ItinerarioArreglo {
         return this.cabeceraItinerario;
     }
 
-    private int getTotal() {
+    public int getTotal() {
         int resultado = 0;
         for (Itinerario obj : this.itinerarios) {
             if (obj != null) {

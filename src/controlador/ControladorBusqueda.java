@@ -7,6 +7,7 @@ package controlador;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.DefaultListModel;
+import modelo.ItinerarioArreglo;
 import modelo.PersonaArreglo;
 import modelo.Tour;
 import modelo.TourArreglo;
@@ -25,15 +26,17 @@ public class ControladorBusqueda {
     VehiculoArreglo modeloVehiculo;
     PersonaArreglo modeloPersona;
     Tour tourElegido;
+    ItinerarioArreglo modeloItinerario;
 
     public ControladorBusqueda(fmrBusqueda vistaBusqueda, TourArreglo modeloTour,
             VehiculoArreglo modeloVehiculo, PersonaArreglo modeloPersona,
-            Tour tourElegido) {
+            Tour tourElegido, ItinerarioArreglo modeloItinerario) {
         this.vistaBusqueda = vistaBusqueda;
         this.modeloTour = modeloTour;
         this.modeloVehiculo = modeloVehiculo;
         this.modeloPersona = modeloPersona;
         this.tourElegido = tourElegido;
+        this.modeloItinerario = modeloItinerario;
 
         this.vistaBusqueda.btnReservar.addActionListener(new ActionListener() {
             @Override
@@ -63,6 +66,9 @@ public class ControladorBusqueda {
     private void llenarListaItinerario() {
         DefaultListModel modelo = new DefaultListModel();
         modelo.removeAllElements();
+        for (int i = 0; i < modeloItinerario.getTotal(); i++) {
+           
+        }
         vistaBusqueda.listItinerario.setModel(modelo);
     }
 

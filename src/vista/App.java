@@ -67,15 +67,13 @@ public class App {
         //////////////////////
         cliente = new Cliente("123", "Sebastian Landeo", "sebastian.landeo@unmsm.edu.pe", "959637429", "72345678", 21);
         personas.agregar(cliente);
-
         cliente = new Cliente("456", "Max Saavedra", "max.saavedra@unmsm.edu.pe", "920797644", "75739960", 20);
         personas.agregar(cliente);
-
         cliente = new Cliente("789", "Joseph Meza", "joseph.meza@unmsm.edu.pe", "998157090", "76543210", 23);
         personas.agregar(cliente);
-        
         cliente = new Cliente("234", "Landeo Chipi", "Landeochipi@unmsm.edu.pe", "998212090", "76543230", 24);
         personas.agregar(cliente);
+        /////////////////////
 
         //Salidas
         mensaje.mostrarTours(tours);

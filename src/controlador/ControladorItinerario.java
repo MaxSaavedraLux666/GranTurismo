@@ -17,14 +17,14 @@ import vista.fmrItinerario;
  * @author User
  */
 public class ControladorItinerario {
-    
+
     fmrItinerario vistaItinerario;
     ItinerarioArreglo modeloItinerario;
 
     public ControladorItinerario(fmrItinerario vistaItinerario, ItinerarioArreglo modeloItinerario) {
         this.vistaItinerario = vistaItinerario;
         this.modeloItinerario = modeloItinerario;
-        
+
         this.vistaItinerario.btn_AgregarItinerario.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -37,8 +37,9 @@ public class ControladorItinerario {
                     vistaItinerario.txtFieldHoraItinerario.setText("");
                     vistaItinerario.txtFieldCodigoItinerario.setText("");
                 } else {
-                    JOptionPane.showMessageDialog(null, "Error\n"
-                            + "Los datos no han sido agregados exitosamente");
+                    JOptionPane.showMessageDialog(null, """
+                                                        Error
+                                                        Los datos no han sido agregados exitosamente""");
                 }
             }
         });
@@ -51,20 +52,29 @@ public class ControladorItinerario {
                             "Los datos han sido eliminados exitosamente");
                     limpiarControles();
                 } else {
-                    JOptionPane.showMessageDialog(null, "Error\n"
-                            + "Los datos no han sido eliminados exitosamente");
+                    JOptionPane.showMessageDialog(null, """
+                                                        Error
+                                                        Los datos no han sido eliminados exitosamente""");
                 }
             }
         });
+        
+        this.vistaItinerario.btnVolver.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                vistaItinerario.dispose();
+            }
+        });
     }
-    
+
     private void limpiarControles() {
         String[] cabecera = modeloItinerario.getCabecera();
         String[][] datos = modeloItinerario.getItinerarios();
         DefaultTableModel modeloTabla = new DefaultTableModel(datos, cabecera);
         vistaItinerario.tablaItinerario.setModel(modeloTabla);
     }
-    public void iniciarItinerario(){
+
+    public void iniciarItinerario() {
         this.vistaItinerario.setVisible(true);
         this.vistaItinerario.setLocationRelativeTo(null);
         limpiarControles();

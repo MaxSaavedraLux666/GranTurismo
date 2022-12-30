@@ -7,6 +7,7 @@ package controlador;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.table.DefaultTableModel;
+import modelo.GuiaArreglo;
 import modelo.PersonaArreglo;
 import modelo.Tour;
 import modelo.TourArreglo;
@@ -27,12 +28,15 @@ public class ControladorTour {
     TourArreglo modeloTour;
     VehiculoArreglo modeloVehiculo;
     PersonaArreglo modeloPersona;
+    GuiaArreglo modeloGuia;
 
-    public ControladorTour(TourArreglo modeloTour, fmrTour vistaTour, VehiculoArreglo modeloVehiculo, PersonaArreglo modeloPersona) {
+    public ControladorTour(TourArreglo modeloTour, fmrTour vistaTour, VehiculoArreglo modeloVehiculo,
+            PersonaArreglo modeloPersona, GuiaArreglo modeloGuia) {
         this.vistaTour = vistaTour;
         this.modeloTour = modeloTour;
         this.modeloVehiculo = modeloVehiculo;
         this.modeloPersona = modeloPersona;
+        this.modeloGuia = modeloGuia;
 
         this.vistaTour.btn_BuscarTour.addActionListener(new ActionListener() {
             @Override
@@ -63,7 +67,6 @@ public class ControladorTour {
 
             }
         });*/
-
         this.vistaTour.btnRegresar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
