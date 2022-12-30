@@ -67,7 +67,7 @@ public class ControladorBusqueda {
         DefaultListModel modelo = new DefaultListModel();
         modelo.removeAllElements();
         for (int i = 0; i < modeloItinerario.getTotal(); i++) {
-           modelo.addElement(modeloItinerario.getItinerarios()[i]);
+           modelo.addElement(modeloItinerario.getItinerarios()[i].toString());
         }
         vistaBusqueda.listItinerario.setModel(modelo);
     }

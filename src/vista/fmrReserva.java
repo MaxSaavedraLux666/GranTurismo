@@ -31,6 +31,7 @@ public class fmrReserva extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         btnRegresar = new javax.swing.JButton();
         btnAceptar = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
@@ -40,13 +41,14 @@ public class fmrReserva extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        cbFecha = new javax.swing.JComboBox<>();
         jLabel13 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jSeparator3 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(0, 204, 102));
+        jPanel1.setBackground(new java.awt.Color(0, 102, 102));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnRegistroCliente.setText("Agregar Cliente");
@@ -55,9 +57,9 @@ public class fmrReserva extends javax.swing.JFrame {
                 btnRegistroClienteActionPerformed(evt);
             }
         });
-        jPanel1.add(btnRegistroCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 180, -1, -1));
+        jPanel1.add(btnRegistroCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 180, -1, -1));
 
-        jPanel2.setBackground(new java.awt.Color(0, 153, 102));
+        jPanel2.setBackground(new java.awt.Color(102, 255, 204));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnRegresar.setText("Regresar");
@@ -66,32 +68,40 @@ public class fmrReserva extends javax.swing.JFrame {
                 btnRegresarActionPerformed(evt);
             }
         });
-        jPanel2.add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 10, -1, -1));
+        jPanel2.add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 10, -1, -1));
 
         btnAceptar.setText("Aceptar");
-        jPanel2.add(btnAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, -1, -1));
+        jPanel2.add(btnAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+
+        jButton1.setText("Elegir Transporte");
+        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 10, -1, -1));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 390, 470, 50));
 
         jLabel6.setFont(new java.awt.Font("Engravers MT", 1, 12)); // NOI18N
-        jLabel6.setText("fecha:");
+        jLabel6.setForeground(new java.awt.Color(204, 204, 0));
+        jLabel6.setText("fecha de viaje:");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 240, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Engravers MT", 1, 12)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(204, 204, 0));
         jLabel7.setText("CLIENTE:");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 180, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Engravers MT", 2, 24)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(204, 204, 0));
         jLabel9.setText("REGISTRAR RESERVA");
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 30, -1, -1));
 
         labelPrecio.setFont(new java.awt.Font("Engravers MT", 1, 12)); // NOI18N
+        labelPrecio.setForeground(new java.awt.Color(204, 204, 0));
         labelPrecio.setText("labelprecio");
-        jPanel1.add(labelPrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 300, -1, -1));
+        jPanel1.add(labelPrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 300, -1, -1));
 
         labelDestino.setFont(new java.awt.Font("Engravers MT", 1, 12)); // NOI18N
+        labelDestino.setForeground(new java.awt.Color(204, 204, 0));
         labelDestino.setText("labelDestino");
-        jPanel1.add(labelDestino, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 120, -1, -1));
+        jPanel1.add(labelDestino, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 120, -1, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/CLIENTE_1.png"))); // NOI18N
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 50, 50));
@@ -105,16 +115,19 @@ public class fmrReserva extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/calendario_1.png"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, 60, 70));
 
-        cbFecha.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel1.add(cbFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 240, -1, -1));
-
         jLabel13.setFont(new java.awt.Font("Engravers MT", 1, 12)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(204, 204, 0));
         jLabel13.setText("DEStino:");
         jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 120, -1, -1));
 
         jLabel12.setFont(new java.awt.Font("Engravers MT", 1, 12)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(204, 204, 0));
         jLabel12.setText("PRECIO:");
         jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 300, -1, -1));
+        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 240, 110, -1));
+
+        jSeparator3.setBackground(new java.awt.Color(255, 255, 0));
+        jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, 350, 10));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -177,7 +190,7 @@ public class fmrReserva extends javax.swing.JFrame {
     public javax.swing.JButton btnAceptar;
     public javax.swing.JButton btnRegistroCliente;
     public javax.swing.JButton btnRegresar;
-    public javax.swing.JComboBox<String> cbFecha;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
@@ -189,6 +202,8 @@ public class fmrReserva extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JTextField jTextField1;
     public javax.swing.JLabel labelDestino;
     public javax.swing.JLabel labelPrecio;
     // End of variables declaration//GEN-END:variables

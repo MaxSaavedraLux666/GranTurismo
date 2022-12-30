@@ -46,7 +46,7 @@ public class fmrBusqueda extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(153, 153, 0));
+        jPanel1.setBackground(new java.awt.Color(0, 102, 102));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnReservar.setBackground(new java.awt.Color(0, 153, 153));
@@ -55,29 +55,30 @@ public class fmrBusqueda extends javax.swing.JFrame {
         btnReservar.setText("Reservar");
         jPanel1.add(btnReservar, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 500, -1, -1));
 
-        jPanel2.setBackground(new java.awt.Color(102, 0, 102));
+        jPanel2.setBackground(new java.awt.Color(0, 204, 204));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         labelNombreDestino.setFont(new java.awt.Font("Lucida Sans Unicode", 1, 18)); // NOI18N
-        labelNombreDestino.setForeground(new java.awt.Color(255, 255, 255));
+        labelNombreDestino.setForeground(new java.awt.Color(204, 0, 102));
         labelNombreDestino.setText("jLabel1");
         jPanel2.add(labelNombreDestino, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 20, 266, 48));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 460, 80));
 
-        listItinerario.setBackground(new java.awt.Color(0, 102, 102));
+        listItinerario.setBackground(new java.awt.Color(102, 255, 204));
         listItinerario.setFont(new java.awt.Font("DialogInput", 0, 12)); // NOI18N
+        listItinerario.setForeground(new java.awt.Color(0, 0, 0));
         jScrollPane1.setViewportView(listItinerario);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, 430, -1));
 
         jLabel1.setFont(new java.awt.Font("Engravers MT", 1, 12)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setForeground(new java.awt.Color(204, 204, 0));
         jLabel1.setText("CÓDIGO:");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Arial Narrow", 1, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setForeground(new java.awt.Color(204, 204, 0));
         jLabel2.setText("ITINERARIO");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 300, -1, -1));
 
@@ -88,37 +89,37 @@ public class fmrBusqueda extends javax.swing.JFrame {
         jPanel1.add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 500, -1, -1));
 
         labelCodigo.setFont(new java.awt.Font("Engravers MT", 1, 12)); // NOI18N
-        labelCodigo.setForeground(new java.awt.Color(0, 0, 0));
+        labelCodigo.setForeground(new java.awt.Color(204, 204, 0));
         labelCodigo.setText("IDENTIFICACIÓN");
         jPanel1.add(labelCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 240, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Engravers MT", 1, 12)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel4.setForeground(new java.awt.Color(204, 204, 0));
         jLabel4.setText("DURACIÓN:");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Engravers MT", 1, 12)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel5.setForeground(new java.awt.Color(204, 204, 0));
         jLabel5.setText("ESTADO:");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Engravers MT", 1, 12)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel6.setForeground(new java.awt.Color(204, 204, 0));
         jLabel6.setText("DESDE:");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, -1, -1));
 
         labelPrecio.setFont(new java.awt.Font("Engravers MT", 1, 12)); // NOI18N
-        labelPrecio.setForeground(new java.awt.Color(0, 0, 0));
+        labelPrecio.setForeground(new java.awt.Color(204, 204, 0));
         labelPrecio.setText("PRECIO");
         jPanel1.add(labelPrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 100, -1, -1));
 
         labelHora.setFont(new java.awt.Font("Engravers MT", 1, 12)); // NOI18N
-        labelHora.setForeground(new java.awt.Color(0, 0, 0));
+        labelHora.setForeground(new java.awt.Color(204, 204, 0));
         labelHora.setText("HORAS");
         jPanel1.add(labelHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 150, -1, -1));
 
         labelEstado.setFont(new java.awt.Font("Engravers MT", 1, 12)); // NOI18N
-        labelEstado.setForeground(new java.awt.Color(0, 0, 0));
+        labelEstado.setForeground(new java.awt.Color(204, 204, 0));
         labelEstado.setText("DISPONIBILIDAD");
         jPanel1.add(labelEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 200, -1, -1));
         jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 280, 450, 20));

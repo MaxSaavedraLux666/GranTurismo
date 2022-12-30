@@ -97,6 +97,7 @@ public class ControladorFormularioTour {
             @Override
             public void actionPerformed(ActionEvent e) {
                 fmrItinerario vistaItinerario = new fmrItinerario();
+                modeloItinerarios = new ItinerarioArreglo(1);
                 ControladorItinerario controlador = new ControladorItinerario(vistaItinerario, modeloItinerarios);
                 controlador.iniciarItinerario();
             }
