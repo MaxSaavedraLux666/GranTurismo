@@ -19,19 +19,22 @@ public class ControladorCliente {
 
     fmrCliente vistaCliente = new fmrCliente();
     PersonaArreglo modelo;
+    static int  i=0;
     String codigo;
+    
 
     public ControladorCliente(fmrCliente vistaCliente, PersonaArreglo modelo) {
         this.vistaCliente = vistaCliente;
         this.modelo=modelo;
-        this.codigo=generarCodigoReserva();
         
 
         this.vistaCliente.btnAgregar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String codigo2= new String();
-                codigo2=generarCodigoReserva();
+                
+                if(i==0){
+                    codigo="100000";   
+                }
                 Cliente cliente = new Cliente(codigo,
                         vistaCliente.txtFieldNombreTitular.getText(),
                         vistaCliente.txtFieldCorreoTitular.getText(),
@@ -45,13 +48,15 @@ public class ControladorCliente {
                     vistaCliente.txtFieldTelefonoTitular.setText("");
                     vistaCliente.txtFieldDNItitular.setText("");
                     vistaCliente.txtFieldEdadTitular.setText("");
-                    vistaCliente.labelCodReserva.setText(codigo2);
+                    codigo=generarCodigoReserva();
+                    vistaCliente.labelCodReserva.setText(codigo);
  
                 } else {
                     JOptionPane.showMessageDialog(null, "Error\n"
                             + "Los datos no han sido agregados exitosamente");
                 
-            }
+                }
+                i++;
             }
         });
 
@@ -72,13 +77,11 @@ public class ControladorCliente {
         return codigo;
     }
     
-    public void detallesCliente(){
-        vistaCliente.labelCodReserva.setText(codigo);
-    }
-
     public void iniciarCliente() {
-        detallesCliente();
+        vistaCliente.labelCodReserva.setText("100000");
         this.vistaCliente.setVisible(true);
         this.vistaCliente.setLocationRelativeTo(null);
     }
+
+    
 }
