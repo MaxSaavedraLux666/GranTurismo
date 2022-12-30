@@ -7,7 +7,9 @@ package controlador;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.time.chrono.ThaiBuddhistEra;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import modelo.Cliente;
 import modelo.PersonaArreglo;
 import vista.fmrCliente;
 import vista.fmrMantenimientoCliente;
@@ -32,13 +34,20 @@ public class ControladorMC {
         this.vistaMC.btnBuscarMC.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
+                modelo.buscarPersona(vistaMC.txtFieldBuscar.getText());
                 
             } 
         });
         this.vistaMC.btnEliminarMC.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
-                
+                if (modelo.eliminarCliente(vistaMC.txtFieldBuscar.getText())) {
+                    JOptionPane.showMessageDialog(null, "Los datos han sido eliminado exitosamente");
+                    vistaMC.txtFieldBuscar.setText("");
+                } else {
+                    JOptionPane.showMessageDialog(null, "Error\n"
+                            + "Los datos no han sido eliminado exitosamente");
+                }
              
             } 
         });
@@ -60,7 +69,4 @@ public class ControladorMC {
         limpiarControles();
     }
  
-    
-    
-    
 }
