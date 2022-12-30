@@ -28,7 +28,7 @@ public class fmrTrabajador extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        btnRegistrarTour = new javax.swing.JButton();
+        btnGuia = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
         btnModificarCliente = new javax.swing.JButton();
         btnTransporte = new javax.swing.JButton();
@@ -38,6 +38,8 @@ public class fmrTrabajador extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        btnRegistrarTour1 = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
 
         jLabel1.setText("jLabel1");
 
@@ -46,13 +48,13 @@ public class fmrTrabajador extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(0, 102, 102));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnRegistrarTour.setText("Agregar Tour");
-        btnRegistrarTour.addActionListener(new java.awt.event.ActionListener() {
+        btnGuia.setText("Guía");
+        btnGuia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRegistrarTourActionPerformed(evt);
+                btnGuiaActionPerformed(evt);
             }
         });
-        jPanel1.add(btnRegistrarTour, new org.netbeans.lib.awtextra.AbsoluteConstraints(286, 322, 113, -1));
+        jPanel1.add(btnGuia, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 320, 113, -1));
 
         btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/salir.png"))); // NOI18N
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -71,7 +73,7 @@ public class fmrTrabajador extends javax.swing.JFrame {
         jPanel1.add(btnModificarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 322, -1, -1));
 
         btnTransporte.setText("Transporte");
-        jPanel1.add(btnTransporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(513, 322, -1, -1));
+        jPanel1.add(btnTransporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 320, -1, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Buses chiquito.jpg"))); // NOI18N
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(97, 126, -1, 170));
@@ -87,13 +89,24 @@ public class fmrTrabajador extends javax.swing.JFrame {
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(116, 59, 373, -1));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/bus_transport_vehicle_icon_123458.png"))); // NOI18N
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(513, 358, -1, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 350, -1, -1));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ticket_icon_178321.png"))); // NOI18N
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(296, 368, 116, 56));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 380, 116, 56));
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/user_84308.png"))); // NOI18N
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(38, 358, 113, 106));
+
+        btnRegistrarTour1.setText("Agregar Tour");
+        btnRegistrarTour1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistrarTour1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnRegistrarTour1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 320, 113, -1));
+
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/guia 2.png"))); // NOI18N
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 350, 110, 100));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -109,9 +122,9 @@ public class fmrTrabajador extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnRegistrarTourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarTourActionPerformed
+    private void btnGuiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuiaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnRegistrarTourActionPerformed
+    }//GEN-LAST:event_btnGuiaActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
         // TODO add your handling code here:
@@ -120,6 +133,10 @@ public class fmrTrabajador extends javax.swing.JFrame {
     private void btnModificarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarClienteActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnModificarClienteActionPerformed
+
+    private void btnRegistrarTour1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarTour1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnRegistrarTour1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -157,8 +174,9 @@ public class fmrTrabajador extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton btnGuia;
     public javax.swing.JButton btnModificarCliente;
-    public javax.swing.JButton btnRegistrarTour;
+    public javax.swing.JButton btnRegistrarTour1;
     public javax.swing.JButton btnSalir;
     public javax.swing.JButton btnTransporte;
     private javax.swing.JLabel jLabel1;
@@ -168,6 +186,7 @@ public class fmrTrabajador extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

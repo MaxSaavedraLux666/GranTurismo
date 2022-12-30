@@ -15,10 +15,6 @@ public class PersonaArreglo {
     private final String[] cabeceraCliente = {"CODIGO DE RESERVA", "NOMBRE", "CORREO",
                             "TELEFONO","DNI","EDAD"};
     
-    public PersonaArreglo() {
-        this(5);
-    }
-    
     public PersonaArreglo(int tamanho) {
         this.personas = new Persona[tamanho];
         this.indice = 0;

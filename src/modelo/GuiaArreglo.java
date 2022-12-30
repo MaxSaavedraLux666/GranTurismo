@@ -79,7 +79,7 @@ public class GuiaArreglo {
     }
 
     public String[][] getGuia() {
-        String[][] resultado = new String[getTotal()][5];
+        String[][] resultado = new String[getTotal()][4];
 
         int i = 0;
 

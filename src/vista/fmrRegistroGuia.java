@@ -31,9 +31,9 @@ public class fmrRegistroGuia extends javax.swing.JFrame {
         btnAceptar = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
-        btnAceptar1 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        tblGuia = new javax.swing.JTable();
+        btnAgregarGuia = new javax.swing.JButton();
+        btnEliminarGuia = new javax.swing.JButton();
         btnRegresar = new javax.swing.JButton();
         jLabel16 = new javax.swing.JLabel();
         jSeparator3 = new javax.swing.JSeparator();
@@ -41,15 +41,14 @@ public class fmrRegistroGuia extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
+        txtFieldNombreGuia = new javax.swing.JTextField();
+        txtFieldDNIGuia = new javax.swing.JTextField();
+        txtFieldSalarioGuia = new javax.swing.JTextField();
+        txtFieldIdiomaGuia = new javax.swing.JTextField();
+        btnModificarGuia = new javax.swing.JButton();
 
         jTable1.setBackground(new java.awt.Color(102, 255, 204));
         jTable1.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jTable1.setForeground(new java.awt.Color(0, 0, 0));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
@@ -70,10 +69,9 @@ public class fmrRegistroGuia extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(0, 102, 102));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTable2.setBackground(new java.awt.Color(102, 255, 204));
-        jTable2.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jTable2.setForeground(new java.awt.Color(0, 0, 0));
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        tblGuia.setBackground(new java.awt.Color(102, 255, 204));
+        tblGuia.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        tblGuia.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -84,15 +82,15 @@ public class fmrRegistroGuia extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane2.setViewportView(jTable2);
+        jScrollPane2.setViewportView(tblGuia);
 
         jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, 560, 330));
 
-        btnAceptar1.setText("Agregar");
-        jPanel1.add(btnAceptar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 330, -1, -1));
+        btnAgregarGuia.setText("Agregar");
+        jPanel1.add(btnAgregarGuia, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 330, -1, -1));
 
-        jButton1.setText("Eliminar");
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 330, -1, -1));
+        btnEliminarGuia.setText("Eliminar");
+        jPanel1.add(btnEliminarGuia, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 330, -1, -1));
 
         btnRegresar.setText("Regresar");
         jPanel1.add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 10, -1, -1));
@@ -123,21 +121,21 @@ public class fmrRegistroGuia extends javax.swing.JFrame {
 
         jLabel10.setFont(new java.awt.Font("Yu Gothic Medium", 1, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(204, 204, 0));
-        jLabel10.setText("Idioma Hablado");
+        jLabel10.setText("Segundo Idioma");
         jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, -1, -1));
-        jPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 90, 190, -1));
+        jPanel1.add(txtFieldNombreGuia, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 90, 190, -1));
 
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        txtFieldDNIGuia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                txtFieldDNIGuiaActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 130, 190, -1));
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 170, 190, -1));
-        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 220, 190, -1));
+        jPanel1.add(txtFieldDNIGuia, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 130, 190, -1));
+        jPanel1.add(txtFieldSalarioGuia, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 170, 190, -1));
+        jPanel1.add(txtFieldIdiomaGuia, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 220, 190, -1));
 
-        jButton2.setText("Modificar");
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 330, -1, -1));
+        btnModificarGuia.setText("Modificar");
+        jPanel1.add(btnModificarGuia, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 330, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -147,15 +145,15 @@ public class fmrRegistroGuia extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 739, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void txtFieldDNIGuiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFieldDNIGuiaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_txtFieldDNIGuiaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -194,10 +192,10 @@ public class fmrRegistroGuia extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnAceptar;
-    public javax.swing.JButton btnAceptar1;
+    public javax.swing.JButton btnAgregarGuia;
+    public javax.swing.JButton btnEliminarGuia;
+    public javax.swing.JButton btnModificarGuia;
     public javax.swing.JButton btnRegresar;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -208,10 +206,10 @@ public class fmrRegistroGuia extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
+    public javax.swing.JTable tblGuia;
+    public javax.swing.JTextField txtFieldDNIGuia;
+    public javax.swing.JTextField txtFieldIdiomaGuia;
+    public javax.swing.JTextField txtFieldNombreGuia;
+    public javax.swing.JTextField txtFieldSalarioGuia;
     // End of variables declaration//GEN-END:variables
 }
