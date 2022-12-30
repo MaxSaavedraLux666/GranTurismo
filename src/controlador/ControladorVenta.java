@@ -52,6 +52,7 @@ public class ControladorVenta {
         });
     }
     
+    
     public void detallesVenta(){
         this.vistVenta.labdelDestino.setText(tourElegido.getNombrePaquete());
         this.vistVenta.labelNCliente.setText(clienteElegido.getNombre());

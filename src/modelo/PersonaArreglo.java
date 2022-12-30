@@ -29,10 +29,10 @@ public class PersonaArreglo {
         this.personas[this.indice] = persona;
         this.indice++;
         result = true;
-
+        
         return result;
     }
-
+    
     /*public boolean eliminarCliente(String codigo, Cliente clientes[]) {
         boolean result = false;
         int tamanio=contarClientes();
@@ -55,8 +55,10 @@ public class PersonaArreglo {
             clientes = nuevo;
             this.indice--;
         }
+
         return result;
     }*/
+    
     public boolean eliminarPersona(String dniPersona) {
         boolean result = false;
         Persona[] nuevo = new Persona[personas.length - 1];
@@ -92,7 +94,7 @@ public class PersonaArreglo {
         }
         return result;
     }
-
+    
     public boolean modificarPersona(String dniPersona, Persona persona) {
         boolean result = false;
         for (Persona objPersona : personas) {
@@ -127,20 +129,18 @@ public class PersonaArreglo {
         }
         return result;
     }
-
-    private int contarClientes() {
-        int i = 0;
-        for (Persona obj : this.personas) {
-            if (obj != null) {
-                if (obj instanceof Cliente) {
-                    i++;
+    private int contarClientes(){
+        int i=0;
+        for(Persona obj: this.personas ){
+            if( obj != null ) {
+                if(obj instanceof Cliente) {
+                    i++;              
                 }
-            }
+            } 
         }
         return i;
     }
-
-    public String[] getCabecera() {
+    public String[] getCabecera(){
         return this.cabeceraCliente;
     }
 
