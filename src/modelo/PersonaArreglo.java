@@ -9,35 +9,35 @@ package modelo;
  * @author Sebastian
  */
 public class PersonaArreglo {
-    
+
     private Persona[] personas;
     private int indice;
     private final String[] cabeceraCliente = {"CODIGO DE RESERVA", "NOMBRE", "CORREO",
-                            "TELEFONO","DNI","EDAD"};
-    
+        "TELEFONO", "DNI", "EDAD"};
+
     public PersonaArreglo(int tamanho) {
         this.personas = new Persona[tamanho];
         this.indice = 0;
     }
-    
-    public boolean agregar(Persona persona){
+
+    public boolean agregar(Persona persona) {
         boolean result = false;
-        if(lleno()){
+        if (lleno()) {
             crecer();
         }
         this.personas[this.indice] = persona;
         this.indice++;
         result = true;
-        
+
         return result;
     }
-    
+
     public boolean eliminarCliente(String codPersona) {
         boolean result = false;
         for (int i = 0; i < this.personas.length; i++) {
             if (personas[i] != buscarPersona(codPersona)) {
                 for (int k = i; k < personas.length; k++) {
-                    this.personas[k] =personas[k + 1];
+                    this.personas[k] = personas[k + 1];
                 }
                 this.indice--;
                 result = true;
@@ -49,99 +49,106 @@ public class PersonaArreglo {
     public Persona buscarPersona(String codPersona) {
         Persona result = null;
         for (int i = 0; i < personas.length; i++) {
-            if (((Cliente)personas[i]).getCodReserva().equals(codPersona)){
+            if (((Cliente) personas[i]).getCodReserva().equals(codPersona)) {
                 result = personas[i];
                 break;
             }
         }
         return result;
     }
-    
-    
-    public void crecer(){
-        Persona[] nuevo = new Persona[indice*2];
-        int i=0;
-        for(Persona obj: this.personas ){
-            nuevo[i]= obj;
+
+    public void crecer() {
+        Persona[] nuevo = new Persona[indice * 2];
+        int i = 0;
+        for (Persona obj : this.personas) {
+            nuevo[i] = obj;
             i++;
         }
         this.personas = nuevo;
     }
-    
-    private  boolean vacio(){
+
+    private boolean vacio() {
         boolean result = false;
-        
+
         return result;
     }
-    
-    private  boolean lleno(){
+
+    private boolean lleno() {
         boolean result = false;
-        if(this.indice == this.personas.length){
+        if (this.indice == this.personas.length) {
             result = true;
         }
         return result;
     }
-    
-    public String[] getCabecera(){
+
+    public String[] getCabecera() {
         return this.cabeceraCliente;
     }
-    public String[][] getClientes(){
+
+    public String[][] getClientes() {
         String[][] resultado = new String[getTotal(1)][6];
         int i = 0;
-        for(Persona obj: this.personas ){
-            if( obj != null ) {
-                if(obj instanceof Cliente) {
-                    resultado[i][0]= ((Cliente) obj).getCodReserva();
-                    resultado[i][1]= obj.getNombre();
-                    resultado[i][2]= ((Cliente) obj).getCorreo();
-                    resultado[i][3]= ((Cliente) obj).getTelefono();
+        for (Persona obj : this.personas) {
+            if (obj != null) {
+                if (obj instanceof Cliente) {
+                    resultado[i][0] = ((Cliente) obj).getCodReserva();
+                    resultado[i][1] = obj.getNombre();
+                    resultado[i][2] = ((Cliente) obj).getCorreo();
+                    resultado[i][3] = ((Cliente) obj).getTelefono();
                     //resultado[i][3]= String.valueOf(((Cliente) obj).getPuntos());
-                    resultado[i][4]= obj.getDni();
-                    resultado[i][5]=String.valueOf(obj.getEdad());
+                    resultado[i][4] = obj.getDni();
+                    resultado[i][5] = String.valueOf(obj.getEdad());
                     i++;
-                    
                 }
             }
-            
+
         }
-        
+
         return resultado;
-    } 
-    
-    public Trabajador[] getTrabajadores(){
+    }
+
+    public void obtenerCliente(String cod) {
+        for (Persona ObjC : this.personas) {
+            if (ObjC != null) {
+                
+            }
+        }
+    }
+
+    public Trabajador[] getTrabajadores() {
         Trabajador[] resultado = new Trabajador[getTotal(2)];
-        
+
         return resultado;
-    } 
-    
+    }
+
     @Override
     public String toString() {
-         String result = "";
-        for(Persona obj: this.personas ){
-            if( obj != null ) {
-                if(obj instanceof Cliente) {
+        String result = "";
+        for (Persona obj : this.personas) {
+            if (obj != null) {
+                if (obj instanceof Cliente) {
                     result += obj + "\n\n";
                 }
             }
-            
+
         }
         return result;
     }
 
     private int getTotal(int i) {
         int resultado = 0;
-        for(Persona obj: this.personas ){
-            if( obj != null ) {
-                if(obj instanceof Cliente && i == 1) {
+        for (Persona obj : this.personas) {
+            if (obj != null) {
+                if (obj instanceof Cliente && i == 1) {
                     resultado++;
                 }
-                if(obj instanceof Trabajador && i == 2) {
+                if (obj instanceof Trabajador && i == 2) {
                     resultado++;
                 }
             }
-            
+
         }
         return resultado;
     }
-    
+
 }

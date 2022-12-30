@@ -74,11 +74,11 @@ public class App {
 
         cliente = new Cliente("789123", "Joseph Meza", "joseph.meza@unmsm.edu.pe", "998157090", "76543210", 23);
         personas.agregar(cliente);
-        
+
         ////Guias
-        guia = new Guia("Fabricio Chuquispuma", "78218381", 8.9f,"Portugues");
+        guia = new Guia("Fabricio Chuquispuma", "78218381", 8.9f, "Portugues");
         guias.agregarGuia(guia);
-        guia = new Guia("Geomar Camacho", "78451231", 1.9f,"Francés");
+        guia = new Guia("Geomar Camacho", "78451231", 1.9f, "Francés");
         guias.agregarGuia(guia);
         ////
         ///Vehiculos
@@ -87,11 +87,10 @@ public class App {
         vehiculo = new Vehiculo("QQ24", 8, 6.5f, "Francesco Bernoulli");
         vehiculos.agregar(vehiculo);
         ////
-        
 
         //Salidas
         fmrPrincipal vista = new fmrPrincipal();
-        ControladorPrincipal controlador = new ControladorPrincipal(vista, tours, 
+        ControladorPrincipal controlador = new ControladorPrincipal(vista, tours,
                 personas, guias, vehiculos);
         controlador.iniciar();
     }

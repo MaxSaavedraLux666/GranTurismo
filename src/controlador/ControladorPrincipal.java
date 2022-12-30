@@ -98,7 +98,7 @@ public class ControladorPrincipal {
                     fmrBusqueda vistaBusqueda = new fmrBusqueda();
                     ControladorBusqueda controlador = new ControladorBusqueda(vistaBusqueda, modeloTour, modeloVehiculo,
                             modeloPersona, modeloTour.buscarTour(vista.txtFieldBusqueda.getText()),
-                   modeloTour.buscarTour(vista.txtFieldBusqueda.getText()).getItinerarios());
+                   modeloTour.buscarTour(vista.txtFieldBusqueda.getText()).getItinerarios(), modeloGuia);
                     controlador.iniciarBusqueda();
                 } else {
                     JOptionPane.showMessageDialog(null, """

@@ -6,6 +6,10 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import modelo.Guia;
+import modelo.Persona;
+import modelo.Tour;
+import modelo.Vehiculo;
 import vista.fmrBoleta;
 import vista.fmrVenta;
 
@@ -16,9 +20,18 @@ import vista.fmrVenta;
 public class ControladorVenta {
     
     fmrVenta vistVenta;
+    Tour tourElegido;
+    Vehiculo vehiculoElegido;
+    Guia guiaElegido;
+    Persona clienteElegido;
 
-    public ControladorVenta(fmrVenta vistVenta) {
+    public ControladorVenta(fmrVenta vistVenta, Tour tourElegido, Vehiculo vehiculoElegido, 
+            Guia guiaElegido, Persona clienteElegido) {
         this.vistVenta = vistVenta;
+        this.guiaElegido = guiaElegido;
+        this.tourElegido = tourElegido;
+        this.vehiculoElegido = vehiculoElegido;
+        this.clienteElegido = clienteElegido;
         
         this.vistVenta.btnAceptar.addActionListener(new ActionListener(){
             @Override
@@ -34,14 +47,30 @@ public class ControladorVenta {
         this.vistVenta.btnCancelar.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
-                vistVenta.dispose();
-                
+                vistVenta.dispose();   
             }
         });
+    }
+    
+    public void detallesVenta(){
+        this.vistVenta.labdelDestino.setText(tourElegido.getNombrePaquete());
+        this.vistVenta.labelNCliente.setText(clienteElegido.getNombre());
+        this.vistVenta.labelDocumento.setText(clienteElegido.getDni());
+        this.vistVenta.labelCorreo.setText("");
+        this.vistVenta.labelTelefono.setText(clienteElegido.getDni());
+        this.vistVenta.labelFechaI.setText("19 - 03 - 23");
+        this.vistVenta.labelFechaV.setText("19 - 03 - 23");
+        this.vistVenta.labelFechaCompra.setText("10 - 03 - 23");
+        this.vistVenta.labelCodReserva.setText("");
+        this.vistVenta.labelNomAgencia.setText("");
+        this.vistVenta.labelGuia.setText("");
+        this.vistVenta.labCodVehiculo.setText("");
+        this.vistVenta.labelCosto.setText("");
     }
     
     public void iniciarVenta(){
         this.vistVenta.setVisible(true);
         this.vistVenta.setLocationRelativeTo(null);
+        detallesVenta();
     }
 }

@@ -8,6 +8,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Arrays;
 import javax.swing.DefaultListModel;
+import modelo.GuiaArreglo;
 import modelo.ItinerarioArreglo;
 import modelo.PersonaArreglo;
 import modelo.Tour;
@@ -26,24 +27,27 @@ public class ControladorBusqueda {
     TourArreglo modeloTour;
     VehiculoArreglo modeloVehiculo;
     PersonaArreglo modeloPersona;
+    GuiaArreglo modeloGuia;
     Tour tourElegido;
     ItinerarioArreglo modeloItinerario;
 
     public ControladorBusqueda(fmrBusqueda vistaBusqueda, TourArreglo modeloTour,
             VehiculoArreglo modeloVehiculo, PersonaArreglo modeloPersona,
-            Tour tourElegido, ItinerarioArreglo modeloItinerario) {
+            Tour tourElegido, ItinerarioArreglo modeloItinerario, GuiaArreglo modeloGuia) {
         this.vistaBusqueda = vistaBusqueda;
         this.modeloTour = modeloTour;
         this.modeloVehiculo = modeloVehiculo;
         this.modeloPersona = modeloPersona;
         this.tourElegido = tourElegido;
         this.modeloItinerario = modeloItinerario;
+        this.modeloGuia = modeloGuia;
 
         this.vistaBusqueda.btnReservar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 fmrReserva vistaReserva = new fmrReserva();
-                ControladorReserva controlador = new ControladorReserva(vistaReserva, modeloTour, modeloVehiculo, modeloPersona, tourElegido);
+                ControladorReserva controlador = new ControladorReserva(vistaReserva, modeloTour, 
+                        modeloVehiculo, modeloPersona, tourElegido, modeloGuia);
                 controlador.iniciarReserva();
             }
         });

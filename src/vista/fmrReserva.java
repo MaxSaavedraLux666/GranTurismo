@@ -29,9 +29,9 @@ public class fmrReserva extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         btnRegistroCliente = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
-        btnRegresar = new javax.swing.JButton();
         btnAceptar = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        btnElegirTranporte = new javax.swing.JButton();
+        btnElegirGuia = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
@@ -45,6 +45,7 @@ public class fmrReserva extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jSeparator3 = new javax.swing.JSeparator();
+        btnRegresar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -62,19 +63,14 @@ public class fmrReserva extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(102, 255, 204));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnRegresar.setText("Regresar");
-        btnRegresar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRegresarActionPerformed(evt);
-            }
-        });
-        jPanel2.add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 10, -1, -1));
-
         btnAceptar.setText("Aceptar");
         jPanel2.add(btnAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
 
-        jButton1.setText("Elegir Transporte");
-        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 10, -1, -1));
+        btnElegirTranporte.setText("Elegir Transporte");
+        jPanel2.add(btnElegirTranporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, -1, -1));
+
+        btnElegirGuia.setText("Elegir Guia");
+        jPanel2.add(btnElegirGuia, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 10, -1, -1));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 390, 470, 50));
 
@@ -128,6 +124,14 @@ public class fmrReserva extends javax.swing.JFrame {
 
         jSeparator3.setBackground(new java.awt.Color(255, 255, 0));
         jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, 350, 10));
+
+        btnRegresar.setText("Regresar");
+        btnRegresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegresarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 0, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -188,9 +192,10 @@ public class fmrReserva extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnAceptar;
+    public javax.swing.JButton btnElegirGuia;
+    public javax.swing.JButton btnElegirTranporte;
     public javax.swing.JButton btnRegistroCliente;
     public javax.swing.JButton btnRegresar;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;

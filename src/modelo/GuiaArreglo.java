@@ -4,8 +4,7 @@ public class GuiaArreglo {
 
     private Guia[] guias;
     int indice;
-    private final String[] cabeceraTours = {"NOMBRE", "DNI", "SALARIO/H",
-        "IDIOMA"};
+    private final String[] cabeceraTours = {"NOMBRE", "DNI", "IDIOMA"};
 
     public GuiaArreglo(int tamaño) {
         this.guias = new Guia[tamaño];
