@@ -36,12 +36,12 @@ public class PersonaArreglo {
         return result;
     }
     
-    public boolean eliminarCliente(String codCliente) {
+    public boolean eliminarCliente(String codPersona) {
         boolean result = false;
         for (int i = 0; i < this.personas.length; i++) {
-            if (personas[i] != buscarCliente(codCliente)) {
+            if (personas[i] != buscarPersona(codPersona)) {
                 for (int k = i; k < personas.length; k++) {
-                    this.personas[k] = personas[k + 1];
+                    this.personas[k] =personas[k + 1];
                 }
                 this.indice--;
                 result = true;
@@ -49,14 +49,13 @@ public class PersonaArreglo {
         }
         return result;
     }
-    
-    public Persona buscarCliente(String codCliente) {
 
+    public Persona buscarPersona(String codPersona) {
         Persona result = null;
-
-        for (Persona objCliente : personas) {
-            if (codCliente == ((Cliente) objCliente).getCodReserva()){
-                result = objCliente;
+        for (int i = 0; i < personas.length; i++) {
+            if (((Cliente)personas[i]).getCodReserva().equals(codPersona)){
+                result = personas[i];
+                break;
             }
         }
         return result;

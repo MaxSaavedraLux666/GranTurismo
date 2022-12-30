@@ -60,6 +60,7 @@ public class ControladorCliente {
             }
         });
 
+
         this.vistaCliente.btnCancelar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
