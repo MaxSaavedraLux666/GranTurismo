@@ -24,11 +24,13 @@ public class App {
         TourArreglo tours = new TourArreglo(1); //Correcto
         ItinerarioArreglo itinerarios;
         //Personas
-        PersonaArreglo personas = new PersonaArreglo(); //Corregir el constructor vacio
+        PersonaArreglo personas = new PersonaArreglo(1); //Correcto
         //Guia
         GuiaArreglo guias = new GuiaArreglo(1); //Correcto
+        Guia guia;
         //Vehiculo
         VehiculoArreglo vehiculos = new VehiculoArreglo(1); //Correcto
+        Vehiculo vehiculo;
 
         //Tours Llenado
         itinerarios = new ItinerarioArreglo(1);
@@ -73,12 +75,20 @@ public class App {
 
         cliente = new Cliente("789123", "Joseph Meza", "joseph.meza@unmsm.edu.pe", "998157090", "76543210", 23);
         personas.agregar(cliente);
-        
+
+        ////Guias
+        guia = new Guia("Kimnua", "2635", 8.9f, "Francés");
+        guias.agregarGuia(guia);
+        ////
+        ///Vehiculos
+        vehiculo = new Vehiculo("QQ23", 8, 5.5f, "Landeo");
+        vehiculos.agregar(vehiculo);
+        ////
 
         //Salidas
         mensaje.mostrarTours(tours);
         fmrPrincipal vista = new fmrPrincipal();
-        ControladorPrincipal controlador = new ControladorPrincipal(vista, tours, 
+        ControladorPrincipal controlador = new ControladorPrincipal(vista, tours,
                 personas, guias, vehiculos);
         controlador.iniciar();
     }

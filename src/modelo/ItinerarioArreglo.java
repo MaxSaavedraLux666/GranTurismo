@@ -51,18 +51,23 @@ public class ItinerarioArreglo {
 
     public boolean eliminarItinerario(String cod) {
         boolean result = false;
-        for (int i = 0; i < this.itinerarios.length; i++) {
-            if (buscarItinerario(cod) == null) {
+        Itinerario[] nuevo = new Itinerario[itinerarios.length - 1];
+        int pos = 0;
+        for (int i = 0; i < itinerarios.length; i++) {
+            if (itinerarios[i].getCodigoItinerario().equals(cod)) {
+                pos = i;
+                result = true;
                 break;
-            } else {
-                if (itinerarios[i] == buscarItinerario(cod)) {
-                    for (int k = i; k < itinerarios.length; k++) {
-                        itinerarios[k] = itinerarios[k + 1];
-                    }
-                    this.indice--;
-                    result = true;
-                }
             }
+        }
+        if (result) {
+            for (int i = 0; i < pos; i++) {
+                nuevo[i] = itinerarios[i];
+            }
+            for (int i = pos + 1; i < itinerarios.length; i++) {
+                nuevo[i - 1] = itinerarios[i];
+            }
+            this.itinerarios = nuevo;
         }
         return result;
     }

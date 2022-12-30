@@ -82,7 +82,7 @@ public class fmrMantenimientoCliente extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(tblMC);
 
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 100, 651, 261));
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 651, 261));
         jPanel1.add(txtFieldBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(198, 419, 147, -1));
 
         jLabel2.setForeground(new java.awt.Color(204, 204, 0));

@@ -49,15 +49,25 @@ public class TourArreglo {
 
     public boolean eliminarTour(String codTour) {
         boolean result = false;
-        for (int i = 0; i < this.tours.length; i++) {
-            if (tours[i] != buscarTour(codTour)) {
-                for (int k = i; k < tours.length; k++) {
-                    this.tours[k] = tours[k + 1];
-                }
-                this.indice--;
+        Tour[] nuevo = new Tour[tours.length - 1];
+        int pos = 0;
+        for (int i = 0; i < tours.length; i++) {
+            if (tours[i].getCodTour().equals(codTour)) {
+                pos = i;
                 result = true;
+                break;
             }
         }
+        if (result) {
+            for (int i = 0; i < pos; i++) {
+                nuevo[i] = tours[i];
+            }
+            for (int i = pos + 1; i < tours.length; i++) {
+                nuevo[i - 1] = tours[i];
+            }
+            this.tours = nuevo;
+        }
+
         return result;
     }
 
@@ -126,6 +136,14 @@ public class TourArreglo {
             }
         }
         return resultado;
+    }
+
+    public int getIndice() {
+        return indice;
+    }
+
+    public void setIndice(int indice) {
+        this.indice = indice;
     }
 
     public Tour[] getTours() {

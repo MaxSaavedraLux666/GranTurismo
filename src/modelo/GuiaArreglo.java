@@ -12,7 +12,7 @@ public class GuiaArreglo {
         this.indice = 0;
     }
 
-    public boolean agregar(Guia guia) {
+    public boolean agregarGuia(Guia guia) {
         boolean result = false;
         if (lleno()) {
             crecer();
