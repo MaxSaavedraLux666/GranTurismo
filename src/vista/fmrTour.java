@@ -33,10 +33,8 @@ public class fmrTour extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
         btn_BuscarTour = new javax.swing.JButton();
         btnRegresar = new javax.swing.JButton();
-        btn_Informacion = new javax.swing.JButton();
         btn_Reservar = new javax.swing.JButton();
         jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         tablaTours = new javax.swing.JTable();
@@ -72,20 +70,15 @@ public class fmrTour extends javax.swing.JFrame {
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 750, 210));
 
-        btn_Informacion.setFont(new java.awt.Font("Lucida Fax", 0, 14)); // NOI18N
-        btn_Informacion.setText("Información");
-        jPanel1.add(btn_Informacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 470, -1, -1));
-
         btn_Reservar.setFont(new java.awt.Font("Lucida Fax", 0, 14)); // NOI18N
         btn_Reservar.setText("Reservar");
-        jPanel1.add(btn_Reservar, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 510, 120, -1));
-        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 510, 100, 30));
-        jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 470, 100, 30));
+        jPanel1.add(btn_Reservar, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 490, 120, -1));
+        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 490, 100, 30));
 
         jLabel4.setFont(new java.awt.Font("Lucida Fax", 0, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Código");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 440, 50, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 460, 50, -1));
 
         tablaTours.setBackground(new java.awt.Color(0, 153, 153));
         tablaTours.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
@@ -106,8 +99,8 @@ public class fmrTour extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("CommercialPi BT", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 0, 51));
-        jLabel3.setText("GIF");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 230, 260, 200));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/machupicchu (1).gif"))); // NOI18N
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 230, 260, 220));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -165,7 +158,6 @@ public class fmrTour extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnRegresar;
     public javax.swing.JButton btn_BuscarTour;
-    public javax.swing.JButton btn_Informacion;
     public javax.swing.JButton btn_Reservar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -176,7 +168,6 @@ public class fmrTour extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
     public javax.swing.JTable tablaTours;
     // End of variables declaration//GEN-END:variables
 }

@@ -45,18 +45,6 @@ public class ControladorTour {
             }
         });
 
-        this.vistaTour.btn_Informacion.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-                fmrBoleta boleta = new fmrBoleta();
-                boleta.labelNombre.setText("Max");
-                boleta.labelValido.setText("4 personas");
-                boleta.labelCosto.setText("16.9");
-                boleta.setVisible(true);
-            }
-        });
-
         /*this.vistaTour.btn_Reservar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

@@ -49,7 +49,7 @@ public class App {
         itinerarios.agregarItinerario(itinerario);
         itinerario = new Itinerario("h34", "Cena", " 7:25 ");
         itinerarios.agregarItinerario(itinerario);
-        tour1 = new Tour("Cusco historico", itinerarios, 14.5f, 8, "CF23");
+        tour1 = new Tour("Cusco historico", itinerarios, 14.5f, 7, "CF23");
         tours.agregarTour(tour1);
         System.out.println("------------------------------------------------------------------------------------------------------------");
 
@@ -60,7 +60,7 @@ public class App {
         itinerarios.agregarItinerario(itinerario);
         itinerario = new Itinerario("u23", "Ceremonia del Inti Raymi", "12:20 ");
         itinerarios.agregarItinerario(itinerario);
-        tour1 = new Tour("Iglesia", itinerarios, 14.5f, 8, "CU23");
+        tour1 = new Tour("Iglesia", itinerarios, 14.5f, 6, "CU23");
         tours.agregarTour(tour1);
         System.out.println("------------------------------------------------------------------------------------------------------------");
 

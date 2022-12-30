@@ -6,6 +6,7 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import vista.fmrBoleta;
 import vista.fmrVenta;
 
 /**
@@ -22,8 +23,11 @@ public class ControladorVenta {
         this.vistVenta.btnAceptar.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
-                
-                
+                fmrBoleta boleta = new fmrBoleta();
+                boleta.labelNombre.setText("Max");
+                boleta.labelValido.setText("4 personas");
+                boleta.labelCosto.setText("16.9");
+                boleta.setVisible(true);
             }
         });
         
@@ -38,5 +42,6 @@ public class ControladorVenta {
     
     public void iniciarVenta(){
         this.vistVenta.setVisible(true);
+        this.vistVenta.setLocationRelativeTo(null);
     }
 }

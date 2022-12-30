@@ -6,6 +6,7 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Arrays;
 import javax.swing.DefaultListModel;
 import modelo.ItinerarioArreglo;
 import modelo.PersonaArreglo;
@@ -67,7 +68,7 @@ public class ControladorBusqueda {
         DefaultListModel modelo = new DefaultListModel();
         modelo.removeAllElements();
         for (int i = 0; i < modeloItinerario.getTotal(); i++) {
-           modelo.addElement(modeloItinerario.getItinerarios()[i].toString());
+           modelo.addElement(Arrays.toString(modeloItinerario.getItinerarios()[i]));
         }
         vistaBusqueda.listItinerario.setModel(modelo);
     }
