@@ -29,6 +29,7 @@ public class fmrRegistroGuia extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         btnAceptar = new javax.swing.JButton();
+        jSpinner1 = new javax.swing.JSpinner();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tblGuia = new javax.swing.JTable();
@@ -45,7 +46,9 @@ public class fmrRegistroGuia extends javax.swing.JFrame {
         txtFieldDNIGuia = new javax.swing.JTextField();
         txtFieldSalarioGuia = new javax.swing.JTextField();
         txtFieldIdiomaGuia = new javax.swing.JTextField();
+        btnBuscarGuia = new javax.swing.JButton();
         btnModificarGuia = new javax.swing.JButton();
+        txtFieldBuscarGuia = new javax.swing.JTextField();
 
         jTable1.setBackground(new java.awt.Color(102, 255, 204));
         jTable1.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
@@ -84,13 +87,13 @@ public class fmrRegistroGuia extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(tblGuia);
 
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, 560, 330));
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, 560, 330));
 
         btnAgregarGuia.setText("Agregar");
-        jPanel1.add(btnAgregarGuia, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 330, -1, -1));
+        jPanel1.add(btnAgregarGuia, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 230, -1, -1));
 
         btnEliminarGuia.setText("Eliminar");
-        jPanel1.add(btnEliminarGuia, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 330, -1, -1));
+        jPanel1.add(btnEliminarGuia, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 310, -1, -1));
 
         btnRegresar.setText("Regresar");
         jPanel1.add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 10, -1, -1));
@@ -107,35 +110,45 @@ public class fmrRegistroGuia extends javax.swing.JFrame {
         jLabel11.setFont(new java.awt.Font("Yu Gothic Medium", 1, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(204, 204, 0));
         jLabel11.setText("Nombre");
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, -1, -1));
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 70, -1, -1));
 
         jLabel12.setFont(new java.awt.Font("Yu Gothic Medium", 1, 14)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(204, 204, 0));
         jLabel12.setText("DNI");
-        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, -1, -1));
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 110, -1, -1));
 
         jLabel13.setFont(new java.awt.Font("Yu Gothic Medium", 1, 14)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(204, 204, 0));
         jLabel13.setText("Salario por Hora");
-        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, -1, -1));
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 160, -1, -1));
 
         jLabel10.setFont(new java.awt.Font("Yu Gothic Medium", 1, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(204, 204, 0));
         jLabel10.setText("Segundo Idioma");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, -1, -1));
-        jPanel1.add(txtFieldNombreGuia, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 90, 190, -1));
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 200, -1, -1));
+        jPanel1.add(txtFieldNombreGuia, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 70, 190, -1));
 
         txtFieldDNIGuia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtFieldDNIGuiaActionPerformed(evt);
             }
         });
-        jPanel1.add(txtFieldDNIGuia, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 130, 190, -1));
-        jPanel1.add(txtFieldSalarioGuia, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 170, 190, -1));
-        jPanel1.add(txtFieldIdiomaGuia, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 220, 190, -1));
+        jPanel1.add(txtFieldDNIGuia, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 110, 190, -1));
+        jPanel1.add(txtFieldSalarioGuia, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 150, 190, -1));
+        jPanel1.add(txtFieldIdiomaGuia, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 200, 190, -1));
+
+        btnBuscarGuia.setText("Buscar");
+        jPanel1.add(btnBuscarGuia, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 280, -1, -1));
 
         btnModificarGuia.setText("Modificar");
-        jPanel1.add(btnModificarGuia, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 330, -1, -1));
+        jPanel1.add(btnModificarGuia, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 310, 80, -1));
+
+        txtFieldBuscarGuia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtFieldBuscarGuiaActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtFieldBuscarGuia, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 280, 190, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -145,7 +158,6 @@ public class fmrRegistroGuia extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 733, Short.MAX_VALUE)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 739, Short.MAX_VALUE)
         );
 
@@ -155,6 +167,10 @@ public class fmrRegistroGuia extends javax.swing.JFrame {
     private void txtFieldDNIGuiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFieldDNIGuiaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtFieldDNIGuiaActionPerformed
+
+    private void txtFieldBuscarGuiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFieldBuscarGuiaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtFieldBuscarGuiaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -194,6 +210,7 @@ public class fmrRegistroGuia extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnAceptar;
     public javax.swing.JButton btnAgregarGuia;
+    public javax.swing.JButton btnBuscarGuia;
     public javax.swing.JButton btnEliminarGuia;
     public javax.swing.JButton btnModificarGuia;
     public javax.swing.JButton btnRegresar;
@@ -206,8 +223,10 @@ public class fmrRegistroGuia extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSpinner jSpinner1;
     private javax.swing.JTable jTable1;
     public javax.swing.JTable tblGuia;
+    public javax.swing.JTextField txtFieldBuscarGuia;
     public javax.swing.JTextField txtFieldDNIGuia;
     public javax.swing.JTextField txtFieldIdiomaGuia;
     public javax.swing.JTextField txtFieldNombreGuia;

@@ -53,6 +53,25 @@ public class ControladorFormularioGuia {
   
         });
         
+        this.vistaGuia.btnBuscarGuia.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                modelo.buscarGuia(vistaGuia.txtFieldBuscarGuia.getText());
+            }
+        });
+
+        this.vistaGuia.btnEliminarGuia.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (modelo.eliminarGuia(vistaGuia.txtFieldBuscarGuia.getText())) {
+                    JOptionPane.showMessageDialog(null, "Los datos han sido eliminado exitosamente");
+                    vistaGuia.txtFieldBuscarGuia.setText("");
+                } else {
+                    JOptionPane.showMessageDialog(null, "Error\n"
+                            + "Los datos no han sido eliminado exitosamente");
+                }
+            }
+        });
         
     }
     

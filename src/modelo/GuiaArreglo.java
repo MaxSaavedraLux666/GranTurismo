@@ -42,24 +42,35 @@ public class GuiaArreglo {
         this.guias = nuevo;
     }
 
-    public boolean eliminarGuia(String nombre) {
+    public boolean eliminarGuia(String dniGuia) {
         boolean result = false;
-        for (int i = 0; i < this.guias.length; i++) {
-            if (guias[i] != buscarGuia(nombre)) {
-                for (int k = i; k < guias.length; k++) {
-                    this.guias[k] = guias[k + 1];
-                }
-                this.indice--;
+        Guia[] nuevo = new Guia[guias.length - 1];
+        int pos = 0;
+        for (int i = 0; i < guias.length; i++) {
+            if (guias[i].getDNI().equals(dniGuia)) {
+                pos = i;
                 result = true;
+                break;
             }
         }
+        if (result) {
+            for (int i = 0; i < pos; i++) {
+                nuevo[i] = guias[i];
+            }
+            for (int i = pos + 1; i < guias.length; i++) {
+                nuevo[i - 1] = guias[i];
+            }
+            this.guias = nuevo;
+            this.indice--;
+        }
+
         return result;
     }
 
-    public Guia buscarGuia(String nombre) {
+    public Guia buscarGuia(String dniGuia) {
         Guia result = null;
         for (int i = 0; i < guias.length; i++) {
-            if (guias[i].getNombre().equals(nombre)) {
+            if (guias[i].getDNI().equals(dniGuia)) {
                 result = guias[i];
                 break;
             }

@@ -76,11 +76,15 @@ public class App {
         personas.agregar(cliente);
         
         ////Guias
-        guia = new Guia("Kimnua", "2635", 8.9f,"Francés");
+        guia = new Guia("Fabricio Chuquispuma", "78218381", 8.9f,"Portugues");
+        guias.agregarGuia(guia);
+        guia = new Guia("Geomar Camacho", "78451231", 1.9f,"Francés");
         guias.agregarGuia(guia);
         ////
         ///Vehiculos
-        vehiculo = new Vehiculo("QQ23", 8, 5.5f, "Landeo");
+        vehiculo = new Vehiculo("QQ23", 8, 5.5f, "Sergio Mcqueen");
+        vehiculos.agregar(vehiculo);
+        vehiculo = new Vehiculo("QQ24", 8, 6.5f, "Francesco Bernoulli");
         vehiculos.agregar(vehiculo);
         ////
         
