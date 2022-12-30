@@ -6,6 +6,8 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import vista.fmrBoleta;
 import vista.fmrVenta;
 
@@ -39,6 +41,8 @@ public class ControladorVenta {
             }
         });
     }
+    
+    
     
     public void iniciarVenta(){
         this.vistVenta.setVisible(true);
