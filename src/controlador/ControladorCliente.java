@@ -49,7 +49,7 @@ public class ControladorCliente {
                     vistaCliente.txtFieldEdadTitular.setText("");
                     codigo = generarCodigoReserva();
                     vistaCliente.labelCodReserva.setText(codigo);
-                    clienteElegido = (Cliente) modelo.buscarPersona(codigo);
+                    //clienteElegido = modelo.buscarPersona(codigo);
                 } else {
                     JOptionPane.showMessageDialog(null, "Error\n"
                             + "Los datos no han sido agregados exitosamente");

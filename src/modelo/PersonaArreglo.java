@@ -14,6 +14,7 @@ public class PersonaArreglo {
     private int indice;
     private final String[] cabeceraCliente = {"CODIGO DE RESERVA", "NOMBRE", "CORREO",
         "TELEFONO", "DNI", "EDAD"};
+    Cliente clienteElegido;
 
     public PersonaArreglo(int tamanho) {
         this.personas = new Persona[tamanho];
@@ -31,7 +32,7 @@ public class PersonaArreglo {
 
         return result;
     }
-    
+
     /*public boolean eliminarCliente(String codigo, Cliente clientes[]) {
         boolean result = false;
         int tamanio=contarClientes();
@@ -54,10 +55,8 @@ public class PersonaArreglo {
             clientes = nuevo;
             this.indice--;
         }
-
         return result;
     }*/
-    
     public boolean eliminarPersona(String dniPersona) {
         boolean result = false;
         Persona[] nuevo = new Persona[personas.length - 1];
@@ -93,7 +92,7 @@ public class PersonaArreglo {
         }
         return result;
     }
-    
+
     public boolean modificarPersona(String dniPersona, Persona persona) {
         boolean result = false;
         for (Persona objPersona : personas) {
@@ -128,18 +127,20 @@ public class PersonaArreglo {
         }
         return result;
     }
-    private int contarClientes(){
-        int i=0;
-        for(Persona obj: this.personas ){
-            if( obj != null ) {
-                if(obj instanceof Cliente) {
-                    i++;              
+
+    private int contarClientes() {
+        int i = 0;
+        for (Persona obj : this.personas) {
+            if (obj != null) {
+                if (obj instanceof Cliente) {
+                    i++;
                 }
-            } 
+            }
         }
         return i;
     }
-    public String[] getCabecera(){
+
+    public String[] getCabecera() {
         return this.cabeceraCliente;
     }
 
@@ -157,6 +158,7 @@ public class PersonaArreglo {
                     resultado[i][4] = obj.getDni();
                     resultado[i][5] = String.valueOf(obj.getEdad());
                     i++;
+
                 }
             }
 
@@ -165,18 +167,16 @@ public class PersonaArreglo {
         return resultado;
     }
 
-    public void obtenerCliente(String cod) {
-        for (Persona ObjC : this.personas) {
-            if (ObjC != null) {
-                
-            }
-        }
-    }
-
     public Trabajador[] getTrabajadores() {
         Trabajador[] resultado = new Trabajador[getTotal(2)];
 
         return resultado;
+    }
+    
+    public Cliente regresarCliente(){
+        
+        
+        return clienteElegido;
     }
 
     @Override
@@ -208,5 +208,4 @@ public class PersonaArreglo {
         }
         return resultado;
     }
-
 }
