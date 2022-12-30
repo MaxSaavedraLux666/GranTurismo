@@ -30,10 +30,10 @@ public class fmrTransporte extends javax.swing.JFrame {
         btnRegresar = new javax.swing.JButton();
         btnAceptar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tablaAutos = new javax.swing.JTable();
         jLabel16 = new javax.swing.JLabel();
         jSeparator3 = new javax.swing.JSeparator();
-        jTextField1 = new javax.swing.JTextField();
+        txtElegir = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -47,10 +47,10 @@ public class fmrTransporte extends javax.swing.JFrame {
         btnAceptar.setText("ELEGIR");
         jPanel1.add(btnAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, -1, -1));
 
-        jTable1.setBackground(new java.awt.Color(102, 255, 204));
-        jTable1.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jTable1.setForeground(new java.awt.Color(0, 0, 0));
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tablaAutos.setBackground(new java.awt.Color(102, 255, 204));
+        tablaAutos.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        tablaAutos.setForeground(new java.awt.Color(0, 0, 0));
+        tablaAutos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
                 {null, null, null, null, null},
@@ -61,7 +61,7 @@ public class fmrTransporte extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4", "Title 5"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tablaAutos);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 560, 330));
 
@@ -73,7 +73,7 @@ public class fmrTransporte extends javax.swing.JFrame {
 
         jSeparator3.setBackground(new java.awt.Color(255, 255, 0));
         jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, 350, 10));
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 150, 200, -1));
+        jPanel1.add(txtElegir, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 150, 200, -1));
 
         jLabel17.setBackground(new java.awt.Color(255, 255, 0));
         jLabel17.setFont(new java.awt.Font("Yu Gothic UI", 0, 18)); // NOI18N
@@ -138,7 +138,7 @@ public class fmrTransporte extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
+    public javax.swing.JTable tablaAutos;
+    public javax.swing.JTextField txtElegir;
     // End of variables declaration//GEN-END:variables
 }
