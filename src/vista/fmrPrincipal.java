@@ -205,7 +205,7 @@ public class fmrPrincipal extends javax.swing.JFrame {
         btnInicio.setBackground(new java.awt.Color(102, 0, 102));
         btnInicio.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 14)); // NOI18N
         btnInicio.setForeground(new java.awt.Color(255, 153, 0));
-        btnInicio.setText("Inicio");
+        btnInicio.setText("Refrescar");
 
         javax.swing.GroupLayout btn_InicioLayout = new javax.swing.GroupLayout(btn_Inicio);
         btn_Inicio.setLayout(btn_InicioLayout);

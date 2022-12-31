@@ -38,7 +38,7 @@ public class fmrTrabajador extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        btnRegistrarTour1 = new javax.swing.JButton();
+        btnRegistrarTour = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
 
         jLabel1.setText("jLabel1");
@@ -97,13 +97,13 @@ public class fmrTrabajador extends javax.swing.JFrame {
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/user_84308.png"))); // NOI18N
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(38, 358, 113, 106));
 
-        btnRegistrarTour1.setText("Agregar Tour");
-        btnRegistrarTour1.addActionListener(new java.awt.event.ActionListener() {
+        btnRegistrarTour.setText("Agregar Tour");
+        btnRegistrarTour.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRegistrarTour1ActionPerformed(evt);
+                btnRegistrarTourActionPerformed(evt);
             }
         });
-        jPanel1.add(btnRegistrarTour1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 320, 113, -1));
+        jPanel1.add(btnRegistrarTour, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 320, 113, -1));
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/guia 2.png"))); // NOI18N
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 350, 110, 100));
@@ -134,9 +134,9 @@ public class fmrTrabajador extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnModificarClienteActionPerformed
 
-    private void btnRegistrarTour1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarTour1ActionPerformed
+    private void btnRegistrarTourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarTourActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnRegistrarTour1ActionPerformed
+    }//GEN-LAST:event_btnRegistrarTourActionPerformed
 
     /**
      * @param args the command line arguments
@@ -176,7 +176,7 @@ public class fmrTrabajador extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnGuia;
     public javax.swing.JButton btnModificarCliente;
-    public javax.swing.JButton btnRegistrarTour1;
+    public javax.swing.JButton btnRegistrarTour;
     public javax.swing.JButton btnSalir;
     public javax.swing.JButton btnTransporte;
     private javax.swing.JLabel jLabel1;

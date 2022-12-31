@@ -76,6 +76,7 @@ public class ControladorReserva {
             public void actionPerformed(ActionEvent e) {
                 fmrTransporte vistaTransporte = new fmrTransporte();
                 ControladorTransporte controlador = new ControladorTransporte(vistaTransporte, modeloVehiculo);
+                controlador.iniciarTransporte();
                 vehiculoElegido = controlador.enviarVehiculo();
             }
         });
@@ -85,6 +86,7 @@ public class ControladorReserva {
             public void actionPerformed(ActionEvent e) {
                 fmrGuia vistaGuia = new fmrGuia();
                 ControladorGuia controlador = new ControladorGuia(vistaGuia, modeloGuia);
+                controlador.iniciarGuia();
                 guiaElegido = controlador.enviarGuia();
             }
         });

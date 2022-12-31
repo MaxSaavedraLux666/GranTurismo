@@ -51,6 +51,7 @@ public class ControladorFormularioTransporte {
                 vistaTransporte.dispose();
             }
         });
+        
 
         this.vistaTransporte.btnEliminar.addActionListener(new ActionListener() {
             @Override

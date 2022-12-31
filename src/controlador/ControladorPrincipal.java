@@ -68,15 +68,25 @@ public class ControladorPrincipal {
                 }
             }
         });
-
-        this.vista.btnTour.addActionListener(new ActionListener() { //Correcto
+        
+        this.vista.btnSiguiente.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //Tour
-                fmrTour vistaTour = new fmrTour();
-                ControladorTour controlTour = new ControladorTour(modeloTour, vistaTour,
-                        modeloVehiculo, modeloPersona, modeloGuia);
-                controlTour.iniciarTour();
+                //siguiente
+                if (estado) {
+                    der(vista.panelDerecho, 1, 2, 620);
+                    estado = false;
+                } else {
+                    izq(vista.panelDerecho, 1, 2, 10);
+                    estado = true;
+                }
+            }
+        });
+
+        this.vista.btnInicio.addActionListener(new ActionListener() { //Correcto
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                llenarLista();
             }
         });
 

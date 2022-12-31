@@ -52,6 +52,15 @@ public class ControladorTrabajador {
             
         });
         
+        this.vistaTrabajador.btnRegistrarTour.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                fmrRegistrarTour vistaTour = new fmrRegistrarTour();
+                ControladorFormularioTour controlador = new ControladorFormularioTour(vistaTour, modeloTour);
+                controlador.iniciarRegistroTour();
+            }
+        });
+        
         this.vistaTrabajador.btnTransporte.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
