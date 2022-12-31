@@ -7,8 +7,13 @@ package controlador;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 import modelo.Cliente;
+import modelo.GuiaArreglo;
 import modelo.PersonaArreglo;
+import modelo.Tour;
+import modelo.TourArreglo;
+import modelo.VehiculoArreglo;
 import vista.fmrCliente;
 
 /**
@@ -18,14 +23,24 @@ import vista.fmrCliente;
 public class ControladorCliente {
 
     fmrCliente vistaCliente = new fmrCliente();
-    PersonaArreglo modelo;
+    PersonaArreglo modeloPersona;
     Cliente clienteElegido;
     static int i = 0;
     String codigo;
+    TourArreglo modeloTour;
+    VehiculoArreglo modeloVehiculo;
+    Tour tourElegido;
+    GuiaArreglo modeloGuia;
 
-    public ControladorCliente(fmrCliente vistaCliente, PersonaArreglo modelo) {
+    public ControladorCliente(fmrCliente vistaCliente, PersonaArreglo modeloPersona,  TourArreglo modeloTour, 
+            VehiculoArreglo modeloVehiculo, Tour tourElegido, GuiaArreglo modeloGuia ) {
+        
         this.vistaCliente = vistaCliente;
-        this.modelo = modelo;
+        this.modeloPersona = modeloPersona;
+        this.modeloTour=modeloTour;
+        this.modeloVehiculo=modeloVehiculo;
+        this.tourElegido=tourElegido;
+        this.modeloGuia=modeloGuia;
 
         this.vistaCliente.btnAgregar.addActionListener(new ActionListener() {
             @Override
@@ -40,7 +55,7 @@ public class ControladorCliente {
                         vistaCliente.txtFieldTelefonoTitular.getText(),
                         vistaCliente.txtFieldDNItitular.getText(),
                         Integer.parseInt(vistaCliente.txtFieldEdadTitular.getText()));
-                if (modelo.agregar(cliente)) {
+                if (modeloPersona.agregar(cliente)) {
                     JOptionPane.showMessageDialog(null, "Los datos han sido agregados exitosamente");
                     vistaCliente.txtFieldNombreTitular.setText("");
                     vistaCliente.txtFieldCorreoTitular.setText("");
@@ -64,6 +79,20 @@ public class ControladorCliente {
                 vistaCliente.dispose();
             }
         });
+        
+    }
+    
+    public void detallesCliente() {
+        vistaCliente.labelDestino.setText(tourElegido.getNombrePaquete());
+        vistaCliente.labelPrecio.setText(String.valueOf(tourElegido.getPrecioTour()));
+
+    }
+    
+    public void limpiarControles() {
+        String[] cabecera = modeloVehiculo.getCabecera();
+        String[][] datos = modeloVehiculo.getVehiculo();
+        DefaultTableModel modeloTabla = new DefaultTableModel(datos, cabecera);
+        vistaCliente.tblVehiculo.setModel(modeloTabla);
     }
 
     public String generarCodigoReserva() {
@@ -79,8 +108,11 @@ public class ControladorCliente {
 
     public void iniciarCliente() {
         vistaCliente.labelCodReserva.setText("100000");
+        detallesCliente();
         this.vistaCliente.setVisible(true);
         this.vistaCliente.setLocationRelativeTo(null);
+        limpiarControles();
+        
     }
 
 }

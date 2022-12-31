@@ -6,6 +6,8 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import modelo.Guia;
 import modelo.Persona;
 import modelo.Tour;
@@ -61,12 +63,18 @@ public class ControladorVenta {
         this.vistVenta.labelTelefono.setText(clienteElegido.getDni());
         this.vistVenta.labelFechaI.setText("19 - 03 - 23");
         this.vistVenta.labelFechaV.setText("19 - 03 - 23");
-        this.vistVenta.labelFechaCompra.setText("10 - 03 - 23");
+        this.vistVenta.labelFechaCompra.setText(fechaActual());
         this.vistVenta.labelCodReserva.setText("");
         this.vistVenta.labelNomAgencia.setText("");
         this.vistVenta.labelGuia.setText("");
         this.vistVenta.labCodVehiculo.setText("");
         this.vistVenta.labelCosto.setText("");
+    }
+    
+    public String fechaActual(){
+        Date fecha=new Date();
+        SimpleDateFormat formatoFecha= new SimpleDateFormat("dd/MM/YYYY");
+        return formatoFecha.format(fecha);
     }
     
     public void iniciarVenta(){
