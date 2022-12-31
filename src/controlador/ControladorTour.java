@@ -14,7 +14,6 @@ import modelo.TourArreglo;
 import modelo.VehiculoArreglo;
 import vista.fmrBoleta;
 import vista.fmrPrincipal;
-import vista.fmrReserva;
 import vista.fmrTour;
 
 /**

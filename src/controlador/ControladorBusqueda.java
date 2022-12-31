@@ -8,6 +8,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Arrays;
 import javax.swing.DefaultListModel;
+import modelo.Guia;
 import modelo.GuiaArreglo;
 import modelo.ItinerarioArreglo;
 import modelo.PersonaArreglo;
@@ -15,7 +16,7 @@ import modelo.Tour;
 import modelo.TourArreglo;
 import modelo.VehiculoArreglo;
 import vista.fmrBusqueda;
-import vista.fmrReserva;
+import vista.fmrCliente;
 
 /**
  *
@@ -45,10 +46,11 @@ public class ControladorBusqueda {
         this.vistaBusqueda.btnReservar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                fmrReserva vistaReserva = new fmrReserva();
-                ControladorReserva controlador = new ControladorReserva(vistaReserva, modeloTour, 
-                        modeloVehiculo, modeloPersona, tourElegido, modeloGuia);
-                controlador.iniciarReserva();
+                fmrCliente vistaCliente = new fmrCliente();
+                Guia guiaElegido= new Guia(" "," ",0," ");
+                ControladorCliente controladorCliente = new ControladorCliente(vistaCliente, modeloPersona, modeloTour, 
+                modeloVehiculo, tourElegido, modeloGuia, guiaElegido);
+                controladorCliente.iniciarCliente();
             }
         });
 

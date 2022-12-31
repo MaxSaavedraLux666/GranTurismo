@@ -6,9 +6,11 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import modelo.Cliente;
+import modelo.Guia;
 import modelo.GuiaArreglo;
 import modelo.PersonaArreglo;
 import modelo.Tour;
@@ -31,9 +33,10 @@ public class ControladorCliente {
     VehiculoArreglo modeloVehiculo;
     Tour tourElegido;
     GuiaArreglo modeloGuia;
+    Guia guiaElegido;
 
     public ControladorCliente(fmrCliente vistaCliente, PersonaArreglo modeloPersona,  TourArreglo modeloTour, 
-            VehiculoArreglo modeloVehiculo, Tour tourElegido, GuiaArreglo modeloGuia ) {
+            VehiculoArreglo modeloVehiculo, Tour tourElegido, GuiaArreglo modeloGuia, Guia guiaElegido ) {
         
         this.vistaCliente = vistaCliente;
         this.modeloPersona = modeloPersona;
@@ -41,6 +44,7 @@ public class ControladorCliente {
         this.modeloVehiculo=modeloVehiculo;
         this.tourElegido=tourElegido;
         this.modeloGuia=modeloGuia;
+        this.guiaElegido=guiaElegido;
 
         this.vistaCliente.btnAgregar.addActionListener(new ActionListener() {
             @Override
@@ -82,6 +86,17 @@ public class ControladorCliente {
         
     }
     
+    public void rellenarGuias(){
+        DefaultComboBoxModel model=new DefaultComboBoxModel();
+        model.addElement(" ");
+        for(Guia obj: this.modeloGuia.getGuias()){
+            if(obj != null){
+                model.addElement(obj);
+            }
+        }
+        this.vistaCliente.cbxGuia.setModel(model);
+    }
+    
     public void detallesCliente() {
         vistaCliente.labelDestino.setText(tourElegido.getNombrePaquete());
         vistaCliente.labelPrecio.setText(String.valueOf(tourElegido.getPrecioTour()));
@@ -108,6 +123,7 @@ public class ControladorCliente {
 
     public void iniciarCliente() {
         vistaCliente.labelCodReserva.setText("100000");
+        rellenarGuias();
         detallesCliente();
         this.vistaCliente.setVisible(true);
         this.vistaCliente.setLocationRelativeTo(null);

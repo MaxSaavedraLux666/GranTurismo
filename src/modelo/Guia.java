@@ -46,5 +46,12 @@ public class Guia {
     public void setIdioma(String idioma) {
         this.idioma = idioma;
     }
+
+    @Override
+    public String toString() {
+        return nombre+" habla "+idioma;
+    }
+    
+    
     
 }
