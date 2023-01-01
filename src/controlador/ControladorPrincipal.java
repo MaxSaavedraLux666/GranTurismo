@@ -31,29 +31,27 @@ public class ControladorPrincipal {
     PersonaArreglo modeloPersona;
     GuiaArreglo modeloGuia;
     VehiculoArreglo modeloVehiculo;
-    Vehiculo vehiculoElegido;
 
     private boolean estado = true;
 
-    public ControladorPrincipal(fmrPrincipal vista,TourArreglo modeloTour) {
+    public ControladorPrincipal(fmrPrincipal vista, TourArreglo modeloTour) {
         this.modeloTour = modeloTour;
         this.vista = vista;
         llenarLista();
     }
 
     public ControladorPrincipal(fmrPrincipal vista, TourArreglo modeloTour,
-            PersonaArreglo modeloPersona, GuiaArreglo modeloGuia, VehiculoArreglo modeloVehiculo, Vehiculo vehiculoElegido) {
+            PersonaArreglo modeloPersona, GuiaArreglo modeloGuia, VehiculoArreglo modeloVehiculo) {
         this.vista = vista;
         this.modeloTour = modeloTour;
         this.modeloPersona = modeloPersona;
         this.modeloGuia = modeloGuia;
         this.modeloVehiculo = modeloVehiculo;
-        this.vehiculoElegido= vehiculoElegido;
 
         this.vista.btn_Salir.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-               // SerializadoraGen.serializar("personas.txt",modeloTour);
+                // SerializadoraGen.serializar("personas.txt",modeloTour);
                 System.exit(0);
             }
         });
@@ -71,7 +69,7 @@ public class ControladorPrincipal {
                 }
             }
         });
-        
+
         this.vista.btnSiguiente.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -109,9 +107,9 @@ public class ControladorPrincipal {
             public void actionPerformed(ActionEvent e) {
                 if (modeloTour.buscarTour(vista.txtFieldBusqueda.getText()) != null) {
                     fmrBusqueda vistaBusqueda = new fmrBusqueda();
-                    ControladorBusqueda controlador = new ControladorBusqueda(vistaBusqueda, modeloTour, modeloVehiculo,vehiculoElegido,
+                    ControladorBusqueda controlador = new ControladorBusqueda(vistaBusqueda, modeloTour, modeloVehiculo,
                             modeloPersona, modeloTour.buscarTour(vista.txtFieldBusqueda.getText()),
-                   modeloTour.buscarTour(vista.txtFieldBusqueda.getText()).getItinerarios(), modeloGuia);
+                            modeloTour.buscarTour(vista.txtFieldBusqueda.getText()).getItinerarios(), modeloGuia);
                     controlador.iniciarBusqueda();
                 } else {
                     JOptionPane.showMessageDialog(null, """
@@ -214,6 +212,7 @@ public class ControladorPrincipal {
         this.vista.twitter.setText("@Cusco_Tours");
         //
     }
+
     //
     public void llenarLista() {
         DefaultListModel modelo = new DefaultListModel();

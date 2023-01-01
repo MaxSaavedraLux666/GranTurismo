@@ -28,19 +28,19 @@ public class ControladorBusqueda {
     fmrBusqueda vistaBusqueda;
     TourArreglo modeloTour;
     VehiculoArreglo modeloVehiculo;
-    Vehiculo vehiculoElegido;
+   
     PersonaArreglo modeloPersona;
     GuiaArreglo modeloGuia;
     Tour tourElegido;
     ItinerarioArreglo modeloItinerario;
 
     public ControladorBusqueda(fmrBusqueda vistaBusqueda, TourArreglo modeloTour,
-            VehiculoArreglo modeloVehiculo,Vehiculo vehiculoElegido, PersonaArreglo modeloPersona,
+            VehiculoArreglo modeloVehiculo, PersonaArreglo modeloPersona,
             Tour tourElegido, ItinerarioArreglo modeloItinerario, GuiaArreglo modeloGuia) {
         this.vistaBusqueda = vistaBusqueda;
         this.modeloTour = modeloTour;
         this.modeloVehiculo = modeloVehiculo;
-        this.vehiculoElegido= vehiculoElegido;
+     
         this.modeloPersona = modeloPersona;
         this.tourElegido = tourElegido;
         this.modeloItinerario = modeloItinerario;
@@ -52,7 +52,7 @@ public class ControladorBusqueda {
                 fmrCliente vistaCliente = new fmrCliente();
                 Guia guiaElegido= new Guia(" "," ",0," ");
                 ControladorCliente controladorCliente = new ControladorCliente(vistaCliente, modeloPersona, modeloTour, 
-                modeloVehiculo, vehiculoElegido, tourElegido, modeloGuia, guiaElegido);
+                modeloVehiculo, tourElegido, modeloGuia, guiaElegido);
                 controladorCliente.iniciarCliente();
             }
         });

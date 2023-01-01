@@ -7,6 +7,7 @@ package vista;
 import modelo.*;
 import controlador.*;
 import java.io.Serializable;
+import libreria.SerializadoraGen;
 
 /**
  *
@@ -32,7 +33,7 @@ public class App implements Serializable{
         VehiculoArreglo vehiculos = new VehiculoArreglo(1); //Correcto
         Vehiculo vehiculo;
 
-        //Tours Llenado
+        /*Tours Llenado
         itinerarios = new ItinerarioArreglo(1);
         itinerario = new Itinerario("c34", "Recojo del transporte", " 4:45 ");
         itinerarios.agregarItinerario(itinerario);
@@ -66,34 +67,38 @@ public class App implements Serializable{
         tours.agregarTour(tour1);
         System.out.println("------------------------------------------------------------------------------------------------------------");
 
-        //////////////////////
-        cliente = new Cliente("123456", "Sebastian Landeo", "sebastian.landeo@unmsm.edu.pe", "959637429", "72345678", 21);
-        personas.agregar(cliente);
+        /////////////////////*/
+        //cliente = new Cliente("123456", "Sebastian Landeo", "sebastian.landeo@unmsm.edu.pe", "959637429", "72345678", 21);
+        //personas.agregar(cliente);
 
-        cliente = new Cliente("456789", "Max Saavedra", "max.saavedra@unmsm.edu.pe", "920797644", "75739960", 20);
-        personas.agregar(cliente);
+        //cliente = new Cliente("456789", "Max Saavedra", "max.saavedra@unmsm.edu.pe", "920797644", "75739960", 20);
+        //personas.agregar(cliente);
 
-        cliente = new Cliente("789123", "Joseph Meza", "joseph.meza@unmsm.edu.pe", "998157090", "76543210", 23);
-        personas.agregar(cliente);
+        //cliente = new Cliente("789123", "Joseph Meza", "joseph.meza@unmsm.edu.pe", "998157090", "76543210", 23);
+        //personas.agregar(cliente);
 
         ////Guias
-        guia = new Guia("Fabricio Chuquispuma", "78218381", 8.9f, "Portugues");
-        guias.agregarGuia(guia);
-        guia = new Guia("Geomar Camacho", "78451231", 1.9f, "Francés");
-        guias.agregarGuia(guia);
+        //guia = new Guia("Fabricio Chuquispuma", "78218381", 8.9f, "Portugues");
+        //guias.agregarGuia(guia);
+        //guia = new Guia("Geomar Camacho", "78451231", 1.9f, "Francés");
+        //guias.agregarGuia(guia);
         ////
         ///Vehiculos
-        vehiculo = new Vehiculo("QQ23", 8, 5.5f, "Sergio Mcqueen");
-        vehiculos.agregar(vehiculo);
-        vehiculo = new Vehiculo("QQ24", 8, 6.5f, "Francesco Bernoulli");
-        vehiculos.agregar(vehiculo);
-        Vehiculo vehiculoElegido=new Vehiculo(" ",0,0," ");
+        //vehiculo = new Vehiculo("QQ23", 8, 5.5f, "Sergio Mcqueen");
+        //vehiculos.agregar(vehiculo);
+        //vehiculo = new Vehiculo("QQ24", 8, 6.5f, "Francesco Bernoulli");
+        //vehiculos.agregar(vehiculo);
+        //Vehiculo vehiculoElegido=new Vehiculo(" ",0,0," ");
         ////
-
+        
+        ///Deserialización
+        
+        tours = (TourArreglo) SerializadoraGen.deserializar("tours.txt");
+        //personas = (PersonaArreglo) SerializadoraGen.deserializar("personas.txt");
         //Salidas
         fmrPrincipal vista = new fmrPrincipal();
         ControladorPrincipal controlador = new ControladorPrincipal(vista, tours,
-                personas, guias, vehiculos, vehiculoElegido);
+                personas, guias, vehiculos);
         controlador.iniciar();
     }
 }

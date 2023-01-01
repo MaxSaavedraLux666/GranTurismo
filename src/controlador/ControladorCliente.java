@@ -40,17 +40,17 @@ public class ControladorCliente {
     GuiaArreglo modeloGuia;
     Guia guiaElegido;
 
-    public ControladorCliente(fmrCliente vistaCliente, PersonaArreglo modeloPersona,  TourArreglo modeloTour, 
-            VehiculoArreglo modeloVehiculo, Vehiculo vehiculoElegido, Tour tourElegido, GuiaArreglo modeloGuia, Guia guiaElegido ) {
-        
+    public ControladorCliente(fmrCliente vistaCliente, PersonaArreglo modeloPersona, TourArreglo modeloTour,
+            VehiculoArreglo modeloVehiculo, Tour tourElegido, GuiaArreglo modeloGuia, Guia guiaElegido) {
+
         this.vistaCliente = vistaCliente;
         this.modeloPersona = modeloPersona;
-        this.modeloTour=modeloTour;
-        this.modeloVehiculo=modeloVehiculo;
-        this.vehiculoElegido=vehiculoElegido;
-        this.tourElegido=tourElegido;
-        this.modeloGuia=modeloGuia;
-        this.guiaElegido=guiaElegido;
+        this.modeloTour = modeloTour;
+        this.modeloVehiculo = modeloVehiculo;
+
+        this.tourElegido = tourElegido;
+        this.modeloGuia = modeloGuia;
+        this.guiaElegido = guiaElegido;
 
         this.vistaCliente.btnAgregar.addActionListener(new ActionListener() {
             @Override
@@ -68,11 +68,10 @@ public class ControladorCliente {
                 vistaCliente.txtFieldFecha.setText(" ");
                 guiaElegido.setNombre(String.valueOf(vistaCliente.cbxGuia.getSelectedIndex()));
                 modeloGuia.agregarGuia(guiaElegido);
-                vehiculoElegido.setCodigoVehiculo(vistaCliente.txtFieldCodigoTransporte.getText());
-                modeloVehiculo.agregar(vehiculoElegido);
-                fmrVenta vistaVenta=new fmrVenta();
-                ControladorVenta controladorVenta=new ControladorVenta(vistaVenta, tourElegido, vehiculoElegido, 
-                guiaElegido, clienteElegido);
+
+                fmrVenta vistaVenta = new fmrVenta();
+                ControladorVenta controladorVenta = new ControladorVenta(vistaVenta, tourElegido, vehiculoElegido,
+                        guiaElegido, clienteElegido);
                 controladorVenta.iniciarVenta();
                 if (modeloPersona.agregar(cliente)) {
                     JOptionPane.showMessageDialog(null, "Los datos han sido agregados exitosamente");
@@ -84,15 +83,13 @@ public class ControladorCliente {
                     codigo = generarCodigoReserva();
                     vistaCliente.labelCodReserva.setText(codigo);
                     //clienteElegido = modelo.buscarPersona(codigo);
-                    
-                    
+
                 } else {
                     JOptionPane.showMessageDialog(null, "Error\n"
                             + "Los datos no han sido agregados exitosamente");
                 }
                 i++;
-                
-                
+
             }
         });
 
@@ -103,28 +100,27 @@ public class ControladorCliente {
                 vistaCliente.dispose();
             }
         });
-        
+
     }
-    
-    public void rellenarGuias(){
-        DefaultComboBoxModel model=new DefaultComboBoxModel();
+
+    public void rellenarGuias() {
+        DefaultComboBoxModel model = new DefaultComboBoxModel();
         model.addElement(" ");
-        for(Guia obj: this.modeloGuia.getGuias()){
-            if(obj != null){
+        for (Guia obj : this.modeloGuia.getGuias()) {
+            if (obj != null) {
                 model.addElement(obj);
             }
         }
         this.vistaCliente.cbxGuia.setModel(model);
-        
 
     }
-    
+
     public void detallesCliente() {
         vistaCliente.labelDestino.setText(tourElegido.getNombrePaquete());
         vistaCliente.labelPrecio.setText(String.valueOf(tourElegido.getPrecioTour()));
 
     }
-    
+
     public void limpiarControles() {
         String[] cabecera = modeloVehiculo.getCabecera();
         String[][] datos = modeloVehiculo.getVehiculo();
@@ -150,7 +146,7 @@ public class ControladorCliente {
         this.vistaCliente.setVisible(true);
         this.vistaCliente.setLocationRelativeTo(null);
         limpiarControles();
-        
+
     }
 
 }
