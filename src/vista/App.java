@@ -17,7 +17,6 @@ public class App implements Serializable{
 
     public static void main(String[] args) {
 
-        Itinerario itinerario;
         Cliente cliente;
 
         //Tours
@@ -27,7 +26,7 @@ public class App implements Serializable{
         PersonaArreglo personas = new PersonaArreglo(1); //Correcto
         //Guia
         GuiaArreglo guias = new GuiaArreglo(1); //Correcto
-        Guia guia;
+        
         //Vehiculo
         VehiculoArreglo vehiculos = new VehiculoArreglo(1); //Correcto
         Vehiculo vehiculo;
@@ -40,13 +39,7 @@ public class App implements Serializable{
 
         //cliente = new Cliente("789123", "Joseph Meza", "joseph.meza@unmsm.edu.pe", "998157090", "76543210", 23);
         //personas.agregar(cliente);
-
-        ////Guias
-        //guia = new Guia("Fabricio Chuquispuma", "78218381", 8.9f, "Portugues");
-        //guias.agregarGuia(guia);
-        //guia = new Guia("Geomar Camacho", "78451231", 1.9f, "Francés");
-        //guias.agregarGuia(guia);
-        ////
+        
         ///Vehiculos
         //vehiculo = new Vehiculo("QQ23", 8, 5.5f, "Sergio Mcqueen");
         //vehiculos.agregar(vehiculo);
@@ -60,6 +53,7 @@ public class App implements Serializable{
         tours = (TourArreglo) SerializadoraGen.deserializar("tours.txt");
         //personas = (PersonaArreglo) SerializadoraGen.deserializar("personas.txt");
         guias = (GuiaArreglo) SerializadoraGen.deserializar("guias.txt");
+        vehiculos = (VehiculoArreglo) SerializadoraGen.deserializar("vehiculos.txt");
         //Salidas
         fmrPrincipal vista = new fmrPrincipal();
         ControladorPrincipal controlador = new ControladorPrincipal(vista, tours,
