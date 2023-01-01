@@ -14,6 +14,7 @@ import modelo.ItinerarioArreglo;
 import modelo.PersonaArreglo;
 import modelo.Tour;
 import modelo.TourArreglo;
+import modelo.Vehiculo;
 import modelo.VehiculoArreglo;
 import vista.fmrBusqueda;
 import vista.fmrCliente;
@@ -27,17 +28,19 @@ public class ControladorBusqueda {
     fmrBusqueda vistaBusqueda;
     TourArreglo modeloTour;
     VehiculoArreglo modeloVehiculo;
+    Vehiculo vehiculoElegido;
     PersonaArreglo modeloPersona;
     GuiaArreglo modeloGuia;
     Tour tourElegido;
     ItinerarioArreglo modeloItinerario;
 
     public ControladorBusqueda(fmrBusqueda vistaBusqueda, TourArreglo modeloTour,
-            VehiculoArreglo modeloVehiculo, PersonaArreglo modeloPersona,
+            VehiculoArreglo modeloVehiculo,Vehiculo vehiculoElegido, PersonaArreglo modeloPersona,
             Tour tourElegido, ItinerarioArreglo modeloItinerario, GuiaArreglo modeloGuia) {
         this.vistaBusqueda = vistaBusqueda;
         this.modeloTour = modeloTour;
         this.modeloVehiculo = modeloVehiculo;
+        this.vehiculoElegido= vehiculoElegido;
         this.modeloPersona = modeloPersona;
         this.tourElegido = tourElegido;
         this.modeloItinerario = modeloItinerario;
@@ -49,7 +52,7 @@ public class ControladorBusqueda {
                 fmrCliente vistaCliente = new fmrCliente();
                 Guia guiaElegido= new Guia(" "," ",0," ");
                 ControladorCliente controladorCliente = new ControladorCliente(vistaCliente, modeloPersona, modeloTour, 
-                modeloVehiculo, tourElegido, modeloGuia, guiaElegido);
+                modeloVehiculo, vehiculoElegido, tourElegido, modeloGuia, guiaElegido);
                 controladorCliente.iniciarCliente();
             }
         });

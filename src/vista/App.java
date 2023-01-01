@@ -86,12 +86,13 @@ public class App {
         vehiculos.agregar(vehiculo);
         vehiculo = new Vehiculo("QQ24", 8, 6.5f, "Francesco Bernoulli");
         vehiculos.agregar(vehiculo);
+        Vehiculo vehiculoElegido=new Vehiculo(" ",0,0," ");
         ////
 
         //Salidas
         fmrPrincipal vista = new fmrPrincipal();
         ControladorPrincipal controlador = new ControladorPrincipal(vista, tours,
-                personas, guias, vehiculos);
+                personas, guias, vehiculos, vehiculoElegido);
         controlador.iniciar();
     }
 }

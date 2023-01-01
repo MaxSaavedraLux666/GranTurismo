@@ -129,7 +129,7 @@ public class TourArreglo {
         return duracion;
     }
 
-    private int getTotal() {
+    public int getTotal() {
         int resultado = 0;
         for (Tour obj : this.tours) {
             if (obj != null) {

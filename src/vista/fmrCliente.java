@@ -34,8 +34,8 @@ public class fmrCliente extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        txtFieldCodigoTransporte = new javax.swing.JTextField();
         txtFieldNombreTitular = new javax.swing.JTextField();
-        txtFieldCorreoTitular = new javax.swing.JTextField();
         txtFieldTelefonoTitular = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         btnAgregar = new javax.swing.JButton();
@@ -54,13 +54,15 @@ public class fmrCliente extends javax.swing.JFrame {
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txtFieldFecha = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblVehiculo = new javax.swing.JTable();
         cbxGuia = new javax.swing.JComboBox<>();
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        txtFieldCorreoTitular = new javax.swing.JTextField();
+        jLabel14 = new javax.swing.JLabel();
 
         jLabel8.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
         jLabel8.setText("Nombre del titular");
@@ -80,25 +82,25 @@ public class fmrCliente extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Wide Latin", 1, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 0));
         jLabel1.setText("Nombre del titular");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 310, -1, -1));
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 320, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Wide Latin", 1, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 0));
         jLabel2.setText("Correo del titular");
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 350, -1, -1));
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 360, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Wide Latin", 1, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 0));
         jLabel3.setText("Teléfono del titular");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 390, -1, -1));
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 390, -1, -1));
 
-        txtFieldNombreTitular.addActionListener(new java.awt.event.ActionListener() {
+        txtFieldCodigoTransporte.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtFieldNombreTitularActionPerformed(evt);
+                txtFieldCodigoTransporteActionPerformed(evt);
             }
         });
-        jPanel2.add(txtFieldNombreTitular, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 310, 240, 20));
-        jPanel2.add(txtFieldCorreoTitular, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 350, 240, 20));
+        jPanel2.add(txtFieldCodigoTransporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 260, 80, 20));
+        jPanel2.add(txtFieldNombreTitular, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 320, 240, 20));
         jPanel2.add(txtFieldTelefonoTitular, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 390, 240, 20));
 
         jLabel5.setFont(new java.awt.Font("Verdana", 3, 36)); // NOI18N
@@ -125,7 +127,7 @@ public class fmrCliente extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Wide Latin", 1, 12)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 0));
         jLabel7.setText("DNI");
-        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 440, -1, -1));
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 430, -1, -1));
 
         txtFieldDNItitular.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -198,8 +200,8 @@ public class fmrCliente extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Wide Latin", 1, 12)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 0));
         jLabel6.setText("Fecha de viaje");
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 530, -1, -1));
-        jPanel2.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 520, 240, -1));
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 510, -1, -1));
+        jPanel2.add(txtFieldFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 510, 240, -1));
 
         tblVehiculo.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -214,7 +216,7 @@ public class fmrCliente extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tblVehiculo);
 
-        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 110, 440, 160));
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 130, 440, 120));
 
         cbxGuia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jPanel2.add(cbxGuia, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 390, 240, -1));
@@ -222,18 +224,22 @@ public class fmrCliente extends javax.swing.JFrame {
         jLabel17.setFont(new java.awt.Font("Engravers MT", 1, 12)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(255, 255, 255));
         jLabel17.setText("datos del cliente");
-        jPanel2.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 280, -1, 20));
+        jPanel2.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 290, -1, 20));
 
         jLabel18.setBackground(new java.awt.Color(255, 0, 51));
         jLabel18.setFont(new java.awt.Font("Engravers MT", 1, 12)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(255, 255, 255));
         jLabel18.setText("tRANSPORTE");
-        jPanel2.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 90, -1, 20));
+        jPanel2.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 110, -1, 20));
 
-        jLabel4.setBackground(new java.awt.Color(255, 51, 51));
-        jLabel4.setFont(new java.awt.Font("Wide Latin", 1, 12)); // NOI18N
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/lugares-turisticos-en-cusco.jpg"))); // NOI18N
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -40, 930, 720));
+        jLabel11.setFont(new java.awt.Font("Wide Latin", 1, 12)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 0));
+        jLabel11.setText("Escribir codigo ");
+        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 260, -1, -1));
+        jPanel2.add(txtFieldCorreoTitular, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 360, 240, 20));
+
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/lugares-turisticos-en-cusco.jpg"))); // NOI18N
+        jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 900, 540));
 
         jDesktopPane1.setLayer(jPanel2, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
@@ -276,9 +282,9 @@ public class fmrCliente extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnCancelarActionPerformed
 
-    private void txtFieldNombreTitularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFieldNombreTitularActionPerformed
+    private void txtFieldCodigoTransporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFieldCodigoTransporteActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtFieldNombreTitularActionPerformed
+    }//GEN-LAST:event_txtFieldCodigoTransporteActionPerformed
 
     private void txtFieldDNItitularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFieldDNItitularActionPerformed
         // TODO add your handling code here:
@@ -334,15 +340,16 @@ public class fmrCliente extends javax.swing.JFrame {
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -352,14 +359,15 @@ public class fmrCliente extends javax.swing.JFrame {
     private javax.swing.JScrollBar jScrollBar1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JTextField jTextField1;
     public javax.swing.JLabel labelCodReserva;
     public javax.swing.JLabel labelDestino;
     public javax.swing.JLabel labelPrecio;
     public javax.swing.JTable tblVehiculo;
+    public javax.swing.JTextField txtFieldCodigoTransporte;
     public javax.swing.JTextField txtFieldCorreoTitular;
     public javax.swing.JTextField txtFieldDNItitular;
     public javax.swing.JTextField txtFieldEdadTitular;
+    public javax.swing.JTextField txtFieldFecha;
     public javax.swing.JTextField txtFieldNombreTitular;
     public javax.swing.JTextField txtFieldNombreTitular3;
     public javax.swing.JTextField txtFieldTelefonoTitular;

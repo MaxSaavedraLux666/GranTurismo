@@ -12,11 +12,14 @@ import javax.swing.table.DefaultTableModel;
 import modelo.Cliente;
 import modelo.Guia;
 import modelo.GuiaArreglo;
+import modelo.Persona;
 import modelo.PersonaArreglo;
 import modelo.Tour;
 import modelo.TourArreglo;
+import modelo.Vehiculo;
 import modelo.VehiculoArreglo;
 import vista.fmrCliente;
+import vista.fmrVenta;
 
 /**
  *
@@ -31,17 +34,19 @@ public class ControladorCliente {
     String codigo;
     TourArreglo modeloTour;
     VehiculoArreglo modeloVehiculo;
+    Vehiculo vehiculoElegido;
     Tour tourElegido;
     GuiaArreglo modeloGuia;
     Guia guiaElegido;
 
     public ControladorCliente(fmrCliente vistaCliente, PersonaArreglo modeloPersona,  TourArreglo modeloTour, 
-            VehiculoArreglo modeloVehiculo, Tour tourElegido, GuiaArreglo modeloGuia, Guia guiaElegido ) {
+            VehiculoArreglo modeloVehiculo, Vehiculo vehiculoElegido, Tour tourElegido, GuiaArreglo modeloGuia, Guia guiaElegido ) {
         
         this.vistaCliente = vistaCliente;
         this.modeloPersona = modeloPersona;
         this.modeloTour=modeloTour;
         this.modeloVehiculo=modeloVehiculo;
+        this.vehiculoElegido=vehiculoElegido;
         this.tourElegido=tourElegido;
         this.modeloGuia=modeloGuia;
         this.guiaElegido=guiaElegido;
@@ -59,21 +64,34 @@ public class ControladorCliente {
                         vistaCliente.txtFieldTelefonoTitular.getText(),
                         vistaCliente.txtFieldDNItitular.getText(),
                         Integer.parseInt(vistaCliente.txtFieldEdadTitular.getText()));
+                vistaCliente.txtFieldFecha.setText(" ");
+                guiaElegido.setNombre(String.valueOf(vistaCliente.cbxGuia.getSelectedIndex()));
+                modeloGuia.agregarGuia(guiaElegido);
+                vehiculoElegido.setCodigoVehiculo(vistaCliente.txtFieldCodigoTransporte.getText());
+                modeloVehiculo.agregar(vehiculoElegido);
+                fmrVenta vistaVenta=new fmrVenta();
+                ControladorVenta controladorVenta=new ControladorVenta(vistaVenta, tourElegido, vehiculoElegido, 
+                guiaElegido, clienteElegido);
+                controladorVenta.iniciarVenta();
                 if (modeloPersona.agregar(cliente)) {
                     JOptionPane.showMessageDialog(null, "Los datos han sido agregados exitosamente");
+                    vistaCliente.txtFieldCodigoTransporte.setText("");
                     vistaCliente.txtFieldNombreTitular.setText("");
-                    vistaCliente.txtFieldCorreoTitular.setText("");
                     vistaCliente.txtFieldTelefonoTitular.setText("");
                     vistaCliente.txtFieldDNItitular.setText("");
                     vistaCliente.txtFieldEdadTitular.setText("");
                     codigo = generarCodigoReserva();
                     vistaCliente.labelCodReserva.setText(codigo);
                     //clienteElegido = modelo.buscarPersona(codigo);
+                    
+                    
                 } else {
                     JOptionPane.showMessageDialog(null, "Error\n"
                             + "Los datos no han sido agregados exitosamente");
                 }
                 i++;
+                
+                
             }
         });
 
@@ -95,6 +113,8 @@ public class ControladorCliente {
             }
         }
         this.vistaCliente.cbxGuia.setModel(model);
+        
+
     }
     
     public void detallesCliente() {

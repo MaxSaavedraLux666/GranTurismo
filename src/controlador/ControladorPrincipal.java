@@ -15,6 +15,7 @@ import libreria.SerializadoraGen;
 import modelo.GuiaArreglo;
 import modelo.PersonaArreglo;
 import modelo.TourArreglo;
+import modelo.Vehiculo;
 import modelo.VehiculoArreglo;
 
 import vista.*;
@@ -30,6 +31,7 @@ public class ControladorPrincipal {
     PersonaArreglo modeloPersona;
     GuiaArreglo modeloGuia;
     VehiculoArreglo modeloVehiculo;
+    Vehiculo vehiculoElegido;
 
     private boolean estado = true;
 
@@ -40,12 +42,13 @@ public class ControladorPrincipal {
     }
 
     public ControladorPrincipal(fmrPrincipal vista, TourArreglo modeloTour,
-            PersonaArreglo modeloPersona, GuiaArreglo modeloGuia, VehiculoArreglo modeloVehiculo) {
+            PersonaArreglo modeloPersona, GuiaArreglo modeloGuia, VehiculoArreglo modeloVehiculo, Vehiculo vehiculoElegido) {
         this.vista = vista;
         this.modeloTour = modeloTour;
         this.modeloPersona = modeloPersona;
         this.modeloGuia = modeloGuia;
         this.modeloVehiculo = modeloVehiculo;
+        this.vehiculoElegido= vehiculoElegido;
 
         this.vista.btn_Salir.addActionListener(new ActionListener() {
             @Override
@@ -106,7 +109,7 @@ public class ControladorPrincipal {
             public void actionPerformed(ActionEvent e) {
                 if (modeloTour.buscarTour(vista.txtFieldBusqueda.getText()) != null) {
                     fmrBusqueda vistaBusqueda = new fmrBusqueda();
-                    ControladorBusqueda controlador = new ControladorBusqueda(vistaBusqueda, modeloTour, modeloVehiculo,
+                    ControladorBusqueda controlador = new ControladorBusqueda(vistaBusqueda, modeloTour, modeloVehiculo,vehiculoElegido,
                             modeloPersona, modeloTour.buscarTour(vista.txtFieldBusqueda.getText()),
                    modeloTour.buscarTour(vista.txtFieldBusqueda.getText()).getItinerarios(), modeloGuia);
                     controlador.iniciarBusqueda();
