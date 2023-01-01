@@ -78,7 +78,7 @@ public class Tour implements Serializable{
     @Override
     public String toString() {
         return nombrePaquete
-                + "       Desde : " + precioTour + " $"
-                + "         Código : " + codTour;
+                + "  Desde : " + precioTour + " $"
+                + "  Código : " + codTour;
     }
 }

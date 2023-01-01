@@ -16,7 +16,7 @@ public class TourArreglo implements Serializable{
     private int indice;
     private final String[] cabeceraTours = {"LUGAR", "ESTADO", "PRECIO",
         "CODIGO"};
-    private String[] duracion = {"1", "2", "3", "4", "5", "6", "7", "Part Time", "Full Time"};
+    private static final long serialVersionUID = 1541553429231114824L;
 
     public TourArreglo() {
         this(5);
@@ -125,10 +125,6 @@ public class TourArreglo implements Serializable{
 
     public String[] getCabecera() {
         return this.cabeceraTours;
-    }
-
-    public String[] getDuracion() {
-        return duracion;
     }
 
     public int getTotal() {

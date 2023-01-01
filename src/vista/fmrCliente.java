@@ -52,7 +52,6 @@ public class fmrCliente extends javax.swing.JFrame {
         labelPrecio = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         txtFieldFecha = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -62,7 +61,6 @@ public class fmrCliente extends javax.swing.JFrame {
         jLabel18 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         txtFieldCorreoTitular = new javax.swing.JTextField();
-        jLabel14 = new javax.swing.JLabel();
 
         jLabel8.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
         jLabel8.setText("Nombre del titular");
@@ -82,31 +80,31 @@ public class fmrCliente extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Wide Latin", 1, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 0));
         jLabel1.setText("Nombre del titular");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 320, -1, -1));
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 490, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Wide Latin", 1, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 0));
         jLabel2.setText("Correo del titular");
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 360, -1, -1));
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 540, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Wide Latin", 1, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 0));
         jLabel3.setText("Teléfono del titular");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 390, -1, -1));
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 590, -1, -1));
 
         txtFieldCodigoTransporte.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtFieldCodigoTransporteActionPerformed(evt);
             }
         });
-        jPanel2.add(txtFieldCodigoTransporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 260, 80, 20));
-        jPanel2.add(txtFieldNombreTitular, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 320, 240, 20));
-        jPanel2.add(txtFieldTelefonoTitular, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 390, 240, 20));
+        jPanel2.add(txtFieldCodigoTransporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 400, 110, 20));
+        jPanel2.add(txtFieldNombreTitular, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 490, 240, 20));
+        jPanel2.add(txtFieldTelefonoTitular, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 590, 240, 20));
 
         jLabel5.setFont(new java.awt.Font("Verdana", 3, 36)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(204, 204, 0));
-        jLabel5.setText("RESERVA DE CLIENTES");
-        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 20, -1, -1));
+        jLabel5.setText("RESERVA");
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 10, -1, -1));
 
         btnAgregar.setText("Agregar");
         btnAgregar.addActionListener(new java.awt.event.ActionListener() {
@@ -114,7 +112,7 @@ public class fmrCliente extends javax.swing.JFrame {
                 btnAgregarActionPerformed(evt);
             }
         });
-        jPanel2.add(btnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 550, -1, -1));
+        jPanel2.add(btnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 790, -1, -1));
 
         btnCancelar.setText("Cancelar");
         btnCancelar.addActionListener(new java.awt.event.ActionListener() {
@@ -122,43 +120,43 @@ public class fmrCliente extends javax.swing.JFrame {
                 btnCancelarActionPerformed(evt);
             }
         });
-        jPanel2.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 550, -1, -1));
+        jPanel2.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 20, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Wide Latin", 1, 12)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 0));
         jLabel7.setText("DNI");
-        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 430, -1, -1));
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 650, -1, -1));
 
         txtFieldDNItitular.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtFieldDNItitularActionPerformed(evt);
             }
         });
-        jPanel2.add(txtFieldDNItitular, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 430, 240, 20));
+        jPanel2.add(txtFieldDNItitular, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 640, 240, 20));
 
         jLabel9.setBackground(new java.awt.Color(255, 51, 51));
         jLabel9.setFont(new java.awt.Font("Wide Latin", 1, 12)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 0));
-        jLabel9.setText("Codigo de Reserva:");
-        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, -1, -1));
+        jLabel9.setText("Codigo");
+        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 100, -1, -1));
 
         txtFieldEdadTitular.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtFieldEdadTitularActionPerformed(evt);
             }
         });
-        jPanel2.add(txtFieldEdadTitular, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 470, 240, 20));
+        jPanel2.add(txtFieldEdadTitular, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 690, 240, 20));
 
         jLabel10.setFont(new java.awt.Font("Wide Latin", 1, 12)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 0));
         jLabel10.setText("Edad");
-        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 480, -1, -1));
+        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 700, -1, -1));
 
         labelCodReserva.setBackground(new java.awt.Color(255, 51, 51));
         labelCodReserva.setFont(new java.awt.Font("Wide Latin", 1, 12)); // NOI18N
         labelCodReserva.setForeground(new java.awt.Color(255, 255, 0));
         labelCodReserva.setText("codigo");
-        jPanel2.add(labelCodReserva, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, -1, -1));
+        jPanel2.add(labelCodReserva, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 100, -1, -1));
 
         jSeparator3.setBackground(new java.awt.Color(255, 255, 0));
         jPanel2.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 60, 500, 10));
@@ -167,42 +165,40 @@ public class fmrCliente extends javax.swing.JFrame {
         labelDestino.setFont(new java.awt.Font("Wide Latin", 1, 12)); // NOI18N
         labelDestino.setForeground(new java.awt.Color(255, 255, 0));
         labelDestino.setText("labelDestino");
-        jPanel2.add(labelDestino, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, -1, 20));
+        jPanel2.add(labelDestino, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, -1, 20));
 
         jLabel13.setBackground(new java.awt.Color(255, 51, 51));
         jLabel13.setFont(new java.awt.Font("Wide Latin", 1, 12)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 0));
         jLabel13.setText("Destino:");
-        jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, -1, 20));
+        jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, -1, 20));
 
         labelPrecio.setBackground(new java.awt.Color(255, 51, 51));
         labelPrecio.setFont(new java.awt.Font("Wide Latin", 1, 12)); // NOI18N
         labelPrecio.setForeground(new java.awt.Color(255, 255, 0));
         labelPrecio.setText("labelprecio");
-        jPanel2.add(labelPrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 260, -1, 20));
+        jPanel2.add(labelPrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 130, -1, 20));
 
         jLabel12.setFont(new java.awt.Font("Engravers MT", 1, 12)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("GUIA");
-        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 360, -1, 20));
+        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 210, -1, 20));
 
         jLabel15.setBackground(new java.awt.Color(255, 51, 51));
         jLabel15.setFont(new java.awt.Font("Wide Latin", 1, 12)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(255, 255, 0));
         jLabel15.setText("Precio:");
-        jPanel2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, -1, 20));
-
-        jLabel16.setFont(new java.awt.Font("Engravers MT", 1, 12)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel16.setText("tour");
-        jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 80, -1, 20));
+        jPanel2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, -1, 20));
 
         jLabel6.setFont(new java.awt.Font("Wide Latin", 1, 12)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 0));
         jLabel6.setText("Fecha de viaje");
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 510, -1, -1));
-        jPanel2.add(txtFieldFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 510, 240, -1));
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 740, -1, -1));
+        jPanel2.add(txtFieldFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 740, 240, -1));
 
+        tblVehiculo.setBackground(new java.awt.Color(153, 255, 204));
+        tblVehiculo.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        tblVehiculo.setForeground(new java.awt.Color(0, 0, 0));
         tblVehiculo.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -216,30 +212,29 @@ public class fmrCliente extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tblVehiculo);
 
-        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 130, 440, 120));
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 440, 120));
 
-        cbxGuia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel2.add(cbxGuia, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 390, 240, -1));
+        cbxGuia.setBackground(new java.awt.Color(153, 255, 204));
+        cbxGuia.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        cbxGuia.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel2.add(cbxGuia, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 250, 320, -1));
 
         jLabel17.setFont(new java.awt.Font("Engravers MT", 1, 12)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(255, 255, 255));
         jLabel17.setText("datos del cliente");
-        jPanel2.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 290, -1, 20));
+        jPanel2.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 440, -1, 20));
 
         jLabel18.setBackground(new java.awt.Color(255, 0, 51));
         jLabel18.setFont(new java.awt.Font("Engravers MT", 1, 12)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(255, 255, 255));
         jLabel18.setText("tRANSPORTE");
-        jPanel2.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 110, -1, 20));
+        jPanel2.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, -1, 20));
 
         jLabel11.setFont(new java.awt.Font("Wide Latin", 1, 12)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 0));
         jLabel11.setText("Escribir codigo ");
-        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 260, -1, -1));
-        jPanel2.add(txtFieldCorreoTitular, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 360, 240, 20));
-
-        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/lugares-turisticos-en-cusco.jpg"))); // NOI18N
-        jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 900, 540));
+        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, -1, -1));
+        jPanel2.add(txtFieldCorreoTitular, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 540, 240, 20));
 
         jDesktopPane1.setLayer(jPanel2, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
@@ -247,22 +242,18 @@ public class fmrCliente extends javax.swing.JFrame {
         jDesktopPane1.setLayout(jDesktopPane1Layout);
         jDesktopPane1Layout.setHorizontalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 811, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 811, Short.MAX_VALUE)
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 830, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jDesktopPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jDesktopPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -343,9 +334,7 @@ public class fmrCliente extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;

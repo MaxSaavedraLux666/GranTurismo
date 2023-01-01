@@ -9,8 +9,10 @@ import java.awt.event.ActionListener;
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import modelo.Cliente;
 import modelo.Guia;
 import modelo.Persona;
+import modelo.PersonaArreglo;
 import modelo.Tour;
 import modelo.Vehiculo;
 import vista.fmrBoleta;
@@ -27,14 +29,16 @@ public class ControladorVenta{
     Vehiculo vehiculoElegido;
     Guia guiaElegido;
     Persona clienteElegido;
+    PersonaArreglo modeloPersona;
 
     public ControladorVenta(fmrVenta vistVenta, Tour tourElegido, Vehiculo vehiculoElegido, 
-            Guia guiaElegido, Persona clienteElegido) {
+            Guia guiaElegido, Persona clienteElegido, PersonaArreglo modeloPersona) {
         this.vistVenta = vistVenta;
         this.guiaElegido = guiaElegido;
         this.tourElegido = tourElegido;
         this.vehiculoElegido = vehiculoElegido;
         this.clienteElegido = clienteElegido;
+        this.modeloPersona = modeloPersona;
         
         this.vistVenta.btnAceptar.addActionListener(new ActionListener(){
             @Override
@@ -60,16 +64,16 @@ public class ControladorVenta{
         this.vistVenta.labdelDestino.setText(tourElegido.getNombrePaquete());
         this.vistVenta.labelNCliente.setText(clienteElegido.getNombre());
         this.vistVenta.labelDocumento.setText(clienteElegido.getDni());
-        this.vistVenta.labelCorreo.setText("");
-        this.vistVenta.labelTelefono.setText(clienteElegido.getDni());
+        this.vistVenta.labelCorreo.setText(modeloPersona.enviarCliente((Cliente) clienteElegido).getCorreo());
+        this.vistVenta.labelTelefono.setText(modeloPersona.enviarCliente((Cliente) clienteElegido).getTelefono());
         this.vistVenta.labelFechaI.setText("19 - 03 - 23");
         this.vistVenta.labelFechaV.setText("19 - 03 - 23");
         this.vistVenta.labelFechaCompra.setText(fechaActual());
-        this.vistVenta.labelCodReserva.setText("");
-        this.vistVenta.labelNomAgencia.setText("");
-        this.vistVenta.labelGuia.setText("");
-        this.vistVenta.labCodVehiculo.setText("");
-        this.vistVenta.labelCosto.setText("");
+        this.vistVenta.labelCodReserva.setText(modeloPersona.enviarCliente((Cliente) clienteElegido).getCodReserva());
+        this.vistVenta.labelNomAgencia.setText("Agencia Cusco travel");
+        this.vistVenta.labelGuia.setText(guiaElegido.getNombre());
+        this.vistVenta.labCodVehiculo.setText(vehiculoElegido.getCodigoVehiculo());
+        this.vistVenta.labelCosto.setText(String.valueOf(tourElegido.getPrecioTour()));
     }
     
     public String fechaActual(){

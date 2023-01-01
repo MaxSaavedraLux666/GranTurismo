@@ -6,6 +6,7 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.concurrent.ThreadLocalRandom;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -31,8 +32,7 @@ public class ControladorCliente {
     fmrCliente vistaCliente = new fmrCliente();
     PersonaArreglo modeloPersona;
     Cliente clienteElegido;
-    static int i = 0;
-    String codigo;
+    String codigoReserva;
     TourArreglo modeloTour;
     VehiculoArreglo modeloVehiculo;
     Vehiculo vehiculoElegido;
@@ -41,62 +41,58 @@ public class ControladorCliente {
     Guia guiaElegido;
 
     public ControladorCliente(fmrCliente vistaCliente, PersonaArreglo modeloPersona, TourArreglo modeloTour,
-            VehiculoArreglo modeloVehiculo, Tour tourElegido, GuiaArreglo modeloGuia, Guia guiaElegido) {
+            VehiculoArreglo modeloVehiculo, Tour tourElegido, GuiaArreglo modeloGuia) {
 
         this.vistaCliente = vistaCliente;
         this.modeloPersona = modeloPersona;
         this.modeloTour = modeloTour;
         this.modeloVehiculo = modeloVehiculo;
-
         this.tourElegido = tourElegido;
         this.modeloGuia = modeloGuia;
-        this.guiaElegido = guiaElegido;
 
         this.vistaCliente.btnAgregar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                //genera el código de la reserva
+                int min = 10;
+                int max = 10000;
+                int randomInt = ThreadLocalRandom.current().nextInt(min, max + 1);
+                codigoReserva = String.valueOf(randomInt);
+                ///
 
-                if (i == 0) {
-                    codigo = "100000";
-                }
-                Cliente cliente = new Cliente(codigo,
+                Cliente cliente = new Cliente(codigoReserva,
                         vistaCliente.txtFieldNombreTitular.getText(),
                         vistaCliente.txtFieldCorreoTitular.getText(),
                         vistaCliente.txtFieldTelefonoTitular.getText(),
                         vistaCliente.txtFieldDNItitular.getText(),
                         Integer.parseInt(vistaCliente.txtFieldEdadTitular.getText()));
-                vistaCliente.txtFieldFecha.setText(" ");
-                guiaElegido.setNombre(String.valueOf(vistaCliente.cbxGuia.getSelectedIndex()));
-                modeloGuia.agregarGuia(guiaElegido);
+                vistaCliente.txtFieldFecha.getText();
+                guiaElegido = (Guia) vistaCliente.cbxGuia.getSelectedItem();
 
-                fmrVenta vistaVenta = new fmrVenta();
-                ControladorVenta controladorVenta = new ControladorVenta(vistaVenta, tourElegido, vehiculoElegido,
-                        guiaElegido, clienteElegido);
-                controladorVenta.iniciarVenta();
-                if (modeloPersona.agregar(cliente)) {
+                if (modeloPersona.agregar(cliente) && modeloVehiculo.buscarVehiculo(vistaCliente.txtFieldCodigoTransporte.getText()) != null && 
+                        modeloGuia.buscarGuia(guiaElegido.getDNI()) != null) {
                     JOptionPane.showMessageDialog(null, "Los datos han sido agregados exitosamente");
                     vistaCliente.txtFieldCodigoTransporte.setText("");
                     vistaCliente.txtFieldNombreTitular.setText("");
                     vistaCliente.txtFieldTelefonoTitular.setText("");
                     vistaCliente.txtFieldDNItitular.setText("");
                     vistaCliente.txtFieldEdadTitular.setText("");
-                    codigo = generarCodigoReserva();
-                    vistaCliente.labelCodReserva.setText(codigo);
-                    //clienteElegido = modelo.buscarPersona(codigo);
+                    SerializadoraGen.serializar("clientes.txt", modeloPersona);
 
+                    fmrVenta vistaVenta = new fmrVenta();
+                    ControladorVenta controladorVenta = new ControladorVenta(vistaVenta, tourElegido, vehiculoElegido,
+                            guiaElegido, cliente, modeloPersona);
+                    controladorVenta.iniciarVenta();
                 } else {
                     JOptionPane.showMessageDialog(null, "Error\n"
                             + "Los datos no han sido agregados exitosamente");
                 }
-                i++;
-
             }
         });
 
         this.vistaCliente.btnCancelar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                SerializadoraGen.serializar("clientes.txt", modeloPersona);
                 vistaCliente.dispose();
             }
         });
@@ -115,10 +111,10 @@ public class ControladorCliente {
 
     }
 
-    public void detallesCliente() {
+    public void detallesReserva() {
         vistaCliente.labelDestino.setText(tourElegido.getNombrePaquete());
         vistaCliente.labelPrecio.setText(String.valueOf(tourElegido.getPrecioTour()));
-
+        vistaCliente.labelCodReserva.setText(tourElegido.getCodTour());
     }
 
     public void limpiarControles() {
@@ -128,21 +124,9 @@ public class ControladorCliente {
         vistaCliente.tblVehiculo.setModel(modeloTabla);
     }
 
-    public String generarCodigoReserva() {
-        int aleatorio = 0;
-        aleatorio = (int) (Math.random() * (999999 - 100000 + 1) + 100000);
-        codigo = String.valueOf(aleatorio);
-        return codigo;
-    }
-
-    public Cliente devolverCliente() {
-        return clienteElegido;
-    }
-
     public void iniciarCliente() {
-        vistaCliente.labelCodReserva.setText("100000");
         rellenarGuias();
-        detallesCliente();
+        detallesReserva();
         this.vistaCliente.setVisible(true);
         this.vistaCliente.setLocationRelativeTo(null);
         limpiarControles();

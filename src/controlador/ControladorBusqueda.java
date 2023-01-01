@@ -50,9 +50,9 @@ public class ControladorBusqueda {
             @Override
             public void actionPerformed(ActionEvent e) {
                 fmrCliente vistaCliente = new fmrCliente();
-                Guia guiaElegido= new Guia(" "," ",0," ");
+            
                 ControladorCliente controladorCliente = new ControladorCliente(vistaCliente, modeloPersona, modeloTour, 
-                modeloVehiculo, tourElegido, modeloGuia, guiaElegido);
+                modeloVehiculo, tourElegido, modeloGuia);
                 controladorCliente.iniciarCliente();
             }
         });

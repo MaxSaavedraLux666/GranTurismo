@@ -142,6 +142,7 @@ public class PersonaArreglo implements Serializable{
         }
         return i;
     }
+    
     public String[] getCabecera(){
         return this.cabeceraCliente;
     }
@@ -175,10 +176,19 @@ public class PersonaArreglo implements Serializable{
         return resultado;
     }
     
-    public Cliente regresarCliente(){
+    public Cliente enviarCliente(Cliente cliente){
+        Cliente result = null;
         
+        for (Persona obj : personas) {
+            if (obj instanceof Cliente) {
+                if (cliente.equals(obj)){
+                    result = (Cliente) obj;
+                    break;
+                }
+            }
+        }
         
-        return clienteElegido;
+        return result;
     }
 
     @Override

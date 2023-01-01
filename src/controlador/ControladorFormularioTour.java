@@ -103,6 +103,7 @@ public class ControladorFormularioTour {
                         vistaRegistrarTour.txtField_Lugar.setText("");
                         vistaRegistrarTour.txtField_Precio.setText("");
                         vistaRegistrarTour.txtHora.setText("");
+                        vistaRegistrarTour.txtHora.setText("");
                     } else {
                         JOptionPane.showMessageDialog(null, "Error\n"
                                 + "Los datos no han sido modificados exitosamente");
@@ -149,6 +150,5 @@ public class ControladorFormularioTour {
         this.vistaRegistrarTour.setVisible(true);
         this.vistaRegistrarTour.setResizable(false);
         this.vistaRegistrarTour.setLocationRelativeTo(null);
-
     }
 }
