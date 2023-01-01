@@ -9,6 +9,7 @@ import java.awt.event.ActionListener;
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import libreria.SerializadoraGen;
 import modelo.Cliente;
 import modelo.Guia;
 import modelo.Persona;
@@ -48,13 +49,14 @@ public class ControladorVenta{
                 boleta.labelValido.setText("4 personas");
                 boleta.labelCosto.setText("16.9");
                 boleta.setVisible(true);
+                SerializadoraGen.serializar("personas.txt", modeloPersona);
             }
         });
         
         this.vistVenta.btnCancelar.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
-                vistVenta.dispose();   
+                vistVenta.dispose(); 
             }
         });
     }

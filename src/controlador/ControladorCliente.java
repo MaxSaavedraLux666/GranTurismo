@@ -77,8 +77,6 @@ public class ControladorCliente {
                     vistaCliente.txtFieldTelefonoTitular.setText("");
                     vistaCliente.txtFieldDNItitular.setText("");
                     vistaCliente.txtFieldEdadTitular.setText("");
-                    SerializadoraGen.serializar("clientes.txt", modeloPersona);
-
                     fmrVenta vistaVenta = new fmrVenta();
                     ControladorVenta controladorVenta = new ControladorVenta(vistaVenta, tourElegido, vehiculoElegido,
                             guiaElegido, cliente, modeloPersona);

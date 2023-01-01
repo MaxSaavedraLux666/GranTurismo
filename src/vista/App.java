@@ -34,7 +34,7 @@ public class App implements Serializable {
         //personas.agregar(cliente);
         ///Deserialización
         tours = (TourArreglo) SerializadoraGen.deserializar("tours.txt");
-        //personas = (PersonaArreglo) SerializadoraGen.deserializar("personas.txt");
+        personas = (PersonaArreglo) SerializadoraGen.deserializar("personas.txt");
         guias = (GuiaArreglo) SerializadoraGen.deserializar("guias.txt");
         vehiculos = (VehiculoArreglo) SerializadoraGen.deserializar("vehiculos.txt");
         //Salidas

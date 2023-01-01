@@ -34,7 +34,7 @@ public class fmrTour extends javax.swing.JFrame {
         btn_BuscarTour = new javax.swing.JButton();
         btnRegresar = new javax.swing.JButton();
         btn_Reservar = new javax.swing.JButton();
-        jTextField2 = new javax.swing.JTextField();
+        txtFieldBusqueda = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         tablaTours = new javax.swing.JTable();
@@ -73,7 +73,7 @@ public class fmrTour extends javax.swing.JFrame {
         btn_Reservar.setFont(new java.awt.Font("Lucida Fax", 0, 14)); // NOI18N
         btn_Reservar.setText("Reservar");
         jPanel1.add(btn_Reservar, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 490, 120, -1));
-        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 490, 100, 30));
+        jPanel1.add(txtFieldBusqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 490, 100, 30));
 
         jLabel4.setFont(new java.awt.Font("Lucida Fax", 0, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
@@ -167,7 +167,7 @@ public class fmrTour extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     public javax.swing.JTable tablaTours;
+    public javax.swing.JTextField txtFieldBusqueda;
     // End of variables declaration//GEN-END:variables
 }

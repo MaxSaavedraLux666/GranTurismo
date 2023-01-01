@@ -6,6 +6,7 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import modelo.GuiaArreglo;
 import modelo.PersonaArreglo;
@@ -13,6 +14,7 @@ import modelo.Tour;
 import modelo.TourArreglo;
 import modelo.VehiculoArreglo;
 import vista.fmrBoleta;
+import vista.fmrBusqueda;
 import vista.fmrPrincipal;
 import vista.fmrTour;
 
@@ -40,7 +42,17 @@ public class ControladorTour {
         this.vistaTour.btn_BuscarTour.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                if (vistaTour.txtFieldBusqueda.getText().equals(modeloTour.buscarTour(vistaTour.txtFieldBusqueda.getText()).getCodTour())) {
+                    fmrBusqueda vistaBusqueda = new fmrBusqueda();
+                    ControladorBusqueda controlador = new ControladorBusqueda(vistaBusqueda, modeloTour, modeloVehiculo,
+                            modeloPersona, modeloTour.buscarTour(vistaTour.txtFieldBusqueda.getText()),
+                            modeloTour.buscarTour(vistaTour.txtFieldBusqueda.getText()).getItinerarios(), modeloGuia);
+                    controlador.iniciarBusqueda();
+                } else {
+                    JOptionPane.showMessageDialog(null, """
+                                                        El tour no se encuentra
+                                                        Ingrese correctamente el c\u00f3digo""");
+                }
             }
         });
 

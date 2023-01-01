@@ -70,17 +70,13 @@ public class ControladorPrincipal {
             }
         });
 
-        this.vista.btnSiguiente.addActionListener(new ActionListener() {
+        this.vista.btnTour.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //siguiente
-                if (estado) {
-                    der(vista.panelDerecho, 1, 2, 620);
-                    estado = false;
-                } else {
-                    izq(vista.panelDerecho, 1, 2, 10);
-                    estado = true;
-                }
+                fmrTour vistaTour = new fmrTour();
+                ControladorTour controlador = new ControladorTour(modeloTour, vistaTour, 
+                        modeloVehiculo, modeloPersona, modeloGuia);
+                controlador.iniciarTour();
             }
         });
 
@@ -105,7 +101,7 @@ public class ControladorPrincipal {
         this.vista.btnBusqueda.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (modeloTour.buscarTour(vista.txtFieldBusqueda.getText()) != null) {
+                if (vista.txtFieldBusqueda.getText().equals(modeloTour.buscarTour(vista.txtFieldBusqueda.getText()).getCodTour())) {
                     fmrBusqueda vistaBusqueda = new fmrBusqueda();
                     ControladorBusqueda controlador = new ControladorBusqueda(vistaBusqueda, modeloTour, modeloVehiculo,
                             modeloPersona, modeloTour.buscarTour(vista.txtFieldBusqueda.getText()),
@@ -113,7 +109,7 @@ public class ControladorPrincipal {
                     controlador.iniciarBusqueda();
                 } else {
                     JOptionPane.showMessageDialog(null, """
-                                                        El tour no se encuentar
+                                                        El tour no se encuentra
                                                         Ingrese correctamente el c\u00f3digo""");
                 }
             }
