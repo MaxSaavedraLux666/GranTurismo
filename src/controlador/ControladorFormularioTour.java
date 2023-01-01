@@ -13,6 +13,8 @@ import modelo.TourArreglo;
 import vista.fmrItinerario;
 import vista.fmrRegistrarTour;
 import controlador.*;
+import java.io.Serializable;
+import libreria.SerializadoraGen;
 import vista.fmrPrincipal;
 
 /**
@@ -35,14 +37,13 @@ public class ControladorFormularioTour {
 
                 Tour tour = new Tour(vistaRegistrarTour.txtField_Lugar.getText(), modeloItinerarios,
                         Float.parseFloat(vistaRegistrarTour.txtField_Precio.getText()),
-                        vistaRegistrarTour.comboBox_Hora.getSelectedIndex(),
-                        vistaRegistrarTour.txtField_Codigo.getText());
+                        Integer.parseInt(vistaRegistrarTour.txtHora.getText()), vistaRegistrarTour.txtField_Codigo.getText());
                 if (modeloTour.agregarTour(tour)) {
                     JOptionPane.showMessageDialog(null, "Los datos han sido agregados exitosamente");
-                    vistaRegistrarTour.txtFieldBuscarCod.setText("");
                     vistaRegistrarTour.txtField_Codigo.setText("");
                     vistaRegistrarTour.txtField_Lugar.setText("");
                     vistaRegistrarTour.txtField_Precio.setText("");
+                    
                     fmrPrincipal vista = new fmrPrincipal();
                     ControladorPrincipal control = new ControladorPrincipal(vista, modeloTour);
                     control.llenarLista();
@@ -57,16 +58,26 @@ public class ControladorFormularioTour {
         this.vistaRegistrarTour.btnBuscra.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                modeloTour.buscarTour(vistaRegistrarTour.txtFieldBuscarCod.getText());
+                String cod = JOptionPane.showInputDialog(null, "Ingrese el codigo del tour");
+                if (modeloTour.buscarTour(cod) != null) {
+                    vistaRegistrarTour.txtField_Codigo.setText(modeloTour.buscarTour(cod).getCodTour());
+                    vistaRegistrarTour.txtField_Lugar.setText(modeloTour.buscarTour(cod).getNombrePaquete());
+                    vistaRegistrarTour.txtHora.setText(String.valueOf(modeloTour.buscarTour(cod).getHoras()));
+                    vistaRegistrarTour.txtField_Precio.setText(String.valueOf(modeloTour.buscarTour(cod).getPrecioTour()));
+                } else {
+                    JOptionPane.showMessageDialog(null, "Error\n"
+                            + "Los datos son incorrectos");
+                }
             }
         });
 
         this.vistaRegistrarTour.btnEliminar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (modeloTour.eliminarTour(vistaRegistrarTour.txtFieldBuscarCod.getText())) {
+                String cod = JOptionPane.showInputDialog(null, "Ingrese el codigo del tour");
+                if (modeloTour.eliminarTour(cod)) {
                     JOptionPane.showMessageDialog(null, "Los datos han sido eliminado exitosamente");
-                    vistaRegistrarTour.txtFieldBuscarCod.setText("");
+
                 } else {
                     JOptionPane.showMessageDialog(null, "Error\n"
                             + "Los datos no han sido eliminado exitosamente");
@@ -78,20 +89,29 @@ public class ControladorFormularioTour {
             @Override
             public void actionPerformed(ActionEvent e) {
 
+                String cod = JOptionPane.showInputDialog(null, "Ingrese el codigo del tour");
+
                 Tour tourNuevo = new Tour(vistaRegistrarTour.txtField_Lugar.getText(), modeloItinerarios,
                         Float.parseFloat(vistaRegistrarTour.txtField_Precio.getText()),
-                        vistaRegistrarTour.comboBox_Hora.getSelectedIndex(),
+                        Integer.parseInt(vistaRegistrarTour.txtHora.getText()),
                         vistaRegistrarTour.txtField_Codigo.getText());
 
-                if (modeloTour.modificarTour(vistaRegistrarTour.txtFieldBuscarCod.getText(), tourNuevo)) {
-                    JOptionPane.showMessageDialog(null, "Los datos han sido modificados exitosamente");
-                    vistaRegistrarTour.txtFieldBuscarCod.setText("");
-                    vistaRegistrarTour.txtField_Codigo.setText("");
-                    vistaRegistrarTour.txtField_Lugar.setText("");
-                    vistaRegistrarTour.txtField_Precio.setText("");
-                } else {
+                if (modeloTour.buscarTour(cod) != null) {
+                    if (modeloTour.modificarTour(cod, tourNuevo)) {
+                        JOptionPane.showMessageDialog(null, "Los datos han sido modificados exitosamente");
+                        vistaRegistrarTour.txtField_Codigo.setText("");
+                        vistaRegistrarTour.txtField_Lugar.setText("");
+                        vistaRegistrarTour.txtField_Precio.setText("");
+                        vistaRegistrarTour.txtHora.setText("");
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Error\n"
+                                + "Los datos no han sido modificados exitosamente");
+                    }
+
+                } else if (vistaRegistrarTour.txtField_Codigo.getText().equals("") && vistaRegistrarTour.txtField_Lugar.getText().equals("")
+                        && vistaRegistrarTour.txtField_Precio.getText().equals("") && vistaRegistrarTour.txtHora.getText().equals("")) {
                     JOptionPane.showMessageDialog(null, "Error\n"
-                            + "Los datos no han sido modificados exitosamente");
+                            + "Hay datos vacíos");
                 }
             }
         });
@@ -109,6 +129,7 @@ public class ControladorFormularioTour {
         this.vistaRegistrarTour.btnSalirTourFmr.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                SerializadoraGen.serializar("tours.txt", modeloTour);
                 vistaRegistrarTour.dispose();
             }
         });
@@ -124,18 +145,10 @@ public class ControladorFormularioTour {
         });
     }
 
-    public void rellenarCbHoras() {
-        String[] horas = this.modeloTour.getDuracion();
-        vistaRegistrarTour.comboBox_Hora.removeAllItems();
-        for (String hora : horas) {
-            vistaRegistrarTour.comboBox_Hora.addItem(hora);
-        }
-    }
-
     public void iniciarRegistroTour() {
         this.vistaRegistrarTour.setVisible(true);
         this.vistaRegistrarTour.setResizable(false);
         this.vistaRegistrarTour.setLocationRelativeTo(null);
-        rellenarCbHoras();
+
     }
 }

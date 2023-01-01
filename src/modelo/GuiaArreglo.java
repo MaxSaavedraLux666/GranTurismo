@@ -1,6 +1,8 @@
 package modelo;
 
-public class GuiaArreglo {
+import java.io.Serializable;
+
+public class GuiaArreglo implements Serializable{
 
     private Guia[] guias;
     int indice;

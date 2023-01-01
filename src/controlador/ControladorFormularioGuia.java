@@ -6,8 +6,10 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.Serializable;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import libreria.SerializadoraGen;
 import modelo.Guia;
 import modelo.GuiaArreglo;
 import vista.fmrRegistroGuia;
@@ -18,11 +20,11 @@ import vista.fmrRegistroGuia;
  */
 public class ControladorFormularioGuia {
     fmrRegistroGuia vistaGuia;
-    GuiaArreglo modelo;
+    GuiaArreglo modeloGuia;
 
-    public ControladorFormularioGuia(fmrRegistroGuia vistaGuia, GuiaArreglo modelo) {
+    public ControladorFormularioGuia(fmrRegistroGuia vistaGuia, GuiaArreglo modeloGuia) {
         this.vistaGuia = vistaGuia;
-        this.modelo = modelo;
+        this.modeloGuia = modeloGuia;
         this.vistaGuia.btnAgregarGuia.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -31,8 +33,9 @@ public class ControladorFormularioGuia {
                         vistaGuia.txtFieldDNIGuia.getText(),
                         Float.parseFloat(vistaGuia.txtFieldSalarioGuia.getText()),
                         vistaGuia.txtFieldIdiomaGuia.getText());
-                if (modelo.agregarGuia(guia)) {
+                if (modeloGuia.agregarGuia(guia)) {
                     JOptionPane.showMessageDialog(null, "Los datos han sido agregados exitosamente");
+                    limpiarControles();
                     vistaGuia.txtFieldNombreGuia.setText("");
                     vistaGuia.txtFieldDNIGuia.setText("");
                     vistaGuia.txtFieldSalarioGuia.setText("");
@@ -48,6 +51,7 @@ public class ControladorFormularioGuia {
         this.vistaGuia.btnRegresar.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
+                SerializadoraGen.serializar("guias.txt", modeloGuia);
                 vistaGuia.dispose();
             }
   
@@ -56,14 +60,14 @@ public class ControladorFormularioGuia {
         this.vistaGuia.btnBuscarGuia.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                modelo.buscarGuia(vistaGuia.txtFieldBuscarGuia.getText());
+                modeloGuia.buscarGuia(vistaGuia.txtFieldBuscarGuia.getText());
             }
         });
 
         this.vistaGuia.btnEliminarGuia.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (modelo.eliminarGuia(vistaGuia.txtFieldBuscarGuia.getText())) {
+                if (modeloGuia.eliminarGuia(vistaGuia.txtFieldBuscarGuia.getText())) {
                     JOptionPane.showMessageDialog(null, "Los datos han sido eliminado exitosamente");
                     vistaGuia.txtFieldBuscarGuia.setText("");
                 } else {
@@ -76,8 +80,8 @@ public class ControladorFormularioGuia {
     }
     
     public void limpiarControles(){
-        String cabecera[]=modelo.getCabecera();
-        String datos[][]=modelo.getGuia();
+        String cabecera[]=modeloGuia.getCabecera();
+        String datos[][]=modeloGuia.getGuia();
         DefaultTableModel modeloTabla = new DefaultTableModel(datos, cabecera);
         vistaGuia.tblGuia.setModel(modeloTabla);
     }

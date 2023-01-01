@@ -6,6 +6,7 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.Serializable;
 import javax.swing.table.DefaultTableModel;
 import modelo.Guia;
 import modelo.GuiaArreglo;
@@ -16,7 +17,7 @@ import vista.fmrGuia;
  *
  * @author User
  */
-public class ControladorGuia {
+public class ControladorGuia{
     
     fmrGuia vista;
     GuiaArreglo modeloGuia;

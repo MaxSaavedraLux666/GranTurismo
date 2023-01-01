@@ -4,11 +4,13 @@
  */
 package modelo;
 
+import java.io.Serializable;
+
 /**
  *
  * @author User
  */
-public class TourArreglo {
+public class TourArreglo implements Serializable{
 
     private Tour[] tours;
     private int indice;

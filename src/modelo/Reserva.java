@@ -1,8 +1,9 @@
 package modelo;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Reserva {
+public class Reserva implements Serializable{
 
     private int codigoReserva;//6 digitos
     private Date fechaReserva;

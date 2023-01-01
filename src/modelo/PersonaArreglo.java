@@ -4,11 +4,13 @@
  */
 package modelo;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Sebastian
  */
-public class PersonaArreglo {
+public class PersonaArreglo implements Serializable{
 
     private Persona[] personas;
     private int indice;

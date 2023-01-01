@@ -10,13 +10,14 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author User
  */
-public class SerializadoraGen {
+public class SerializadoraGen implements Serializable{
 
     public static void serializar(String sNombreArchivo,
             ArrayList arreglo) {

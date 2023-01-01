@@ -6,6 +6,7 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import modelo.Guia;
@@ -19,7 +20,7 @@ import vista.fmrVenta;
  *
  * @author User
  */
-public class ControladorVenta {
+public class ControladorVenta{
     
     fmrVenta vistVenta;
     Tour tourElegido;

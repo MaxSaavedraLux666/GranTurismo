@@ -6,12 +6,13 @@ package vista;
 
 import modelo.*;
 import controlador.*;
+import java.io.Serializable;
 
 /**
  *
  * @author User
  */
-public class App {
+public class App implements Serializable{
 
     public static void main(String[] args) {
 

@@ -6,6 +6,7 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.Serializable;
 import modelo.GuiaArreglo;
 import modelo.PersonaArreglo;
 import modelo.TourArreglo;
@@ -20,7 +21,7 @@ import vista.fmrTrabajador;
  *
  * @author User
  */
-public class ControladorTrabajador {
+public class ControladorTrabajador{
 
     fmrTrabajador vistaTrabajador;
     TourArreglo modeloTour;

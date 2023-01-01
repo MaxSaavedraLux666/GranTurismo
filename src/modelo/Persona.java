@@ -4,11 +4,14 @@
  */
 package modelo;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Joseph
  */
-public class Persona {
+public class Persona implements Serializable{
+
     protected String nombre;
     protected String dni;
     protected int edad;
@@ -40,13 +43,12 @@ public class Persona {
     }
 
     public void setEdad(int edad) {
-        this.edad = edad;  
+        this.edad = edad;
     }
 
     @Override
     public String toString() {
-        return "Nombre: "+nombre+"\t"+"DNI: "+dni+"\t"+"Edad: "+edad;
+        return "Nombre: " + nombre + "\t" + "DNI: " + dni + "\t" + "Edad: " + edad;
     }
-    
-    
+
 }

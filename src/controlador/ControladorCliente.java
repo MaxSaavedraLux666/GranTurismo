@@ -9,6 +9,7 @@ import java.awt.event.ActionListener;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import libreria.SerializadoraGen;
 import modelo.Cliente;
 import modelo.Guia;
 import modelo.GuiaArreglo;
@@ -98,6 +99,7 @@ public class ControladorCliente {
         this.vistaCliente.btnCancelar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                SerializadoraGen.serializar("clientes.txt", modeloPersona);
                 vistaCliente.dispose();
             }
         });

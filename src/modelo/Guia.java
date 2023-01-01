@@ -1,8 +1,10 @@
 
 package modelo;
 
+import java.io.Serializable;
 
-public class Guia {
+
+public class Guia implements Serializable{
     private String nombre;
     private String DNI;
     private float SalarioPorHora;

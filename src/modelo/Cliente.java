@@ -4,21 +4,23 @@
  */
 package modelo;
 
+import java.io.Serializable;
+
 /**
  *
  * @author User
  */
-public class Cliente extends Persona{
-    
+public class Cliente extends Persona implements Serializable{
+
     private String codReserva;
     private String correo;
     private String telefono;
     private int numPersonas;
 
-    public Cliente(String codReserva,String nombre, 
-            String correo, String telefono,String dni, int edad) {
+    public Cliente(String codReserva, String nombre,
+            String correo, String telefono, String dni, int edad) {
         super(nombre, dni, edad);
-        this.codReserva=codReserva;
+        this.codReserva = codReserva;
         this.correo = correo;
         this.telefono = telefono;
     }
@@ -54,10 +56,10 @@ public class Cliente extends Persona{
     public void setNumPersonas(int numPersonas) {
         this.numPersonas = numPersonas;
     }
-    
-    @Override 
-    public String toString(){
-        return super.toString()+"\t"+codReserva+"\t"+nombre+"\t"+correo+"\t"+telefono;
+
+    @Override
+    public String toString() {
+        return super.toString() + "\t" + codReserva + "\t" + nombre + "\t" + correo + "\t" + telefono;
     }
-     
+
 }

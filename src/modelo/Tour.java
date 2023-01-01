@@ -4,11 +4,13 @@
  */
 package modelo;
 
+import java.io.Serializable;
+
 /**
  *
  * @author User
  */
-public class Tour {
+public class Tour implements Serializable{
 
     private String nombrePaquete;
     private ItinerarioArreglo itinerarios;

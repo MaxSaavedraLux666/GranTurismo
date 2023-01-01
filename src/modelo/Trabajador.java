@@ -4,11 +4,13 @@
  */
 package modelo;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Joseph
  */
-public class Trabajador extends Persona{
+public class Trabajador extends Persona implements Serializable{
     
     private String codTrabajador;
     private Reserva[] reservas;

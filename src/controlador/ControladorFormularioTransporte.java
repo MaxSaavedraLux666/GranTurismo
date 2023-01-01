@@ -6,8 +6,10 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.Serializable;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import libreria.SerializadoraGen;
 import modelo.Vehiculo;
 import modelo.VehiculoArreglo;
 import vista.fmrRegistroTransporte;
@@ -16,7 +18,7 @@ import vista.fmrRegistroTransporte;
  *
  * @author User
  */
-public class ControladorFormularioTransporte {
+public class ControladorFormularioTransporte{
 
     fmrRegistroTransporte vistaTransporte;
     VehiculoArreglo modeloVehiculo;
@@ -48,6 +50,7 @@ public class ControladorFormularioTransporte {
         this.vistaTransporte.btnRegresar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                SerializadoraGen.serializar("vehiculos.txt", modeloVehiculo);
                 vistaTransporte.dispose();
             }
         });

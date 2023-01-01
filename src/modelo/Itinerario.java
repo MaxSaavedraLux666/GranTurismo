@@ -4,11 +4,13 @@
  */
 package modelo;
 
+import java.io.Serializable;
+
 /**
  *
  * @author User
  */
-public class Itinerario {
+public class Itinerario implements Serializable{
 
     private String codigoItinerario;
     private String hora;

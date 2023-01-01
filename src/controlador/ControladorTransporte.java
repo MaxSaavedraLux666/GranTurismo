@@ -6,6 +6,7 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.Serializable;
 import javax.swing.table.DefaultTableModel;
 import modelo.Vehiculo;
 import modelo.VehiculoArreglo;
@@ -15,7 +16,7 @@ import vista.fmrTransporte;
  *
  * @author User
  */
-public class ControladorTransporte {
+public class ControladorTransporte{
 
     fmrTransporte vistaTransporte;
     VehiculoArreglo modeloVehiculo;

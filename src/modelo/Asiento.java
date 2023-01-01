@@ -4,11 +4,13 @@
  */
 package modelo;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Sebastian
  */
-public class Asiento {
+public class Asiento implements Serializable{
     private int numero_De_Asiento;
     private boolean estado;
 
