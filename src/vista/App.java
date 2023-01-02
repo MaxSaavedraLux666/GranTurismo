@@ -27,7 +27,7 @@ public class App implements Serializable {
         VehiculoArreglo vehiculos = new VehiculoArreglo(1); //Correcto
         //Venta
         VentaArreglo ventas = new VentaArreglo(1);
-
+//private static final long serialVersionUID = -4111840617393640442L;
         ///Deserialización
         tours = (TourArreglo) SerializadoraGen.deserializar("tours.txt");
         personas = (PersonaArreglo) SerializadoraGen.deserializar("personas.txt");

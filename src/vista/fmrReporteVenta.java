@@ -34,6 +34,7 @@ public class fmrReporteVenta extends javax.swing.JFrame {
         tablaReporte = new javax.swing.JTable();
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
+        btnImprimir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -82,11 +83,14 @@ public class fmrReporteVenta extends javax.swing.JFrame {
         jLabel19.setText("TOTAL");
         jPanel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 500, -1, -1));
 
+        btnImprimir.setText("Imprimir Reporte");
+        jPanel1.add(btnImprimir, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 540, -1, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 621, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -132,6 +136,7 @@ public class fmrReporteVenta extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton btnImprimir;
     public javax.swing.JButton btnRegresar;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;

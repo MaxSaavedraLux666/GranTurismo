@@ -10,13 +10,12 @@ import java.io.Serializable;
  *
  * @author User
  */
-public class VentaArreglo implements Serializable{
+public class VentaArreglo implements Serializable {
 
     private Venta[] ventas;
     private int indice;
     private final String[] cabeceraVentas = {"Fecha", "Código del Tour", "Código de la Reserva",
         "Costo"};
-    private static final long serialVersionUID = -4111840617393640442L;
 
     public VentaArreglo(int tam) {
         this.ventas = new Venta[tam];
@@ -87,10 +86,12 @@ public class VentaArreglo implements Serializable{
         return resultado;
     }
 
-    public double calcularTotalVentas(Venta[] ventaArreglo) {
+    public double calcularTotalVentas() {
         double total = 0;
-        for (int i = 0; i < ventaArreglo.length; i++) {
-            total += ventaArreglo[i].getCosto();
+        for (Venta obj : ventas) {
+            if (obj != null) {
+                total += obj.getCosto();
+            }
         }
         return total;
     }
