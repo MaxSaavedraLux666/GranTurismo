@@ -66,7 +66,6 @@ public class ControladorVenta {
                             tourElegido.getPrecioTour());
                     modeloVenta.agregarVenta(venta);
                     SerializadoraGen.serializar("ventas.txt", modeloVenta);
-                    ControladorReporteVenta control = new ControladorReporteVenta(modeloVenta); 
                     
                     ControladorBoleta controlador = new ControladorBoleta(vistaBoleta, clienteElegido,
                             tourElegido, fecha, guiaElegido, modeloPersona, fechaVenta);
@@ -106,7 +105,7 @@ public class ControladorVenta {
         this.vistVenta.labelNomAgencia.setText("Agencia Cusco travel");
         this.vistVenta.labelGuia.setText(guiaElegido.getNombre());
         this.vistVenta.labCodVehiculo.setText(vehiculoElegido.getCodigoVehiculo());
-        this.vistVenta.labelCosto.setText(String.valueOf(tourElegido.getPrecioTour()));
+        this.vistVenta.labelCosto.setText(String.valueOf(tourElegido.getPrecioTour()) + " $");
     }
 
     public void iniciarVenta() {

@@ -19,10 +19,6 @@ public class ControladorReporteVenta {
     fmrReporteVenta vistaReporte;
     VentaArreglo modeloVenta;
 
-    public ControladorReporteVenta(VentaArreglo modeloVenta) {
-        this.modeloVenta = modeloVenta;
-    }
-
     public ControladorReporteVenta(fmrReporteVenta vistaReporte, VentaArreglo modeloVenta) {
         this.vistaReporte = vistaReporte;
         this.modeloVenta = modeloVenta;
@@ -35,7 +31,7 @@ public class ControladorReporteVenta {
         });
     }
     
-    public void total(){
+    public void total(){ 
         this.vistaReporte.labelTotal.setText(String.valueOf(modeloVenta.calcularTotalVentas(modeloVenta.getVentas())) + " $");
     }
     
