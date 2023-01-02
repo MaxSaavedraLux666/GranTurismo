@@ -8,12 +8,12 @@ package vista;
  *
  * @author User
  */
-public class fmrGuia extends javax.swing.JFrame {
+public class fmrReporteVenta extends javax.swing.JFrame {
 
     /**
-     * Creates new form fmrGuia
+     * Creates new form fmrReporteVenta
      */
-    public fmrGuia() {
+    public fmrReporteVenta() {
         initComponents();
     }
 
@@ -27,36 +27,35 @@ public class fmrGuia extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel17 = new javax.swing.JLabel();
+        labelTotal = new javax.swing.JLabel();
         jSeparator3 = new javax.swing.JSeparator();
         btnRegresar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tablaGuia = new javax.swing.JTable();
-        btnAceptar = new javax.swing.JButton();
-        txtElegir = new javax.swing.JTextField();
-        jLabel16 = new javax.swing.JLabel();
+        tablaReporte = new javax.swing.JTable();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(0, 102, 102));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel17.setBackground(new java.awt.Color(255, 255, 0));
-        jLabel17.setFont(new java.awt.Font("Yu Gothic UI", 0, 18)); // NOI18N
-        jLabel17.setForeground(new java.awt.Color(255, 255, 0));
-        jLabel17.setText("GUIA");
-        jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 10, -1, -1));
+        labelTotal.setBackground(new java.awt.Color(255, 255, 0));
+        labelTotal.setFont(new java.awt.Font("Yu Gothic UI", 0, 18)); // NOI18N
+        labelTotal.setForeground(new java.awt.Color(255, 255, 0));
+        labelTotal.setText("TOTAL");
+        jPanel1.add(labelTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 500, -1, -1));
 
         jSeparator3.setBackground(new java.awt.Color(255, 255, 0));
-        jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 40, 350, 10));
+        jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 50, 350, 10));
 
         btnRegresar.setText("Regresar");
-        jPanel1.add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 10, -1, -1));
+        jPanel1.add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 10, -1, -1));
 
-        tablaGuia.setBackground(new java.awt.Color(102, 255, 204));
-        tablaGuia.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        tablaGuia.setForeground(new java.awt.Color(0, 0, 0));
-        tablaGuia.setModel(new javax.swing.table.DefaultTableModel(
+        tablaReporte.setBackground(new java.awt.Color(102, 255, 204));
+        tablaReporte.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        tablaReporte.setForeground(new java.awt.Color(0, 0, 0));
+        tablaReporte.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -67,29 +66,31 @@ public class fmrGuia extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(tablaGuia);
+        jScrollPane1.setViewportView(tablaReporte);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 560, 330));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 560, 330));
 
-        btnAceptar.setText("ELEGIR");
-        jPanel1.add(btnAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, -1, -1));
-        jPanel1.add(txtElegir, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 170, 200, -1));
+        jLabel18.setBackground(new java.awt.Color(255, 255, 0));
+        jLabel18.setFont(new java.awt.Font("Yu Gothic UI", 0, 18)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(255, 255, 0));
+        jLabel18.setText("REPORTE");
+        jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 20, -1, -1));
 
-        jLabel16.setBackground(new java.awt.Color(255, 255, 0));
-        jLabel16.setFont(new java.awt.Font("Yu Gothic UI", 0, 12)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(255, 255, 0));
-        jLabel16.setText("Nombre");
-        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 130, -1, -1));
+        jLabel19.setBackground(new java.awt.Color(255, 255, 0));
+        jLabel19.setFont(new java.awt.Font("Yu Gothic UI", 0, 18)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(255, 255, 0));
+        jLabel19.setText("TOTAL");
+        jPanel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 500, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 581, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 621, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 572, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 586, Short.MAX_VALUE)
         );
 
         pack();
@@ -112,33 +113,32 @@ public class fmrGuia extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(fmrGuia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(fmrReporteVenta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(fmrGuia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(fmrReporteVenta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(fmrGuia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(fmrReporteVenta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(fmrGuia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(fmrReporteVenta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new fmrGuia().setVisible(true);
+                new fmrReporteVenta().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton btnAceptar;
     public javax.swing.JButton btnRegresar;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator3;
-    public javax.swing.JTable tablaGuia;
-    public javax.swing.JTextField txtElegir;
+    public javax.swing.JLabel labelTotal;
+    public javax.swing.JTable tablaReporte;
     // End of variables declaration//GEN-END:variables
 }

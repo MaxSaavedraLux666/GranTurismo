@@ -120,7 +120,7 @@ public class fmrVenta extends javax.swing.JFrame {
         labelCosto.setFont(new java.awt.Font("Engravers MT", 1, 12)); // NOI18N
         labelCosto.setForeground(new java.awt.Color(204, 204, 0));
         labelCosto.setText("costo del tour");
-        jPanel2.add(labelCosto, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 720, -1, -1));
+        jPanel2.add(labelCosto, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 710, -1, -1));
 
         jLabel13.setFont(new java.awt.Font("Engravers MT", 1, 12)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(204, 204, 0));

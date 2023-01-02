@@ -13,9 +13,8 @@ import modelo.PersonaArreglo;
 import modelo.Tour;
 import modelo.TourArreglo;
 import modelo.VehiculoArreglo;
-import vista.fmrBoleta;
+import modelo.VentaArreglo;
 import vista.fmrBusqueda;
-import vista.fmrPrincipal;
 import vista.fmrTour;
 
 /**
@@ -30,23 +29,26 @@ public class ControladorTour {
     VehiculoArreglo modeloVehiculo;
     PersonaArreglo modeloPersona;
     GuiaArreglo modeloGuia;
+    VentaArreglo modeloVenta;
 
     public ControladorTour(TourArreglo modeloTour, fmrTour vistaTour, VehiculoArreglo modeloVehiculo,
-            PersonaArreglo modeloPersona, GuiaArreglo modeloGuia) {
+            PersonaArreglo modeloPersona, GuiaArreglo modeloGuia, VentaArreglo modeloVenta) {
         this.vistaTour = vistaTour;
         this.modeloTour = modeloTour;
         this.modeloVehiculo = modeloVehiculo;
         this.modeloPersona = modeloPersona;
         this.modeloGuia = modeloGuia;
+        this.modeloVenta = modeloVenta;
 
         this.vistaTour.btn_BuscarTour.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (vistaTour.txtFieldBusqueda.getText().equals(modeloTour.buscarTour(vistaTour.txtFieldBusqueda.getText()).getCodTour())) {
+                Tour tour = modeloTour.buscarTour(vistaTour.txtFieldBusqueda.getText());
+                if (tour != null) {
                     fmrBusqueda vistaBusqueda = new fmrBusqueda();
                     ControladorBusqueda controlador = new ControladorBusqueda(vistaBusqueda, modeloTour, modeloVehiculo,
                             modeloPersona, modeloTour.buscarTour(vistaTour.txtFieldBusqueda.getText()),
-                            modeloTour.buscarTour(vistaTour.txtFieldBusqueda.getText()).getItinerarios(), modeloGuia);
+                            modeloTour.buscarTour(vistaTour.txtFieldBusqueda.getText()).getItinerarios(), modeloGuia, modeloVenta);
                     controlador.iniciarBusqueda();
                 } else {
                     JOptionPane.showMessageDialog(null, """

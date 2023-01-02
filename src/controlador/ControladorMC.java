@@ -10,6 +10,7 @@ import java.io.Serializable;
 import java.time.chrono.ThaiBuddhistEra;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import libreria.SerializadoraGen;
 import modelo.Cliente;
 import modelo.PersonaArreglo;
 import vista.fmrCliente;
@@ -29,6 +30,7 @@ public class ControladorMC{
         this.vistaMC.btnSalirMC.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
+                SerializadoraGen.serializar("personas.txt", modelo);
                 vistaMC.dispose();
             }  
         });
@@ -45,6 +47,8 @@ public class ControladorMC{
                 if (modelo.eliminarPersona(vistaMC.txtFieldBuscar.getText())) {
                     JOptionPane.showMessageDialog(null, "Los datos han sido eliminado exitosamente");
                     vistaMC.txtFieldBuscar.setText("");
+                    limpiarControles();
+                    
                 } else {
                     JOptionPane.showMessageDialog(null, "Error\n"
                             + "Los datos no han sido eliminado exitosamente");

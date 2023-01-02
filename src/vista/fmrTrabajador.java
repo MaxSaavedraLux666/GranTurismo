@@ -32,7 +32,6 @@ public class fmrTrabajador extends javax.swing.JFrame {
         btnSalir = new javax.swing.JButton();
         btnModificarCliente = new javax.swing.JButton();
         btnTransporte = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -40,6 +39,7 @@ public class fmrTrabajador extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         btnRegistrarTour = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
+        btnReporte = new javax.swing.JButton();
 
         jLabel1.setText("jLabel1");
 
@@ -54,7 +54,7 @@ public class fmrTrabajador extends javax.swing.JFrame {
                 btnGuiaActionPerformed(evt);
             }
         });
-        jPanel1.add(btnGuia, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 320, 113, -1));
+        jPanel1.add(btnGuia, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 140, 113, -1));
 
         btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/salir.png"))); // NOI18N
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -70,13 +70,10 @@ public class fmrTrabajador extends javax.swing.JFrame {
                 btnModificarClienteActionPerformed(evt);
             }
         });
-        jPanel1.add(btnModificarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 322, -1, -1));
+        jPanel1.add(btnModificarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 140, -1, -1));
 
         btnTransporte.setText("Transporte");
-        jPanel1.add(btnTransporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 320, -1, -1));
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Buses chiquito.jpg"))); // NOI18N
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(97, 126, -1, 170));
+        jPanel1.add(btnTransporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 300, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Sitka Heading", 3, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(204, 204, 0));
@@ -89,13 +86,13 @@ public class fmrTrabajador extends javax.swing.JFrame {
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(116, 59, 373, -1));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/bus_transport_vehicle_icon_123458.png"))); // NOI18N
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 350, -1, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 340, -1, -1));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ticket_icon_178321.png"))); // NOI18N
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 380, 116, 56));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 200, 116, 56));
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/user_84308.png"))); // NOI18N
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(38, 358, 113, 106));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 190, 113, 106));
 
         btnRegistrarTour.setText("Agregar Tour");
         btnRegistrarTour.addActionListener(new java.awt.event.ActionListener() {
@@ -103,10 +100,13 @@ public class fmrTrabajador extends javax.swing.JFrame {
                 btnRegistrarTourActionPerformed(evt);
             }
         });
-        jPanel1.add(btnRegistrarTour, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 320, 113, -1));
+        jPanel1.add(btnRegistrarTour, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 140, 113, -1));
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/guia 2.png"))); // NOI18N
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 350, 110, 100));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 190, 110, 100));
+
+        btnReporte.setText("Reporte de Ventas");
+        jPanel1.add(btnReporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 300, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -177,10 +177,10 @@ public class fmrTrabajador extends javax.swing.JFrame {
     public javax.swing.JButton btnGuia;
     public javax.swing.JButton btnModificarCliente;
     public javax.swing.JButton btnRegistrarTour;
+    public javax.swing.JButton btnReporte;
     public javax.swing.JButton btnSalir;
     public javax.swing.JButton btnTransporte;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

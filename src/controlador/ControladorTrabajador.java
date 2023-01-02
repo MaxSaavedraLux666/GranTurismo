@@ -11,10 +11,12 @@ import modelo.GuiaArreglo;
 import modelo.PersonaArreglo;
 import modelo.TourArreglo;
 import modelo.VehiculoArreglo;
+import modelo.VentaArreglo;
 import vista.fmrMantenimientoCliente;
 import vista.fmrRegistrarTour;
 import vista.fmrRegistroGuia;
 import vista.fmrRegistroTransporte;
+import vista.fmrReporteVenta;
 import vista.fmrTrabajador;
 
 /**
@@ -28,13 +30,15 @@ public class ControladorTrabajador{
     PersonaArreglo modeloPersona;
     VehiculoArreglo modeloVehiculo;
     GuiaArreglo modeloGuia;
+    VentaArreglo modeloVenta;
 
     public ControladorTrabajador(fmrTrabajador vistaTrabajador, TourArreglo modeloTour,
-            PersonaArreglo modeloPersona, VehiculoArreglo modeloVehiculo, GuiaArreglo modeloGuia) {
+            PersonaArreglo modeloPersona, VehiculoArreglo modeloVehiculo, GuiaArreglo modeloGuia, VentaArreglo modeloVenta) {
         this.vistaTrabajador = vistaTrabajador;
         this.modeloTour = modeloTour;
         this.modeloPersona = modeloPersona;
         this.modeloGuia = modeloGuia;
+        this.modeloVenta = modeloVenta;
 
         this.vistaTrabajador.btnSalir.addActionListener(new ActionListener() {
             @Override
@@ -79,7 +83,15 @@ public class ControladorTrabajador{
                 controladorGuia.iniciarGuia();
             }
         });
-
+        
+        this.vistaTrabajador.btnReporte.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                fmrReporteVenta vistaReporte = new fmrReporteVenta();
+                ControladorReporteVenta controlador = new ControladorReporteVenta(vistaReporte, modeloVenta);
+                controlador.iniciarReporte();
+            }
+        });
     }
 
     public void iniciarTrabajador() {

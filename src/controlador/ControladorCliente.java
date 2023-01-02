@@ -20,6 +20,7 @@ import modelo.Tour;
 import modelo.TourArreglo;
 import modelo.Vehiculo;
 import modelo.VehiculoArreglo;
+import modelo.VentaArreglo;
 import vista.fmrCliente;
 import vista.fmrVenta;
 
@@ -31,17 +32,18 @@ public class ControladorCliente {
 
     fmrCliente vistaCliente = new fmrCliente();
     PersonaArreglo modeloPersona;
-    Cliente clienteElegido;
-    String codigoReserva;
-    TourArreglo modeloTour;
     VehiculoArreglo modeloVehiculo;
+    TourArreglo modeloTour;
+    GuiaArreglo modeloGuia;
+    VentaArreglo modeloVenta;
+    Cliente clienteElegido;
     Vehiculo vehiculoElegido;
     Tour tourElegido;
-    GuiaArreglo modeloGuia;
     Guia guiaElegido;
+    String codigoReserva;
 
     public ControladorCliente(fmrCliente vistaCliente, PersonaArreglo modeloPersona, TourArreglo modeloTour,
-            VehiculoArreglo modeloVehiculo, Tour tourElegido, GuiaArreglo modeloGuia) {
+            VehiculoArreglo modeloVehiculo, Tour tourElegido, GuiaArreglo modeloGuia, VentaArreglo modeloVenta) {
 
         this.vistaCliente = vistaCliente;
         this.modeloPersona = modeloPersona;
@@ -49,6 +51,7 @@ public class ControladorCliente {
         this.modeloVehiculo = modeloVehiculo;
         this.tourElegido = tourElegido;
         this.modeloGuia = modeloGuia;
+        this.modeloVenta = modeloVenta;
 
         this.vistaCliente.btnAgregar.addActionListener(new ActionListener() {
             @Override
@@ -66,20 +69,22 @@ public class ControladorCliente {
                         vistaCliente.txtFieldTelefonoTitular.getText(),
                         vistaCliente.txtFieldDNItitular.getText(),
                         Integer.parseInt(vistaCliente.txtFieldEdadTitular.getText()));
-                vistaCliente.txtFieldFecha.getText();
-                guiaElegido = (Guia) vistaCliente.cbxGuia.getSelectedItem();
 
-                if (modeloPersona.agregar(cliente) && modeloVehiculo.buscarVehiculo(vistaCliente.txtFieldCodigoTransporte.getText()) != null && 
-                        modeloGuia.buscarGuia(guiaElegido.getDNI()) != null) {
+                guiaElegido = (Guia) vistaCliente.cbxGuia.getSelectedItem();
+                vehiculoElegido = modeloVehiculo.buscarVehiculo(vistaCliente.txtFieldCodigoTransporte.getText());
+
+                if (modeloPersona.agregar(cliente) && vehiculoElegido != null
+                        && modeloGuia.buscarGuia(guiaElegido.getDNI()) != null) {
                     JOptionPane.showMessageDialog(null, "Los datos han sido agregados exitosamente");
                     vistaCliente.txtFieldCodigoTransporte.setText("");
                     vistaCliente.txtFieldNombreTitular.setText("");
                     vistaCliente.txtFieldTelefonoTitular.setText("");
                     vistaCliente.txtFieldDNItitular.setText("");
                     vistaCliente.txtFieldEdadTitular.setText("");
+                    vistaCliente.txtFieldCorreoTitular.setText("");
                     fmrVenta vistaVenta = new fmrVenta();
                     ControladorVenta controladorVenta = new ControladorVenta(vistaVenta, tourElegido, vehiculoElegido,
-                            guiaElegido, cliente, modeloPersona);
+                            guiaElegido, cliente, modeloPersona, vistaCliente.txtFieldFecha.getText(), modeloVenta);
                     controladorVenta.iniciarVenta();
                 } else {
                     JOptionPane.showMessageDialog(null, "Error\n"
@@ -128,7 +133,6 @@ public class ControladorCliente {
         this.vistaCliente.setVisible(true);
         this.vistaCliente.setLocationRelativeTo(null);
         limpiarControles();
-
     }
 
 }

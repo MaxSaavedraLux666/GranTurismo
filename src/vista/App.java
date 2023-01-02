@@ -25,22 +25,19 @@ public class App implements Serializable {
         GuiaArreglo guias = new GuiaArreglo(1); //Correcto
         //Vehiculo
         VehiculoArreglo vehiculos = new VehiculoArreglo(1); //Correcto
+        //Venta
+        VentaArreglo ventas = new VentaArreglo(1);
 
-        //cliente = new Cliente("123456", "Sebastian Landeo", "sebastian.landeo@unmsm.edu.pe", "959637429", "72345678", 21);
-        //personas.agregar(cliente);
-        //cliente = new Cliente("456789", "Max Saavedra", "max.saavedra@unmsm.edu.pe", "920797644", "75739960", 20);
-        //personas.agregar(cliente);
-        //cliente = new Cliente("789123", "Joseph Meza", "joseph.meza@unmsm.edu.pe", "998157090", "76543210", 23);
-        //personas.agregar(cliente);
         ///Deserialización
         tours = (TourArreglo) SerializadoraGen.deserializar("tours.txt");
         personas = (PersonaArreglo) SerializadoraGen.deserializar("personas.txt");
         guias = (GuiaArreglo) SerializadoraGen.deserializar("guias.txt");
         vehiculos = (VehiculoArreglo) SerializadoraGen.deserializar("vehiculos.txt");
+        ventas = (VentaArreglo) SerializadoraGen.deserializar("ventas.txt");
         //Salidas
         fmrPrincipal vista = new fmrPrincipal();
         ControladorPrincipal controlador = new ControladorPrincipal(vista, tours,
-                personas, guias, vehiculos);
+                personas, guias, vehiculos, ventas);
         controlador.iniciar();
     }
 }

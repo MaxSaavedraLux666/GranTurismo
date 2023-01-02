@@ -16,6 +16,7 @@ import modelo.Tour;
 import modelo.TourArreglo;
 import modelo.Vehiculo;
 import modelo.VehiculoArreglo;
+import modelo.VentaArreglo;
 import vista.fmrBusqueda;
 import vista.fmrCliente;
 
@@ -28,19 +29,21 @@ public class ControladorBusqueda {
     fmrBusqueda vistaBusqueda;
     TourArreglo modeloTour;
     VehiculoArreglo modeloVehiculo;
-   
+
     PersonaArreglo modeloPersona;
     GuiaArreglo modeloGuia;
     Tour tourElegido;
     ItinerarioArreglo modeloItinerario;
+    VentaArreglo modeloVenta;
 
     public ControladorBusqueda(fmrBusqueda vistaBusqueda, TourArreglo modeloTour,
             VehiculoArreglo modeloVehiculo, PersonaArreglo modeloPersona,
-            Tour tourElegido, ItinerarioArreglo modeloItinerario, GuiaArreglo modeloGuia) {
+            Tour tourElegido, ItinerarioArreglo modeloItinerario, 
+            GuiaArreglo modeloGuia, VentaArreglo modeloVenta) {
         this.vistaBusqueda = vistaBusqueda;
         this.modeloTour = modeloTour;
         this.modeloVehiculo = modeloVehiculo;
-     
+        this.modeloVenta = modeloVenta;
         this.modeloPersona = modeloPersona;
         this.tourElegido = tourElegido;
         this.modeloItinerario = modeloItinerario;
@@ -50,9 +53,9 @@ public class ControladorBusqueda {
             @Override
             public void actionPerformed(ActionEvent e) {
                 fmrCliente vistaCliente = new fmrCliente();
-            
-                ControladorCliente controladorCliente = new ControladorCliente(vistaCliente, modeloPersona, modeloTour, 
-                modeloVehiculo, tourElegido, modeloGuia);
+
+                ControladorCliente controladorCliente = new ControladorCliente(vistaCliente, modeloPersona, modeloTour,
+                        modeloVehiculo, tourElegido, modeloGuia, modeloVenta);
                 controladorCliente.iniciarCliente();
             }
         });
@@ -77,7 +80,7 @@ public class ControladorBusqueda {
         DefaultListModel modelo = new DefaultListModel();
         modelo.removeAllElements();
         for (int i = 0; i < modeloItinerario.getTotal(); i++) {
-           modelo.addElement(Arrays.toString(modeloItinerario.getItinerarios()[i]));
+            modelo.addElement(Arrays.toString(modeloItinerario.getItinerarios()[i]));
         }
         vistaBusqueda.listItinerario.setModel(modelo);
     }

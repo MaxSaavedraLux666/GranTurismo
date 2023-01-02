@@ -11,12 +11,11 @@ import javax.swing.DefaultListModel;
 import javax.swing.JComponent;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
-import libreria.SerializadoraGen;
 import modelo.GuiaArreglo;
 import modelo.PersonaArreglo;
 import modelo.TourArreglo;
-import modelo.Vehiculo;
 import modelo.VehiculoArreglo;
+import modelo.VentaArreglo;
 
 import vista.*;
 
@@ -31,6 +30,7 @@ public class ControladorPrincipal {
     PersonaArreglo modeloPersona;
     GuiaArreglo modeloGuia;
     VehiculoArreglo modeloVehiculo;
+    VentaArreglo modeloVenta;
 
     private boolean estado = true;
 
@@ -41,17 +41,18 @@ public class ControladorPrincipal {
     }
 
     public ControladorPrincipal(fmrPrincipal vista, TourArreglo modeloTour,
-            PersonaArreglo modeloPersona, GuiaArreglo modeloGuia, VehiculoArreglo modeloVehiculo) {
+            PersonaArreglo modeloPersona, GuiaArreglo modeloGuia, 
+            VehiculoArreglo modeloVehiculo, VentaArreglo modeloVenta) {
         this.vista = vista;
         this.modeloTour = modeloTour;
         this.modeloPersona = modeloPersona;
         this.modeloGuia = modeloGuia;
         this.modeloVehiculo = modeloVehiculo;
+        this.modeloVenta = modeloVenta;
 
         this.vista.btn_Salir.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // SerializadoraGen.serializar("personas.txt",modeloTour);
                 System.exit(0);
             }
         });
@@ -75,7 +76,7 @@ public class ControladorPrincipal {
             public void actionPerformed(ActionEvent e) {
                 fmrTour vistaTour = new fmrTour();
                 ControladorTour controlador = new ControladorTour(modeloTour, vistaTour, 
-                        modeloVehiculo, modeloPersona, modeloGuia);
+                        modeloVehiculo, modeloPersona, modeloGuia, modeloVenta);
                 controlador.iniciarTour();
             }
         });
@@ -93,7 +94,7 @@ public class ControladorPrincipal {
                 //Trabajador
                 fmrTrabajador vistTrabajador = new fmrTrabajador();
                 ControladorTrabajador controlador = new ControladorTrabajador(vistTrabajador,
-                        modeloTour, modeloPersona, modeloVehiculo, modeloGuia);
+                        modeloTour, modeloPersona, modeloVehiculo, modeloGuia, modeloVenta);
                 controlador.iniciarTrabajador();
             }
         });
@@ -105,7 +106,7 @@ public class ControladorPrincipal {
                     fmrBusqueda vistaBusqueda = new fmrBusqueda();
                     ControladorBusqueda controlador = new ControladorBusqueda(vistaBusqueda, modeloTour, modeloVehiculo,
                             modeloPersona, modeloTour.buscarTour(vista.txtFieldBusqueda.getText()),
-                            modeloTour.buscarTour(vista.txtFieldBusqueda.getText()).getItinerarios(), modeloGuia);
+                            modeloTour.buscarTour(vista.txtFieldBusqueda.getText()).getItinerarios(), modeloGuia, modeloVenta);
                     controlador.iniciarBusqueda();
                 } else {
                     JOptionPane.showMessageDialog(null, """
