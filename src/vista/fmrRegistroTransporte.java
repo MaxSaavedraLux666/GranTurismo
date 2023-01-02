@@ -49,14 +49,13 @@ public class fmrRegistroTransporte extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnAceptar.setText("Agregar");
-        jPanel1.add(btnAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 350, -1, -1));
+        jPanel1.add(btnAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 180, -1, -1));
 
         btnEliminar.setText("Eliminar");
-        jPanel1.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 350, -1, -1));
+        jPanel1.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 180, -1, -1));
 
         tablaTransporte.setBackground(new java.awt.Color(102, 255, 204));
         tablaTransporte.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        tablaTransporte.setForeground(new java.awt.Color(0, 0, 0));
         tablaTransporte.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
@@ -70,22 +69,22 @@ public class fmrRegistroTransporte extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tablaTransporte);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 390, 560, 330));
-        jPanel1.add(txtCostoP, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 170, 190, -1));
-        jPanel1.add(txtCodAuto, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 220, 190, -1));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 560, 230));
+        jPanel1.add(txtCostoP, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 110, 190, -1));
+        jPanel1.add(txtCodAuto, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 140, 190, -1));
 
         txtCapacidad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCapacidadActionPerformed(evt);
             }
         });
-        jPanel1.add(txtCapacidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 130, 190, -1));
-        jPanel1.add(txtNombreDuenio, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 90, 190, -1));
+        jPanel1.add(txtCapacidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 80, 190, -1));
+        jPanel1.add(txtNombreDuenio, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 50, 190, -1));
 
         jLabel10.setFont(new java.awt.Font("Yu Gothic Medium", 1, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(204, 204, 0));
         jLabel10.setText("Código de Transporte");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, -1, -1));
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, -1, -1));
 
         btnRegresar.setText("Regresar");
         jPanel1.add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 10, -1, -1));
@@ -102,17 +101,17 @@ public class fmrRegistroTransporte extends javax.swing.JFrame {
         jLabel11.setFont(new java.awt.Font("Yu Gothic Medium", 1, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(204, 204, 0));
         jLabel11.setText("Nombre del Dueño");
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, -1, -1));
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 50, -1, -1));
 
         jLabel12.setFont(new java.awt.Font("Yu Gothic Medium", 1, 14)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(204, 204, 0));
         jLabel12.setText("Costo por pasajero");
-        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, -1, -1));
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, -1, -1));
 
         jLabel13.setFont(new java.awt.Font("Yu Gothic Medium", 1, 14)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(204, 204, 0));
         jLabel13.setText("Capacidad");
-        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, -1, -1));
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 80, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -122,7 +121,7 @@ public class fmrRegistroTransporte extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 728, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 495, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();

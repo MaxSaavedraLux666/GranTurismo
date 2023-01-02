@@ -117,7 +117,6 @@ public class ControladorCliente {
     public void detallesReserva() {
         vistaCliente.labelDestino.setText(tourElegido.getNombrePaquete());
         vistaCliente.labelPrecio.setText(String.valueOf(tourElegido.getPrecioTour()));
-        vistaCliente.labelCodReserva.setText(tourElegido.getCodTour());
     }
 
     public void limpiarControles() {

@@ -35,6 +35,7 @@ public class fmrMantenimientoCliente extends javax.swing.JFrame {
         txtFieldBuscar = new javax.swing.JTextField();
         jSeparator3 = new javax.swing.JSeparator();
         btnEliminarMC = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -85,6 +86,11 @@ public class fmrMantenimientoCliente extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnEliminarMC, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 420, -1, -1));
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI Black", 3, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 0));
+        jLabel2.setText("Escribir DNI");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 400, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -148,6 +154,7 @@ public class fmrMantenimientoCliente extends javax.swing.JFrame {
     public javax.swing.JButton btnEliminarMC;
     public javax.swing.JButton btnSalirMC;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator3;

@@ -32,22 +32,18 @@ public class fmrPrincipal extends javax.swing.JFrame {
         bg = new javax.swing.JPanel();
         sidePanel = new javax.swing.JPanel();
         btn_Trabajador = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        btnTrabajador = new javax.swing.JButton();
-        btn_Tour = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        btnTour = new javax.swing.JButton();
-        btn_Inicio = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         btnInicio = new javax.swing.JButton();
-        btn_Paquete = new javax.swing.JPanel();
-        jLabel7 = new javax.swing.JLabel();
-        btnPaquete = new javax.swing.JButton();
-        btn_Reserva = new javax.swing.JPanel();
-        jLabel9 = new javax.swing.JLabel();
-        btnReserva = new javax.swing.JButton();
-        jLabel13 = new javax.swing.JLabel();
+        btn_Inicio = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
+        btn_Paquete = new javax.swing.JPanel();
+        btnTrabajador = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        btn_Reserva = new javax.swing.JPanel();
+        btn_Tour = new javax.swing.JPanel();
+        btnTour = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel8 = new javax.swing.JLabel();
@@ -61,6 +57,7 @@ public class fmrPrincipal extends javax.swing.JFrame {
         jLabel17 = new javax.swing.JLabel();
         telefono1 = new javax.swing.JLabel();
         telefono2 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
         btn_Salir = new javax.swing.JButton();
@@ -135,70 +132,6 @@ public class fmrPrincipal extends javax.swing.JFrame {
 
         btn_Trabajador.setBackground(new java.awt.Color(63, 43, 100));
 
-        jLabel1.setBackground(new java.awt.Color(255, 204, 102));
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/trabajador.png"))); // NOI18N
-
-        btnTrabajador.setBackground(new java.awt.Color(102, 0, 102));
-        btnTrabajador.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 14)); // NOI18N
-        btnTrabajador.setForeground(new java.awt.Color(255, 153, 0));
-        btnTrabajador.setText("Trabajador");
-
-        javax.swing.GroupLayout btn_TrabajadorLayout = new javax.swing.GroupLayout(btn_Trabajador);
-        btn_Trabajador.setLayout(btn_TrabajadorLayout);
-        btn_TrabajadorLayout.setHorizontalGroup(
-            btn_TrabajadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btn_TrabajadorLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnTrabajador, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33))
-        );
-        btn_TrabajadorLayout.setVerticalGroup(
-            btn_TrabajadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btn_TrabajadorLayout.createSequentialGroup()
-                .addGroup(btn_TrabajadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnTrabajador)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 3, Short.MAX_VALUE))
-        );
-
-        sidePanel.add(btn_Trabajador, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 200, 40));
-
-        btn_Tour.setBackground(new java.awt.Color(63, 43, 100));
-
-        jLabel3.setBackground(new java.awt.Color(255, 204, 102));
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tour.png"))); // NOI18N
-
-        btnTour.setBackground(new java.awt.Color(102, 0, 102));
-        btnTour.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 14)); // NOI18N
-        btnTour.setForeground(new java.awt.Color(255, 153, 0));
-        btnTour.setText("Tour");
-
-        javax.swing.GroupLayout btn_TourLayout = new javax.swing.GroupLayout(btn_Tour);
-        btn_Tour.setLayout(btn_TourLayout);
-        btn_TourLayout.setHorizontalGroup(
-            btn_TourLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btn_TourLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnTour, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33))
-        );
-        btn_TourLayout.setVerticalGroup(
-            btn_TourLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btn_TourLayout.createSequentialGroup()
-                .addGroup(btn_TourLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnTour)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 3, Short.MAX_VALUE))
-        );
-
-        sidePanel.add(btn_Tour, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 200, 40));
-
-        btn_Inicio.setBackground(new java.awt.Color(85, 55, 118));
-
         jLabel5.setBackground(new java.awt.Color(255, 204, 102));
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/home.png"))); // NOI18N
 
@@ -207,114 +140,152 @@ public class fmrPrincipal extends javax.swing.JFrame {
         btnInicio.setForeground(new java.awt.Color(255, 153, 0));
         btnInicio.setText("Refrescar");
 
+        javax.swing.GroupLayout btn_TrabajadorLayout = new javax.swing.GroupLayout(btn_Trabajador);
+        btn_Trabajador.setLayout(btn_TrabajadorLayout);
+        btn_TrabajadorLayout.setHorizontalGroup(
+            btn_TrabajadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btn_TrabajadorLayout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(29, Short.MAX_VALUE))
+        );
+        btn_TrabajadorLayout.setVerticalGroup(
+            btn_TrabajadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btn_TrabajadorLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(btn_TrabajadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnInicio))
+                .addContainerGap())
+        );
+
+        sidePanel.add(btn_Trabajador, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 200, 40));
+
+        btn_Inicio.setBackground(new java.awt.Color(85, 55, 118));
+
+        jLabel14.setFont(new java.awt.Font("ItalicT", 0, 14)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(255, 255, 51));
+        jLabel14.setText("Redes sociales");
+        jLabel14.setToolTipText("");
+
         javax.swing.GroupLayout btn_InicioLayout = new javax.swing.GroupLayout(btn_Inicio);
         btn_Inicio.setLayout(btn_InicioLayout);
         btn_InicioLayout.setHorizontalGroup(
             btn_InicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btn_InicioLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33))
+            .addGroup(btn_InicioLayout.createSequentialGroup()
+                .addGap(49, 49, 49)
+                .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(51, Short.MAX_VALUE))
         );
         btn_InicioLayout.setVerticalGroup(
             btn_InicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(btn_InicioLayout.createSequentialGroup()
-                .addGroup(btn_InicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnInicio)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 3, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jLabel14)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        sidePanel.add(btn_Inicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 200, 40));
+        sidePanel.add(btn_Inicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 270, 200, 30));
 
         btn_Paquete.setBackground(new java.awt.Color(63, 43, 100));
 
-        jLabel7.setBackground(new java.awt.Color(255, 204, 102));
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/paquete.png"))); // NOI18N
+        btnTrabajador.setBackground(new java.awt.Color(102, 0, 102));
+        btnTrabajador.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 14)); // NOI18N
+        btnTrabajador.setForeground(new java.awt.Color(255, 153, 0));
+        btnTrabajador.setText("Trabajador");
 
-        btnPaquete.setBackground(new java.awt.Color(102, 0, 102));
-        btnPaquete.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 14)); // NOI18N
-        btnPaquete.setForeground(new java.awt.Color(255, 153, 0));
-        btnPaquete.setText("Paquete");
+        jLabel1.setBackground(new java.awt.Color(255, 204, 102));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/trabajador.png"))); // NOI18N
 
         javax.swing.GroupLayout btn_PaqueteLayout = new javax.swing.GroupLayout(btn_Paquete);
         btn_Paquete.setLayout(btn_PaqueteLayout);
         btn_PaqueteLayout.setHorizontalGroup(
             btn_PaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btn_PaqueteLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnPaquete, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33))
+                .addContainerGap(7, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnTrabajador, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30))
         );
         btn_PaqueteLayout.setVerticalGroup(
             btn_PaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btn_PaqueteLayout.createSequentialGroup()
-                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btn_PaqueteLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnPaquete)
-                .addContainerGap())
+                .addComponent(btnTrabajador)
+                .addGap(11, 11, 11))
+            .addGroup(btn_PaqueteLayout.createSequentialGroup()
+                .addComponent(jLabel1)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         sidePanel.add(btn_Paquete, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 200, 40));
 
         btn_Reserva.setBackground(new java.awt.Color(63, 43, 100));
 
-        jLabel9.setBackground(new java.awt.Color(255, 204, 102));
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/reserva.png"))); // NOI18N
+        btn_Tour.setBackground(new java.awt.Color(63, 43, 100));
 
-        btnReserva.setBackground(new java.awt.Color(102, 0, 102));
-        btnReserva.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 14)); // NOI18N
-        btnReserva.setForeground(new java.awt.Color(255, 153, 0));
-        btnReserva.setText("Reserva");
+        btnTour.setBackground(new java.awt.Color(102, 0, 102));
+        btnTour.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 14)); // NOI18N
+        btnTour.setForeground(new java.awt.Color(255, 153, 0));
+        btnTour.setText("Tour");
+
+        jLabel3.setBackground(new java.awt.Color(255, 204, 102));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tour.png"))); // NOI18N
+
+        javax.swing.GroupLayout btn_TourLayout = new javax.swing.GroupLayout(btn_Tour);
+        btn_Tour.setLayout(btn_TourLayout);
+        btn_TourLayout.setHorizontalGroup(
+            btn_TourLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btn_TourLayout.createSequentialGroup()
+                .addContainerGap(10, Short.MAX_VALUE)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnTour, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33))
+        );
+        btn_TourLayout.setVerticalGroup(
+            btn_TourLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btn_TourLayout.createSequentialGroup()
+                .addGroup(btn_TourLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(btn_TourLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btnTour))
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 13, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout btn_ReservaLayout = new javax.swing.GroupLayout(btn_Reserva);
         btn_Reserva.setLayout(btn_ReservaLayout);
         btn_ReservaLayout.setHorizontalGroup(
             btn_ReservaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btn_ReservaLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnReserva, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33))
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(btn_Tour, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         btn_ReservaLayout.setVerticalGroup(
             btn_ReservaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btn_ReservaLayout.createSequentialGroup()
-                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btn_ReservaLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnReserva)
-                .addContainerGap())
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(btn_Tour, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         sidePanel.add(btn_Reserva, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, 200, 40));
 
-        jLabel13.setFont(new java.awt.Font("ItalicT", 0, 18)); // NOI18N
+        jLabel13.setFont(new java.awt.Font("ItalicT", 1, 18)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 51));
         jLabel13.setText("Turismo");
         jLabel13.setToolTipText("");
         sidePanel.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, 100, -1));
 
-        jLabel14.setFont(new java.awt.Font("ItalicT", 0, 18)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(255, 255, 51));
-        jLabel14.setText("Agencia");
-        jLabel14.setToolTipText("");
-        sidePanel.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, 100, -1));
-
-        jLabel15.setFont(new java.awt.Font("ItalicT", 0, 18)); // NOI18N
+        jLabel15.setFont(new java.awt.Font("ItalicT", 1, 18)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(255, 255, 51));
         jLabel15.setText("de");
         jLabel15.setToolTipText("");
         sidePanel.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 30, 40, -1));
-        sidePanel.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 180, 10));
+        sidePanel.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 180, 10));
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Whatsapp.png"))); // NOI18N
         sidePanel.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, -1, -1));
@@ -356,6 +327,12 @@ public class fmrPrincipal extends javax.swing.JFrame {
         telefono2.setForeground(new java.awt.Color(255, 255, 255));
         telefono2.setText("jLabel21");
         sidePanel.add(telefono2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 530, -1, -1));
+
+        jLabel22.setFont(new java.awt.Font("ItalicT", 1, 18)); // NOI18N
+        jLabel22.setForeground(new java.awt.Color(255, 255, 51));
+        jLabel22.setText("Agencia");
+        jLabel22.setToolTipText("");
+        sidePanel.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, 100, -1));
 
         bg.add(sidePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 550));
 
@@ -609,12 +586,10 @@ public class fmrPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel bg;
     public javax.swing.JButton btnBusqueda;
     public javax.swing.JButton btnConsultas;
-    public javax.swing.JButton btnInicio;
+    private javax.swing.JButton btnInicio;
     public javax.swing.JButton btnNosotros;
     public javax.swing.JButton btnNotas;
-    public javax.swing.JButton btnPaquete;
     public javax.swing.JButton btnRecomendaciones;
-    public javax.swing.JButton btnReserva;
     public javax.swing.JButton btnSiguiente;
     public javax.swing.JButton btnTour;
     public javax.swing.JButton btnTrabajador;
@@ -642,13 +617,12 @@ public class fmrPrincipal extends javax.swing.JFrame {
     public javax.swing.JLabel jLabel2;
     public javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

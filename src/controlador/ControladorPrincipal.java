@@ -81,12 +81,12 @@ public class ControladorPrincipal {
             }
         });
 
-        this.vista.btnInicio.addActionListener(new ActionListener() { //Correcto
+        /*this.vista.btnInicio.addActionListener(new ActionListener() { //Correcto
             @Override
             public void actionPerformed(ActionEvent e) {
                 llenarLista();
             }
-        });
+        });*/
 
         this.vista.btnTrabajador.addActionListener(new ActionListener() { //correcto
             @Override

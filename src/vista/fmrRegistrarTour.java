@@ -132,7 +132,7 @@ public class fmrRegistrarTour extends javax.swing.JFrame {
         jPanel3.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 37, 336, -1));
         jPanel3.add(txtHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 120, 180, -1));
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 90, 360, 360));
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 90, 350, 300));
 
         jPanel5.setBackground(new java.awt.Color(0, 102, 102));
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -141,42 +141,42 @@ public class fmrRegistrarTour extends javax.swing.JFrame {
         btnModificar.setFont(new java.awt.Font("Yu Gothic UI", 0, 14)); // NOI18N
         btnModificar.setForeground(new java.awt.Color(204, 204, 0));
         btnModificar.setText("Modificar");
-        jPanel5.add(btnModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 20, -1, -1));
+        jPanel5.add(btnModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 10, -1, -1));
 
         btnEliminar.setBackground(new java.awt.Color(51, 0, 0));
         btnEliminar.setFont(new java.awt.Font("Yu Gothic UI", 0, 14)); // NOI18N
         btnEliminar.setForeground(new java.awt.Color(204, 204, 0));
         btnEliminar.setText("Eliminar");
-        jPanel5.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, -1, -1));
+        jPanel5.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, -1));
 
         btnAgregar.setBackground(new java.awt.Color(51, 0, 0));
         btnAgregar.setFont(new java.awt.Font("Yu Gothic UI", 0, 14)); // NOI18N
         btnAgregar.setForeground(new java.awt.Color(204, 204, 0));
         btnAgregar.setText("Agregar");
-        jPanel5.add(btnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
+        jPanel5.add(btnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
 
         btnBuscra.setBackground(new java.awt.Color(51, 0, 0));
         btnBuscra.setFont(new java.awt.Font("Yu Gothic UI", 0, 14)); // NOI18N
         btnBuscra.setForeground(new java.awt.Color(204, 204, 0));
         btnBuscra.setText("Buscar");
-        jPanel5.add(btnBuscra, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 80, 90, -1));
+        jPanel5.add(btnBuscra, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 50, 90, -1));
 
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/montaña.png"))); // NOI18N
-        jPanel5.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 120, 70, 70));
+        jPanel5.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 80, 70, 70));
 
         btnAgregarItinerario.setBackground(new java.awt.Color(51, 0, 0));
         btnAgregarItinerario.setFont(new java.awt.Font("Yu Gothic UI", 0, 14)); // NOI18N
         btnAgregarItinerario.setForeground(new java.awt.Color(204, 204, 0));
         btnAgregarItinerario.setText("Añadir Itinerario");
-        jPanel5.add(btnAgregarItinerario, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 20, -1, -1));
+        jPanel5.add(btnAgregarItinerario, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 10, -1, -1));
 
         btnVerItinerario.setBackground(new java.awt.Color(51, 0, 0));
         btnVerItinerario.setFont(new java.awt.Font("Yu Gothic UI", 0, 14)); // NOI18N
         btnVerItinerario.setForeground(new java.awt.Color(204, 204, 0));
         btnVerItinerario.setText("Ver Itinerario");
-        jPanel5.add(btnVerItinerario, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 80, 130, -1));
+        jPanel5.add(btnVerItinerario, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 50, 130, -1));
 
-        jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 470, 470, 200));
+        jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 400, 470, 160));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -186,7 +186,7 @@ public class fmrRegistrarTour extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 685, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 578, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
