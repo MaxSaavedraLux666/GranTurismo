@@ -41,7 +41,7 @@ public class ControladorPrincipal {
     }
 
     public ControladorPrincipal(fmrPrincipal vista, TourArreglo modeloTour,
-            PersonaArreglo modeloPersona, GuiaArreglo modeloGuia, 
+            PersonaArreglo modeloPersona, GuiaArreglo modeloGuia,
             VehiculoArreglo modeloVehiculo, VentaArreglo modeloVenta) {
         this.vista = vista;
         this.modeloTour = modeloTour;
@@ -75,34 +75,27 @@ public class ControladorPrincipal {
             @Override
             public void actionPerformed(ActionEvent e) {
                 fmrTour vistaTour = new fmrTour();
-                ControladorTour controlador = new ControladorTour(modeloTour, vistaTour, 
+                ControladorTour controlador = new ControladorTour(modeloTour, vistaTour,
                         modeloVehiculo, modeloPersona, modeloGuia, modeloVenta);
                 controlador.iniciarTour();
             }
         });
 
-        /*this.vista.btnInicio.addActionListener(new ActionListener() { //Correcto
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                llenarLista();
-            }
-        });*/
-
         this.vista.btnTrabajador.addActionListener(new ActionListener() { //correcto
             @Override
             public void actionPerformed(ActionEvent e) {
                 //Trabajador
-                fmrTrabajador vistTrabajador = new fmrTrabajador();
-                ControladorTrabajador controlador = new ControladorTrabajador(vistTrabajador,
-                        modeloTour, modeloPersona, modeloVehiculo, modeloGuia, modeloVenta);
-                controlador.iniciarTrabajador();
+                fmrInicioSesion vistaInicioSesion = new fmrInicioSesion();
+                ControladorInicioSesion controlador = new ControladorInicioSesion(vistaInicioSesion,
+                        modeloPersona, modeloTour, modeloVehiculo, modeloGuia, modeloVenta);
+                controlador.inicioSesion();
             }
         });
 
         this.vista.btnBusqueda.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                
+
                 if (vista.txtFieldBusqueda.getText().equals(modeloTour.buscarTour(vista.txtFieldBusqueda.getText()).getCodTour())) {
                     fmrBusqueda vistaBusqueda = new fmrBusqueda();
                     ControladorBusqueda controlador = new ControladorBusqueda(vistaBusqueda, modeloTour, modeloVehiculo,

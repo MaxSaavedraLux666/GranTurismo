@@ -10,12 +10,18 @@ import java.io.Serializable;
  *
  * @author Sebastian
  */
-public class PersonaArreglo implements Serializable{
+public class PersonaArreglo implements Serializable {
 
     private Persona[] personas;
     private int indice;
-    private final String[] cabeceraCliente = {"CODIGO DE RESERVA", "NOMBRE", "CORREO",
+    private final String[] cabeceraCliente = {"CÓDIGO DE RESERVA", "NOMBRE", "CORREO",
         "TELEFONO", "DNI", "EDAD"};
+    private final String[] cabeceraTrabajador = {"CÓDIGO", "NOMBRE", "DNI",
+        "EDAD", "SUELDO", "VENTAS REALIZADAS"};
+
+    private final String[] cabeceraPlanilla = {"DNI", "NOMBRES", "CANT. VENTAS",
+        "SUELDO", "COMISIÓN", "SUELDO TOTAL"};
+
     Cliente clienteElegido;
 
     public PersonaArreglo(int tamanho) {
@@ -31,36 +37,10 @@ public class PersonaArreglo implements Serializable{
         this.personas[this.indice] = persona;
         this.indice++;
         result = true;
-        
-        return result;
-    }
-    
-    /*public boolean eliminarCliente(String codigo, Cliente clientes[]) {
-        boolean result = false;
-        int tamanio=contarClientes();
-        Cliente[] nuevo = new Cliente[tamanio - 1];
-        int pos = 0;
-        for (int i = 0; i < tamanio; i++) {
-            if (clientes[i].getCodReserva().equals(codigo)) {
-                pos = i;
-                result = true;
-                break;
-            }
-        }
-        if (result) {
-            for (int i = 0; i < pos; i++) {
-                nuevo[i] = clientes[i];
-            }
-            for (int i = pos + 1; i < tamanio; i++) {
-                nuevo[i - 1] = clientes[i];
-            }
-            clientes = nuevo;
-            this.indice--;
-        }
 
         return result;
-    }*/
-    
+    }
+
     public boolean eliminarPersona(String dniPersona) {
         boolean result = false;
         Persona[] nuevo = new Persona[personas.length - 1];
@@ -88,18 +68,18 @@ public class PersonaArreglo implements Serializable{
 
     public Persona buscarPersona(String dniPersona) {
         Persona result = null;
-        for (int i = 0; i < personas.length; i++) {
-            if (personas[i].getDni().equals(dniPersona)) {
-                result = personas[i];
+        for (int i = 0; i < this.personas.length; i++) {
+            if (this.personas[i].getDni().equals(dniPersona)) {
+                result = this.personas[i];
                 break;
             }
         }
         return result;
     }
-    
+
     public boolean modificarPersona(String dniPersona, Persona persona) {
         boolean result = false;
-        for (Persona objPersona : personas) {
+        for (Persona objPersona : this.personas) {
             if (dniPersona.equals(objPersona.getDni())) {
                 objPersona = persona;
                 result = true;
@@ -118,12 +98,6 @@ public class PersonaArreglo implements Serializable{
         this.personas = nuevo;
     }
 
-    private boolean vacio() {
-        boolean result = false;
-
-        return result;
-    }
-
     private boolean lleno() {
         boolean result = false;
         if (this.indice == this.personas.length) {
@@ -131,19 +105,8 @@ public class PersonaArreglo implements Serializable{
         }
         return result;
     }
-    private int contarClientes(){
-        int i=0;
-        for(Persona obj: this.personas ){
-            if( obj != null ) {
-                if(obj instanceof Cliente) {
-                    i++;              
-                }
-            } 
-        }
-        return i;
-    }
-    
-    public String[] getCabecera(){
+
+    public String[] getCabecera() {
         return this.cabeceraCliente;
     }
 
@@ -157,7 +120,6 @@ public class PersonaArreglo implements Serializable{
                     resultado[i][1] = obj.getNombre();
                     resultado[i][2] = ((Cliente) obj).getCorreo();
                     resultado[i][3] = ((Cliente) obj).getTelefono();
-                    //resultado[i][3]= String.valueOf(((Cliente) obj).getPuntos());
                     resultado[i][4] = obj.getDni();
                     resultado[i][5] = String.valueOf(obj.getEdad());
                     i++;
@@ -166,43 +128,97 @@ public class PersonaArreglo implements Serializable{
             }
 
         }
+        return resultado;
+    }
 
+    public String[][] getDatosTrabajador() {
+        String[][] resultado = new String[getTotal(2)][6];
+        int i = 0;
+        for (Persona obj : this.personas) {
+            if (obj != null) {
+                if (obj instanceof Trabajador) {
+                    resultado[i][0] = ((Trabajador) obj).getCodTrabajador();
+                    resultado[i][1] = obj.getNombre();
+                    resultado[i][2] = obj.getDni();
+                    resultado[i][3] = String.valueOf(obj.getEdad());
+                    resultado[i][4] = String.valueOf(((Trabajador) obj).getSueldo());
+                    resultado[i][5] = String.valueOf(((Trabajador) obj).getVentasRealizadas());
+                    i++;
+                }
+            }
+        }
+        return resultado;
+    }
+
+    public String[][] getPlanilla() {
+        String[][] resultado = new String[getTotal(2)][6];
+        int i = 0;
+        for (Persona obj : this.personas) {
+            if (obj != null) {
+                if (obj instanceof Trabajador) {
+                    resultado[i][0] = obj.getDni();
+                    resultado[i][1] = obj.getNombre();
+                    resultado[i][2] = String.valueOf(((Trabajador) obj).getVentasRealizadas());
+                    resultado[i][3] = String.valueOf(((Trabajador) obj).getSueldo());
+                    resultado[i][4] = String.valueOf(((Trabajador) obj).calcularComision());
+                    resultado[i][5] = String.valueOf((((Trabajador) obj).getSueldo() + ((Trabajador) obj).calcularComision()));
+                    i++;
+                }
+            }
+        }
         return resultado;
     }
 
     public Trabajador[] getTrabajadores() {
         Trabajador[] resultado = new Trabajador[getTotal(2)];
-
         return resultado;
     }
-    
-    public Cliente enviarCliente(Cliente cliente){
+
+    public String[] getCabeceraTrabajador() {
+        return cabeceraTrabajador;
+    }
+
+    public Cliente enviarCliente(Cliente cliente) {
         Cliente result = null;
-        
-        for (Persona obj : personas) {
+        for (Persona obj : this.personas) {
             if (obj instanceof Cliente) {
-                if (cliente.equals(obj)){
+                if (cliente.equals(obj)) {
                     result = (Cliente) obj;
                     break;
                 }
             }
         }
-        
         return result;
     }
 
-    @Override
-    public String toString() {
-        String result = "";
+    public Trabajador enviarTrabajador(Trabajador trabajador) {
+        Trabajador result = null;
         for (Persona obj : this.personas) {
-            if (obj != null) {
-                if (obj instanceof Cliente) {
-                    result += obj + "\n\n";
+            if (obj instanceof Trabajador) {
+                if (trabajador.equals(obj)) {
+                    result = (Trabajador) obj;
+                    break;
                 }
             }
-
         }
         return result;
+    }
+
+    public Trabajador enviarTrabajador(String user, String pass) {
+        Trabajador result = null;
+        for (Persona obj : this.personas) {
+            if (obj instanceof Trabajador) {
+                if (((Trabajador) obj).getCredenciales().verificar(user, pass)) {
+                    result = (Trabajador) obj;
+                    break;
+                }
+            }
+        }
+        return result;
+    }
+
+    public String[] getCabeceraPlanilla() {
+        return cabeceraPlanilla;
     }
 
     private int getTotal(int i) {
@@ -216,8 +232,72 @@ public class PersonaArreglo implements Serializable{
                     resultado++;
                 }
             }
-
         }
         return resultado;
+    }
+
+    public double obtenerTotalSueldos() {
+        double totalSueldos = 0;
+        for (Persona obj : this.personas) {
+            if (obj != null) {
+                if (obj instanceof Trabajador) {
+                    totalSueldos = ((Trabajador) obj).getSueldo();
+                }
+            }
+        }
+        return totalSueldos;
+    }
+
+    public double obtenerTotalSueldosNeto() {
+        double totalSueldosNeto = 0;
+        for (Persona obj : this.personas) {
+            if (obj != null) {
+                if (obj instanceof Trabajador) {
+                    totalSueldosNeto = ((Trabajador) obj).getSueldo() + ((Trabajador) obj).calcularComision();
+                }
+            }
+        }
+        return totalSueldosNeto;
+    }
+
+    public double obtenerTotalVentas() {
+        int totalVentas = 0;
+        for (Persona obj : this.personas) {
+            if (obj != null) {
+                if (obj instanceof Trabajador) {
+                    totalVentas = ((Trabajador) obj).getVentasRealizadas();
+                }
+            }
+        }
+        return totalVentas;
+    }
+
+    public boolean verificarTrabajador(String nombreUsuario, String contraseña) {
+        boolean result = false;
+        for (Persona obj : this.personas) {
+            if (obj != null) {
+                if (obj instanceof Trabajador) {
+                    result = ((Trabajador) obj).getCredenciales().verificar(nombreUsuario, contraseña);
+                }
+            }
+        }
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        String result = "";
+        for (Persona obj : this.personas) {
+            if (obj != null) {
+                if (obj instanceof Cliente) {
+                    result += obj + "\n\n";
+                }
+
+                if (obj instanceof Trabajador) {
+                    result += obj + "\n\n";
+                }
+            }
+        }
+        return result;
     }
 }

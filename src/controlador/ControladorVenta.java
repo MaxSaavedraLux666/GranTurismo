@@ -21,6 +21,7 @@ import modelo.Venta;
 import modelo.VentaArreglo;
 import vista.fmrBoleta;
 import vista.fmrVenta;
+import vista.fmrVentaTrabajador;
 
 /**
  *
@@ -54,7 +55,6 @@ public class ControladorVenta {
         this.vistVenta.btnAceptar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                fmrBoleta vistaBoleta = new fmrBoleta();
 
                 float pago = Float.parseFloat(JOptionPane.showInputDialog(null, " Le corresponde un pago de "
                         + tourElegido.getPrecioTour() + " $ \n" + " Ingresar monto\n"));
@@ -62,18 +62,17 @@ public class ControladorVenta {
                 if (pago == tourElegido.getPrecioTour()) {
 
                     venta = new Venta(fechaVenta, tourElegido.getCodTour(),
-                            modeloPersona.enviarCliente((Cliente) clienteElegido).getCodReserva(), 
+                            modeloPersona.enviarCliente((Cliente) clienteElegido).getCodReserva(),
                             tourElegido.getPrecioTour());
                     modeloVenta.agregarVenta(venta);
                     SerializadoraGen.serializar("ventas.txt", modeloVenta);
-                    
-                    ControladorBoleta controlador = new ControladorBoleta(vistaBoleta, clienteElegido,
-                            tourElegido, fecha, guiaElegido, modeloPersona, fechaVenta);
-                    controlador.iniciarBoleta();
+                    fmrVentaTrabajador vistaVentaTrabajador = new fmrVentaTrabajador();
+                    ControladorVentaTrabajador controlador = new ControladorVentaTrabajador(vistaVentaTrabajador,
+                            clienteElegido, tourElegido, fecha, guiaElegido, modeloPersona, fechaVenta);
+                    controlador.inicioVentaTrabajador();
                     SerializadoraGen.serializar("personas.txt", modeloPersona);
                     vistVenta.dispose();
                 } else {
-
                     JOptionPane.showMessageDialog(null, "El pago no corresponde, vuelve a intentarlo");
                 }
             }

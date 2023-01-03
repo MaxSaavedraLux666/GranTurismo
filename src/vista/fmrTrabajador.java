@@ -40,6 +40,8 @@ public class fmrTrabajador extends javax.swing.JFrame {
         btnRegistrarTour = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         btnReporte = new javax.swing.JButton();
+        btnReporteTrabajadores = new javax.swing.JButton();
+        btnRegistroTrabajadores = new javax.swing.JButton();
 
         jLabel1.setText("jLabel1");
 
@@ -106,7 +108,13 @@ public class fmrTrabajador extends javax.swing.JFrame {
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 190, 110, 100));
 
         btnReporte.setText("Reporte de Ventas");
-        jPanel1.add(btnReporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 300, -1, -1));
+        jPanel1.add(btnReporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 300, -1, -1));
+
+        btnReporteTrabajadores.setText("Reporte Trabajadores");
+        jPanel1.add(btnReporteTrabajadores, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 300, -1, -1));
+
+        btnRegistroTrabajadores.setText("Registrar Trabajadores");
+        jPanel1.add(btnRegistroTrabajadores, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 360, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -177,7 +185,9 @@ public class fmrTrabajador extends javax.swing.JFrame {
     public javax.swing.JButton btnGuia;
     public javax.swing.JButton btnModificarCliente;
     public javax.swing.JButton btnRegistrarTour;
+    public javax.swing.JButton btnRegistroTrabajadores;
     public javax.swing.JButton btnReporte;
+    public javax.swing.JButton btnReporteTrabajadores;
     public javax.swing.JButton btnSalir;
     public javax.swing.JButton btnTransporte;
     private javax.swing.JLabel jLabel1;
